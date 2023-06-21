@@ -2,65 +2,60 @@
 import Image from 'next/image';
 import flameImage from '../../public/assets/images/icons/flamme.png';
 import TeamCard from "@/components/team-card/page";
+import {buttons, depbuttons} from '@/utils/buttons';
 import {useEffect, useState} from "react";
+import TeamPositionsCard from "@/components/team-positions-card/page";
 
 export default function Home() {
     let teamView: string = "all";
-    const [data, setData] = useState(null)
+    const [teamData, setTeamData] = useState(null)
+    const [teamPositions, setTeamPositions] = useState(null)
+
     const [isLoading, setLoading] = useState(false)
     const [filteredTeamMember, setFilteredTeamMember] = useState(null);
+    const [filteredTeamPositions, setFilteredTeamPositions] = useState(null);
     let clickedRank: any;
+    let clickedPos: any;
     useEffect(() => {
         setLoading(true)
         fetch('https://plexus.baltic-galaxy.de/api/team')
             .then((res) => res.json())
-            .then((data) => {
-                setData(data)
+            .then((teamData) => {
+                setTeamData(teamData)
                 setLoading(false)
             })
-        setFilteredTeamMember(data)
+        fetch('https://plexus.baltic-galaxy.de/api/tpos')
+            .then((res) => res.json())
+            .then((teamPositions) => {
+                setTeamPositions(teamPositions)
+                setLoading(false)
+            })
+        setFilteredTeamPositions(teamPositions)
+        setFilteredTeamMember(teamData)
     }, [])
 
     if (isLoading) return <p>Loading...</p>
-    if (!data) return <p>No profile data</p>
+    if (!teamData) return <p>No profile data</p>
      function filterTeamMember(rankName: any) {
-         return data.filter(rank => rank.rank === rankName);
+         return teamData.filter(rank => rank.rank === rankName);
     }
-
+    function filterTeamPositions(departmentName: any) {
+        return teamPositions.filter(dep => dep.department === departmentName);
+    }
     function handleTeamMember(e: any) {
         let rankTeamMember = e.target.value;
         clickedRank = rankTeamMember;
         rankTeamMember !== "all"
             ? setFilteredTeamMember(filterTeamMember(rankTeamMember))
-            : setFilteredTeamMember(data);
+            : setFilteredTeamMember(teamData);
     }
-
-     const buttons = [
-        {
-            name: "Alle",
-            value: "all"
-        },
-         {
-             name: "Projektleitung",
-             value: "9_pl"
-         },
-         {
-             name: "Management",
-             value: "9_management"
-         },
-        {
-            name: "Developer",
-            value: "8_developer"
-        },
-        {
-            name: "Moderation",
-            value: "7_moderation"
-        },
-        {
-            name: "Architektur",
-            value: "6_architektur"
-        }
-    ];
+    function handleTeamPositions(e: any) {
+        let pos = e.target.value;
+        clickedPos = pos;
+        pos !== "all"
+            ? setFilteredTeamPositions(filterTeamPositions(pos))
+            : setFilteredTeamPositions(teamPositions);
+    }
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
@@ -175,84 +170,27 @@ export default function Home() {
 
                 <div className="mt-8">
                     <ul className="inline-flex float-left">
-                        <li className="mr-2 mt-1">Filtern nach:</li>
-                        <li><span className="badge active">Alle</span></li>
-                        <li><span className="badge">Entwicklung</span></li>
-                        <li><span className="badge">Bauen</span></li>
-                        <li><span className="badge">Content</span></li>
-                        <li><span className="badge">Moderation</span></li>
+                        {depbuttons &&
+                            depbuttons.map((type, index) => (
+                                <>
+                                    <li><button key={index} value={type.value} onClick={handleTeamPositions} className="badge"> {type.name}</button></li>
+                                </>
+                            ))}
                     </ul>
 
                     <ul className="float-right">
                         <li>Sortien nach: Keine</li>
                     </ul>
                     <br/>
+                    <br/>
+                    <p className="text-white/70">{filteredTeamPositions && filteredTeamPositions.length} Positionen sind offen </p>
                 </div>
 
                 <div className="mt-10">
-                    <div
-                        className=" mt-8 px-6 py-2 group border-2 border-white/10 rounded-xl relative bg-apply-card-radial grid grid-flow-row-dense grid-cols-10">
 
-                        <div className="px-8 py-6 col-span-5">
-                            <div>
-                                <span className="px-2 text-[11px] py-1 bg-white/10 rounded mr-2">Backend</span>
-                                <span className="px-2 text-[11px] py-1 bg-white/10 rounded mr-2">Frontend</span>
-                            </div>
-
-                            <div className="mt-4">
-                                <h1 className="text-[22px]"><Image className="inline h-7 w-7 -mt-1 mr-4" alt="alt"
-                                                                   src={flameImage}/>Architekt</h1>
-                                <p className="mt-4 mb-4 text-[15px]">
-                                    Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in
-                                    hendrerit urna.
-                                    Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
-                                    Maecenas vitae mattis
-                                    tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo.
-                                </p>
-
-                                <a className="text-baltic-tuerkis py-2 px-4 cursor-pointer group">Jetzt bewerben <Image
-                                    height={20} width={20} alt="alt"
-                                    className="inline transition-all ease-in-out group-hover:ml-3 ml-2 h-4 w-4"
-                                    src="/assets/images/icons/arrow_right.png"/></a>
-                            </div>
-
-                        </div>
-                        <div className="px-8 py-6 col-span-5">
-
-
-                            <div className="mt-6">
-                                <h2 className="text-[18px]">Du bringst folgendes mit</h2>
-
-                                <ul>
-                                    <li className="text-[12px] mt-4 text-white/70"><Image height={12} width={12}
-                                                                                          alt="alt"
-                                                                                          className="inline mr-3 h-3 -mt-1"
-                                                                                          src="/assets/images/icons/check.png"/>Du
-                                        hast gute Kenntnisse in der Programmiersprache Java
-                                    </li>
-                                    <li className="text-[12px] mt-2 text-white/70"><Image height={12} width={12}
-                                                                                          alt="alt"
-                                                                                          className="inline mr-3 h-3 -mt-1"
-                                                                                          src="/assets/images/icons/check.png"/>Du
-                                        hast gute Kenntnisse mit der Bukkit/Spigot API und weiÃŸt sie anzuwende
-                                    </li>
-                                    <li className="text-[12px] mt-2 text-white/70"><Image height={12} width={12}
-                                                                                          alt="alt"
-                                                                                          className="inline mr-3 h-3 -mt-1"
-                                                                                          src="/assets/images/icons/check.png"/>Du
-                                        hast grundlegende Kenntnisse mit Maven und Git
-                                    </li>
-                                    <li className="text-[12px] mt-2 text-white/70">Weitere Informationen siehst du im
-                                        Bewerbungsportal
-                                    </li>
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
+                    {filteredTeamPositions && filteredTeamPositions.map((position: any, index: any) => (
+                        <TeamPositionsCard key={index} prio={position.prio} position_name={position.position_name} description={position.description} tags={position.tags} requirements={position.requirements} />
+                    ))}
                 </div>
 
             </div>
