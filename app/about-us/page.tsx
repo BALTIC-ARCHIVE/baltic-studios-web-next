@@ -1,7 +1,6 @@
 'use client'
 import Image from 'next/image';
-import flameImage from '../../public/assets/images/icons/flamme.png';
-import {motion, useMotionTemplate, useMotionValue} from "framer-motion";
+import {motion} from "framer-motion";
 import TeamCard from "@/components/team-card/page";
 import {buttons, depbuttons} from '@/utils/buttons';
 import {useEffect, useState} from "react";
@@ -20,7 +19,8 @@ export default function Home() {
     let [activeTabPos, setActiveTabPos] = useState(depbuttons[0].value);
     let clickedRank: any;
     let clickedPos: any;
-
+    let teamSize: any;
+    let posSize: any;
 
     useEffect(() => {
         setLoading(true);
@@ -44,6 +44,16 @@ export default function Home() {
 
     if (isLoading) return <p>Loading...</p>
     if (!teamData && !teamPositions) return <p>No profile data</p>
+
+    if (filteredTeamMember) {
+        // @ts-ignore
+        let teamSize = filteredTeamMember.length
+    }
+    if (filteredTeamPositions) {
+        // @ts-ignore
+        let posSize = filteredTeamPositions.length
+    }
+
      function filterTeamMember(rankName: any) {
          // @ts-ignore
          return teamData.filter(rank => rank.rank === rankName);
@@ -71,6 +81,8 @@ export default function Home() {
     // @ts-ignore
     // @ts-ignore
     // @ts-ignore
+    // @ts-ignore
+    const {length} = filteredTeamPositions;
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
             <div className=" heading mx-auto max-w-4xl">
@@ -135,7 +147,7 @@ export default function Home() {
                     </ul>
                     <br/>
                     <br/>
-                    <p className="text-white/70">{filteredTeamMember && filteredTeamMember.length} Mitglieder werden angezeigt. </p>
+                    <p className="text-white/70">{filteredTeamMember && teamSize} Mitglieder werden angezeigt. </p>
                 </div>
 
 
