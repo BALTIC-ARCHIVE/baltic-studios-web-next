@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import {wait} from "next/dist/build/output/log";
 
 export default function Home() {
-    const [teamPositions, setTeamPositions] = useState(null)
+    const [teamPositions, setTeamPositions] = useState([] as any)
     const [isLoading, setLoading] = useState(false)
 
     useEffect(() => {

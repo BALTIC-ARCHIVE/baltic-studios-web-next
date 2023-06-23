@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
 
 
 export default function Home() {
-  const [tracks, setTracks] = useState(null);
+  const [tracks, setTracks] = useState([] as any)
 
   useEffect(() => {
     fetch('https://plexus.baltic-galaxy.de/api/tracks')
