@@ -78,6 +78,7 @@ export default function Home() {
             : setFilteredTeamPositions(teamPositions);
     }
 
+    // @ts-ignore
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
             <div className=" heading mx-auto max-w-4xl">
@@ -158,7 +159,7 @@ export default function Home() {
                                   twitterHandle={member.twitter_handle}
                                   entryDate={member.joined}
                         />
-                    ))}
+                    ) as any)}
 
 
 
