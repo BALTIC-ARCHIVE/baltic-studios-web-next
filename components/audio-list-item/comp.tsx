@@ -29,7 +29,7 @@ export default function AudioListItem({audioUrl, title}: any) {
     const [playing, toggle] = useAudio(audioUrl);
     // @ts-ignore
     return (
-        <li className="bg-blue-500/10 px-8 py-5">
+        <li className=" px-8 py-5">
             <div className="inline"
                  onClick={toggle}>
                 {playing ? <IoPause className="inline mr-4" size="30px"/> :

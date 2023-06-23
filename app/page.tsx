@@ -68,7 +68,7 @@ export default function Home() {
               className="inline transition-all ease-in-out group-hover:ml-3 ml-2 h-4 w-4"
               src="/assets/images/icons/arrow_right.png"/></a>
         </div>
-        <div className="bg-white/10 h-fit rounded-2xl">
+        <div className="bg-white/5 h-fit rounded-2xl">
           <ul>
             {tracks && tracks.map((track: any, index: any) => (
                 <AudioListItem key={index} title={track.title} author={track.author} duration="2:30" audioUrl={track.audioUrl}/>

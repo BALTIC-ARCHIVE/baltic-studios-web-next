@@ -13,7 +13,7 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-radial-bottom': 'radial-gradient(at bottom, var(--tw-gradient-stops))',
         'gradient-radial-top': 'radial-gradient(at top, var(--tw-gradient-stops))',
-        'blog-heading-gradient': "linear-gradient(360deg, rgba(14,14,14,0.4) 0%, rgba(0, 0, 0, 0) 25.19%), url('https://cdn.discordapp.com/attachments/733728032254197946/1121744126979878962/image.png')",
+        'blog-heading-gradient': " url('https://plexus.baltic-galaxy.de/assets/images/baltic-home-1.png')",
         'blog-article-gradient': "linear-gradient(to right top, rgba(1, 2, 3, 1), rgba(0, 0, 0, 0.0))",
         'apply-card-radial': 'radial-gradient(62.35% 115.02% at 50% 100%, rgba(255, 153, 0, 0.15) 0%, rgba(255, 153, 0, 0) 100%)',
         'team-card-radial': "radial-gradient(62.35% 115.02% at 50% 100%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%)",
