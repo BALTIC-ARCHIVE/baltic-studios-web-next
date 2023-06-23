@@ -6,7 +6,7 @@ import {buttons, depbuttons} from '@/utils/buttons';
 import {useEffect, useState} from "react";
 import TeamPositionsCard from "@/components/team-positions-card/page";
 import {wait} from "next/dist/build/output/log";
-
+/* eslint-disable */
 export default function Home() {
 
     const [teamData, setTeamData] = useState(null)
