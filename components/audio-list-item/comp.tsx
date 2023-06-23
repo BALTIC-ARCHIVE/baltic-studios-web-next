@@ -23,7 +23,7 @@ const useAudio = (url: any) => {
         };
     }, []);
 
-    return [playing, toggle];
+    return [playing, toggle] as const;
 };
 export default function AudioListItem({audioUrl, title}: any) {
     const [playing, toggle] = useAudio(audioUrl);
