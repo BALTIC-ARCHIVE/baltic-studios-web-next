@@ -33,8 +33,8 @@ export default function Home({ params }: { params: { position: string } }) {
 
     const handleChange = (event: any) => {
         const name = event.target.name;
-        const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}))
+        const value: any = event.target.value;
+        setInputs((values: any) => ({...values, [name]: value}))
     }
 
     const handleSubmit = (event: any) => {
