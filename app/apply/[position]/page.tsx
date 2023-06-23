@@ -29,7 +29,7 @@ export default function Home({ params }: { params: { position: string } }) {
 
     }, [])
 
-    const [inputs, setInputs] = useState({});
+    const [inputs, setInputs] = useState({} as any);
 
     const handleChange = (event: any) => {
         const name = event.target.name;
