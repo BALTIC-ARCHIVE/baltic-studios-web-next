@@ -156,10 +156,7 @@ body {
 }
 
 .header {
-  position: relative;
-  height: 90vh;
-  z-index: 1;
-  overflow: hidden;
+  padding-top: 15vh;
 }
 
 .header h1 {
@@ -182,8 +179,9 @@ body {
 }
 
 .header h4 {
-  margin-top: 120px;
+  margin-top: 18vh;
   z-index: 9999999999999999;
+  position: relative;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -321,4 +319,18 @@ body {
 
 .badge.active {
   background: rgba(255, 255, 255, 0.2);
+}
+
+.gradient-h4 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+
+  background: linear-gradient(90.14deg, #C6D2FF 0.12%, #6988F9 100.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
 }

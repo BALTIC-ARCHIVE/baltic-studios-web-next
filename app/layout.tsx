@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
 
       <header className="bg-transparent absolute top-0 left-0 w-full">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+          <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 z-99999" aria-label="Global">
               <div className="flex lg:flex-1">
                   <a href="#" className="-m-1.5 p-1.5">
                       <span className="sr-only">Lol</span>

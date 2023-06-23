@@ -11,9 +11,12 @@ export default function SuccessPage() {
             <div className="absolute top-52 right-96 w-[524px] h-[170px] blur-[150px] bg-purple-500/40 z-999 "></div>
             <div className="absolute top-24 left-[30vw] w-[272px] h-[272px] blur-[150px] bg-blue-500/40 z-999"></div>
             <div className="heading mx-auto max-w-4xl text-center">
-                <div className="mt-52 mb-12 bg-gradient-to-b from-[#00FFB21B]/10 to-[#00FFB22F]/10 p-4 mx-auto h-20 w-20 rounded-full">
+                <motion.div
+                    animate={{ scale: 1.5 }}
+                    transition={{ type: "spring", damping: 3, delay: 0.1 }}
+                    className="mt-52 mb-12 bg-gradient-to-b from-[#00FFB21B]/10 to-[#00FFB22F]/10 p-4 mx-auto h-20 w-20 rounded-full">
                     <Image src="/assets/images/r2d2.png" width={50} height={50} alt="Rocket" />
-                </div>
+                </motion.div>
                 <h4 className="text-center">Vielen Dank für dein Interesse!</h4>
                 <h1>Deine Bewerbung wird mit Lichtgeschwindigkeit bearbeitet!</h1>
 
