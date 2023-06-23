@@ -8,8 +8,8 @@ import InputTextArea from "@/components/utils/InputTextArea";
 import {EmbedBuilder, WebhookClient} from "discord.js";
 import { useRouter } from 'next/navigation'
 export default function Home({ params }: { params: { position: string } }) {
-    const [teamPositions, setTeamPositions] = useState(null)
-    const [singlePosition, setSinglePosition] = useState(null)
+    const [teamPositions, setTeamPositions] = useState([] as any)
+    const [singlePosition, setSinglePosition] = useState({} as any)
     const [isLoading, setLoading] = useState(false)
     const router = useRouter()
 
@@ -49,7 +49,7 @@ export default function Home({ params }: { params: { position: string } }) {
         const params = {
             username: "Bewerbi",
             avatar_url: "https://www.baltic-galaxy.de/assets/images/logo.png",
-            content: "Neue Bewerbung für " + singlePosition.position_name + " von " + inputs.name + " (" + inputs.minecraft_ign + ") @everyone \n\n" +
+            content: "Neue Bewerbung für " + (singlePosition && singlePosition.position_name) + " von " + inputs.name + " (" + inputs.minecraft_ign + ") @everyone \n\n" +
                 "**E-Mail:** \n" + inputs.email + "\n\n" +
                 "**Discord: **\n" + inputs.discord_id + "\n\n" +
                 "**Ist dem Discord beigetreten:**\n " + (inputs.have_discord = "on" ? 'Ja': 'Nein') + "\n\n" +
