@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="bg-black header">
         <h1><span>KREATIONEN</span> mit lichtgeschwindigkeit</h1>
         <h4>Minecraft als Plattform zum Erzählen von galaktischen Geschichten.</h4>
