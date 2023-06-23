@@ -1,3 +1,33 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "next/no-css-tags": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-console": "off",
+    "no-underscore-dangle": "off",
+    "no-param-reassign": "off",
+    "no-use-before-define": "off",
+    "no-unused-vars": "off",
+    "no-shadow": "off",
+    "no-nested-ternary": "off",
+    "no-undef": "off",
+    "no-restricted-syntax": "off",
+    "no-continue": "off",
+    "no-plusplus": "off",
+    "no-prototype-builtins": "off",
+    "no-return-assign": "off",
+    "no-else-return": "off",
+    "no-void": "off",
+    "no-useless-escape": "off",
+    "no-useless-concat": "off",
+    "no-sequences": "off",
+    "no-async-promise-executor": "off",
+    "no-await-in-loop": "off",
+    "no-constant-condition": "off",
+    "no-undef-init": "off",
+    "no-restricted-globals": "off"
+  }
 }
