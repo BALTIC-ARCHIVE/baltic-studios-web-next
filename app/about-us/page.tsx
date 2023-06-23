@@ -6,15 +6,16 @@ import {buttons, depbuttons} from '@/utils/buttons';
 import {useEffect, useState} from "react";
 import TeamPositionsCard from "@/components/team-positions-card/page";
 import {wait} from "next/dist/build/output/log";
+import AudioListItem from "@/components/audio-list-item/comp";
 /* eslint-disable */
 export default function Home() {
 
-    const [teamData, setTeamData] = useState(null)
-    const [teamPositions, setTeamPositions] = useState(null)
+    const [teamData, setTeamData] = useState([] as any)
+    const [teamPositions, setTeamPositions] = useState([] as any)
 
     const [isLoading, setLoading] = useState(false)
-    const [filteredTeamMember, setFilteredTeamMember] = useState(null);
-    const [filteredTeamPositions, setFilteredTeamPositions] = useState(null);
+    const [filteredTeamMember, setFilteredTeamMember] = useState([] as any)
+    const [filteredTeamPositions, setFilteredTeamPositions] = useState([] as any)
     let [activeTab, setActiveTab] = useState(buttons[0].value);
     let [activeTabPos, setActiveTabPos] = useState(depbuttons[0].value);
     let clickedRank: any;
@@ -78,6 +79,7 @@ export default function Home() {
             : setFilteredTeamPositions(teamPositions);
     }
 
+    // @ts-ignore
     // @ts-ignore
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
@@ -159,7 +161,7 @@ export default function Home() {
                                   twitterHandle={member.twitter_handle}
                                   entryDate={member.joined}
                         />
-                    ) as any)}
+                    ))}
 
 
 
