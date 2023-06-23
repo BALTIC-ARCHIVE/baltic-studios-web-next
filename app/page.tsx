@@ -3,6 +3,7 @@ import Image from 'next/image'
 import {IoPlay} from "react-icons/io5";
 import AudioListItem from "@/components/audio-list-item/comp";
 import {useEffect, useState} from "react";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -22,9 +23,8 @@ export default function Home() {
         <h4>Wir schaffen großartiges für Augen und Ohren. Möchtest du Teil der Reise sein?</h4>
 
         <div className="flex justify-center mt-12 relative z-50">
-          <a href="#"
-             className="text-black/70 px-8 py-4 rounded-md bg-[#00FFA3] text-black border-[#7E89B1] text-sm font-medium mr-5">DISCORD
-            BEITRETEN</a>
+          <Link href="/about-us"
+             className="text-black/70 px-8 py-4 rounded-md bg-[#00FFA3] text-black border-[#7E89B1] text-sm font-medium mr-5">OFFENE POSITIONEN</Link>
         </div>
 
 

@@ -79,12 +79,12 @@ export default function Home({ params }: { params: { position: string } }) {
                 <div className="rounded-b-xl overflow-hidden">
 
                     {teamPositions.map((teamPosition: any, index: any) => (
-                        <PositionTile key={index} positionName={teamPosition.position_name} positionDesc={teamPosition.short_description}/>
+                        <PositionTile key={index} positionName={teamPosition.position_name} positionId={teamPosition.position_id} positionDesc={teamPosition.short_description}/>
                     ))}
                 </div>
             </div>
 
-            <ApplyPositionCard singlePosition={singlePosition}/>
+            <ApplyPositionCard singlePosition={singlePosition} reqs={singlePosition.requirements}/>
 
             <form className="mt-16" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-2 gap-8">

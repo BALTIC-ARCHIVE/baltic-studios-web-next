@@ -1,11 +1,11 @@
 'use client';
 import {motion, useMotionTemplate, useMotionValue} from "framer-motion";
 import Image from "next/image";
-import {MouseEvent} from "react";
+import {MouseEvent, useEffect, useState} from "react";
 import flameImage from "@/public/assets/images/icons/flamme.png";
 import {tag} from "postcss-selector-parser";
 
-export default function ApplyPositionCard({singlePosition}: any) {
+export default function ApplyPositionCard({singlePosition, reqs}: any) {
     let mouseX = useMotionValue(0);
     let mouseY = useMotionValue(0);
     const is_high_priority = true;
@@ -15,8 +15,8 @@ export default function ApplyPositionCard({singlePosition}: any) {
         mouseY.set(clientY - top);
     }
 
-    if (!singlePosition) return <h1>No profile data</h1>
 
+    if (!singlePosition && !reqs) return <h1>No profile data</h1>
     return (
         <div
             className=" mt-12 px-6 py-2  border-white/10 bg-white/5 rounded-xl text-white relative grid grid-flow-row-dense grid-cols-10">
@@ -49,7 +49,7 @@ export default function ApplyPositionCard({singlePosition}: any) {
                     <h2 className="text-[18px]">Du bringst folgendes mit:</h2>
 
                     <ul>
-                        {singlePosition.requirements.map((req: any, index: any) => (
+                        {reqs?.map((req: any, index: any) => (
                             <li key={index} className="text-[12px] mt-4 text-white/70">
                                 <Image height={12} width={12} alt="alt" className="inline mr-3 h-3 -mt-1" src="/assets/images/icons/check.png"/>
                                 {req}

@@ -256,7 +256,7 @@ export default function Home() {
                 <div className="mt-10">
 
                     {filteredTeamPositions && filteredTeamPositions.map((position: any, index: any) => (
-                        <TeamPositionsCard key={index} prio={position.prio} position_name={position.position_name} description={position.description} tags={position.tags} requirements={position.requirements} />
+                        <TeamPositionsCard key={index} prio={position.prio} positionId={position.position_id} position_name={position.position_name} description={position.description} tags={position.tags} requirements={position.requirements} />
                     ))}
                 </div>
 
