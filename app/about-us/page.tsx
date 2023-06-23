@@ -252,7 +252,7 @@ export default function Home() {
                     </ul>
                     <br/>
                     <br/>
-                    <p className="text-white/70">{filteredTeamPositions && filteredTeamPositions.length} Positionen sind offen </p>
+                    <p className="text-white/70">{filteredTeamPositions && posSize} Positionen sind offen </p>
                 </div>
 
                 <div className="mt-10">
