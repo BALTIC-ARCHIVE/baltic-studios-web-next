@@ -78,11 +78,6 @@ export default function Home() {
             : setFilteredTeamPositions(teamPositions);
     }
 
-    // @ts-ignore
-    // @ts-ignore
-    // @ts-ignore
-    // @ts-ignore
-    const {length} = filteredTeamPositions;
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
             <div className=" heading mx-auto max-w-4xl">
