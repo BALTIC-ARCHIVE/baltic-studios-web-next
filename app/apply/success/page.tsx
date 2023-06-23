@@ -24,7 +24,7 @@ export default function SuccessPage() {
 
             <div className="mt-20 w-full px-52 grid grid-cols-2 gap-x-5 gap-y-16">
                 <div>
-                    <h1 className="text-5xl leading-relaxed">“Erzähle mir nicht, wie meine Chancen <br/> stehen!”</h1>
+                    <h1 className="text-5xl text-white leading-relaxed">“Erzähle mir nicht, wie meine Chancen <br/> stehen!”</h1>
                     <h4 className="text-xl text-white/50">- Han Solo</h4>
                 </div>
                 <div>
