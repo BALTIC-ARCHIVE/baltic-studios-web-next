@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de">
-      <body className={inter.className}>
+      <body className="bg-black">
 
       <header className="bg-transparent absolute top-0 left-0 w-full">
           <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 z-99999" aria-label="Global">
