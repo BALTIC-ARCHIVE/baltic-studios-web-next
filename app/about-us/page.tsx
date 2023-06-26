@@ -27,7 +27,7 @@ export default function Home() {
             .then((res) => res.json())
             .then((teamData) => {
                 setTeamData(teamData)
-                setTeamData(teamData)
+                setFilteredTeamMember(teamData)
             });
         fetch('https://plexus.baltic-galaxy.de/api/tpos')
             .then((res) => res.json())
