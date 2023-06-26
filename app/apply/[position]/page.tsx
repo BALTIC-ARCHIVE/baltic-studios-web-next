@@ -114,7 +114,7 @@ export default function Home({ params }: { params: { position: string } }) {
                             Links zu den jeweiligen Websiten hinzu." placeholder="Tippe hier deinen Text ein..." rows={8} id="werke" change={handleChange} required={true}/>
 
 
-                    <InputCheckbox label="Ich habe verstanden, dass nach dem Klicken des folgenden Buttons ich die Bewerbung nicht mehr bearbeiten kann. Ich habe ebenfalls in Kenntnis genommen, dass die Teammitglieder von Baltic Studios Zugang zu meiner Bewerbung haben." id="accept-privacy" required={true}/>
+                    <InputCheckbox extraClass="col-span-2" label="Ich habe verstanden, dass nach dem Klicken des folgenden Buttons ich die Bewerbung nicht mehr bearbeiten kann. Ich habe ebenfalls in Kenntnis genommen, dass die Teammitglieder von Baltic Studios Zugang zu meiner Bewerbung haben." id="accept-privacy" required={true}/>
 
 
                     <div className="col-span-2 mx-auto">

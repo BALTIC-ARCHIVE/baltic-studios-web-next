@@ -12,7 +12,7 @@ export const buttons = [
         value: "9_management"
     },
     {
-        name: "Developer",
+        name: "Entwicklung",
         value: "8_developer"
     },
     {
