@@ -20,8 +20,6 @@ export default function Home() {
     let [activeTabPos, setActiveTabPos] = useState(depbuttons[0].value);
     let clickedRank: any;
     let clickedPos: any;
-    let teamSize: any;
-    let posSize: any;
 
     useEffect(() => {
         setLoading(true);
@@ -47,15 +45,6 @@ export default function Home() {
 
     if (isLoading) return <p>Loading...</p>
     if (!teamData && !teamPositions) return <p>No profile data</p>
-
-    if (filteredTeamMember) {
-        // @ts-ignore
-        let teamSize = filteredTeamMember.length
-    }
-    if (filteredTeamPositions) {
-        // @ts-ignore
-        let posSize = filteredTeamPositions.length
-    }
 
      function filterTeamMember(rankName: any) {
          // @ts-ignore
@@ -147,7 +136,7 @@ export default function Home() {
                     </ul>
                     <br/>
                     <br/>
-                    <p className="text-white/70">{filteredTeamMember && teamSize} Mitglieder werden angezeigt. </p>
+                    <p className="text-white/70">{filteredTeamMember && filteredTeamMember.length} Mitglieder werden angezeigt. </p>
                 </div>
 
 
@@ -252,10 +241,10 @@ export default function Home() {
                     </ul>
                     <br/>
                     <br/>
-                    <p className="text-white/70">{filteredTeamPositions && posSize} Positionen sind offen </p>
+                    <p className="text-white/70">{filteredTeamPositions && filteredTeamPositions.length} Positionen sind offen </p>
                 </div>
 
-                <div className="mt-10">
+                <div className="mt-10 transition ease-in-out">
 
                     {filteredTeamPositions && filteredTeamPositions.map((position: any, index: any) => (
                         <TeamPositionsCard key={index} prio={position.prio} positionId={position.position_id} position_name={position.position_name} description={position.description} tags={position.tags} requirements={position.requirements} />
