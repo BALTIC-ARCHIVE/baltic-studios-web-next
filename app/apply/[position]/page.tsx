@@ -118,7 +118,7 @@ export default function Home({ params }: { params: { position: string } }) {
 
 
                     <div className="col-span-2 mx-auto">
-                        <button type="submit" className="px-12 py-4 text-black rounded bg-baltic-tuerkis bg-white">Jetzt Bewerbung
+                        <button type="submit" className="px-12 py-4 text-black rounded bg-baltic-tuerkis hover:bg-baltic-tuerkis/90">Jetzt Bewerbung
                             abschicken!
                         </button>
                     </div>
