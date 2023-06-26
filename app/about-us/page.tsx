@@ -260,7 +260,7 @@ export default function Home() {
                             >
                                 {activeTabPos === tab.value && (
                                     <motion.span
-                                        layoutId="bubble"
+                                        layoutId="bubble2"
                                         className="absolute inset-0 z-10 bg-white/10 mix-blend-difference"
                                         style={{ borderRadius: 9999 }}
                                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
