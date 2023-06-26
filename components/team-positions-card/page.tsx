@@ -42,7 +42,7 @@ export default function TeamPositionsCard({tags, prio, position_name, descriptio
 
             <div className="px-8 py-6 col-span-5">
                 <div>
-                    {tags.map((tag: any, index: any) => (
+                    {tags && tags.map((tag: any, index: any) => (
                         <span key={index} className="px-2 text-[11px] py-1 bg-white/10 rounded mr-2">{tag}</span>
                     ))}
 
