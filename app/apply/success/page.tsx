@@ -22,12 +22,12 @@ export default function SuccessPage() {
 
             </div>
 
-            <div className="mt-20 w-full px-52 grid grid-cols-2 gap-x-5 gap-y-16">
-                <div>
+            <div className="mt-20 xl:w-3/4 w-5/6 grid grid-cols-2 gap-x-5 gap-y-16">
+                <div className="col-span-2 xl:col-span-1">
                     <h1 className="text-5xl text-white leading-relaxed">“Erzähle mir nicht, wie meine Chancen <br/> stehen!”</h1>
                     <h4 className="text-xl text-white/50">- Han Solo</h4>
                 </div>
-                <div>
+                <div className="col-span-2 xl:col-span-1">
                     <div className="bg-white/10 w-full px-8 py-12 rounded-xl">
                         <h3 className="text-baltic-tuerkis text-xl mb-4">Das passiert jetzt für dich...</h3>
                         <p className="text-[18px] text-white/70">Wahrscheinlich starren wir alle schon erstaunt auf deine Bewerbung! Du wirst zeitnah auf Discord von uns benachrichtigt und auf einen Tee in einem Gespräch eingeladen. Schaue dich in der Zeit ruhig etwas auf unserem Projekt um. Fühl dich wie Zuhause!</p>
@@ -38,8 +38,7 @@ export default function SuccessPage() {
             <div className="h-1/2 w-3/4 mt-32 mx-auto text-white">
                 <h1 className="text-white text-[32px]">Stelle dir vor...</h1>
                 <div className="mt-16 grid grid-cols-4 gap-8">
-
-                    <div className=" hover:scale-105 cursor-pointer transition-all ease">
+                    <div className="xl:col-span-1 col-span-4 hover:scale-105 cursor-pointer transition-all ease">
                         <span><Image className="h-8" src="/assets/images/icons/heart.png" alt="alt" width={40}
                                      height={80}/></span>
                         <p className="mt-6 text-[22px]">
@@ -47,7 +46,7 @@ export default function SuccessPage() {
                         </p>
                     </div>
 
-                    <div className=" hover:scale-105 cursor-pointer transition-all ease">
+                    <div className="xl:col-span-1 col-span-4  hover:scale-105 cursor-pointer transition-all ease">
                         <span><Image className="h-8" src="/assets/images/icons/house.png" alt="alt" width={40}
                                      height={80}/></span>
                         <p className="mt-6 text-[22px]">
@@ -55,7 +54,7 @@ export default function SuccessPage() {
                         </p>
                     </div>
 
-                    <div className=" hover:scale-105 cursor-pointer transition-all ease">
+                    <div className="xl:col-span-1 col-span-4  hover:scale-105 cursor-pointer transition-all ease">
                         <span><Image className="h-8" src="/assets/images/icons/rocket.png" alt="alt" width={40}
                                      height={80}/></span>
                         <p className="mt-6 text-[22px]">
@@ -63,7 +62,7 @@ export default function SuccessPage() {
                         </p>
                     </div>
 
-                    <div className=" hover:scale-105 cursor-pointer transition-all ease">
+                    <div className="xl:col-span-1 col-span-4  hover:scale-105 cursor-pointer transition-all ease">
                         <span><Image className="h-8" src="/assets/images/icons/bulb.png" alt="alt" width={40}
                                      height={80}/></span>
                         <p className="mt-6 text-[22px]">

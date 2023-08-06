@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={`bg-black text-white ${inter.className}`}>
 
       <header className="bg-transparent absolute top-0 left-0 w-full">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 z-99999" aria-label="Global">
+          <nav className="mx-auto flex xl:w-3/4 w-5/6 items-center justify-between py-6 z-99999" aria-label="Global">
               <div className="flex lg:flex-1">
                   <a href="#" className="-m-1.5 p-1.5">
                       <span className="sr-only">Lol</span>
@@ -65,53 +65,49 @@ export default function RootLayout({
       {children}
 
       <div className=" p-10 xl:p-10 pb-12 mt-22 ">
-          <div className="grid grid-cols-3 xl:h-16 h-10 gap-x-4 xl:mx-24 border-gray-800 border-b">
+          <div className="grid xl:grid-cols-3 grid-cols-2 xl:h-16 h-10 gap-x-4 xl:mx-24 border-gray-800 border-b">
               <div className="h-fit">
                   <Image
                       src="/assets/logo.png"
                       width={200}
                       height={200}
-                      alt="Picture of the author"
+                      alt="Baltic Studios Logo"
                   />
               </div>
-              <div className="h-fit">
-                  <p className="text-xl  text-gray-500">Ein Universum voller Ideen</p>
+              <div className="h-fit w-full">
+                  <p className="xl:text-xl mt-1 text-[12px] text-gray-500">Ein Universum voller Ideen</p>
               </div>
               <div className="h-fit">
               </div>
 
           </div>
 
-          <div className="grid xl:grid-cols-4 grid-cols-2 gap-x-4 xl:mx-24 justify-items-center pt-10 py-38">
-              <div className="h-fit ">
+          <div className="grid grid-cols-4 gap-x-4 xl:mx-24 justify-items-center pt-10 py-38">
+              <div className="h-fit col-span-4 xl:col-span-1">
                   <h2 className="text-white">© BALTIC STUDIOS</h2>
                   <p className="text-gray-400 text-sm mt-3">Lorem ipsum dolor sit, sed sit amet, consetetur sadipscing
                       elitr, sed diam nonumy eirmod tempor.</p>
-                  <p className="text-gray-400 text-sm mt-3">Dieses Projekt steht in keiner Verbindung mit Disney® und
+                  <p className="text-gray-400 text-sm mt-3">Dieses Projekt steht in keiner Verbindung mit Minecraft®, Disney® und
                       deren Marken</p>
 
               </div>
-              <div className="h-fit">
-                  <ul className="text-gray-500">
-                      <li>Homepage</li>
-                      <li className="my-2">Über Uns</li>
-                      <li className="my-2">Bewerben</li>
+              <div className="h-fit mt-6 xl:mt-0 col-span-4 xl:col-span-2">
+                  <ul className="grid grid-cols-2 gap-x-8 xl:gap-x-52 text-gray-500">
+                      <li><a className="hover:text-gray-400 hover:cursor-pointer">Homepage</a></li>
+                      <li><a className="hover:text-gray-400 hover:cursor-pointer">Über Uns</a></li>
+                      <li><a className="hover:text-gray-400 hover:cursor-pointer">Bewerben</a></li>
+                      <li><a className="hover:text-gray-400 hover:cursor-pointer">AGB</a></li>
+                      <li><a className="hover:text-gray-400 hover:cursor-pointer">Datenschutzerklärung</a></li>
+                      <li><a className="hover:text-gray-400 hover:cursor-pointer">Impressum</a></li>
                   </ul>
               </div>
-              <div className="h-fit">
-                  <ul className="text-gray-500">
-                      <li>AGB</li>
-                      <li className="my-2">Datenschutzerklärung</li>
-                      <li className="my-2">Impressum</li>
-                  </ul>
-              </div>
-              <div className="h-fit mt-10 text-white">
+              <div className="h-fit mt-5 text-white col-span-4 xl:col-span-1">
 
-                  <a className="px-4 py-3 mt-5 rounded bg-white/[0.07] hover:bg-white/[0.1] hover:cursor-pointer">Baltic
+                  <a className="px-4 py-3 mt-5 xl:mt-0 rounded bg-white/[0.07] hover:bg-white/[0.1] hover:cursor-pointer">Baltic
                       Galaxy besuchen</a>
-                  <div className="flex justify-end px-4 bg-transparent text-white">
+                  <div className="flex xl:justify-end px-4 bg-transparent text-white">
                       <div className="py-6 flex">
-                          <div className="hidden xl:flex items-center space-x-5">
+                          <div className="flex xl:flex items-center space-x-5">
                               <a className="flex hover:text-gray-200" href="#">
                                   <Image
                                       src="/assets/images/tiktok.svg"

@@ -25,7 +25,7 @@ export default function TeamPositionsCard({tags, prio, position_name, descriptio
 
     return (
         <div
-            className=" mt-8 px-6 py-2 group border-2 border-white/10 rounded-xl relative bg-apply-card-radial grid grid-flow-row-dense grid-cols-10"
+            className="mt-8 px-6 py-2 group border-2  border-white/10 rounded-xl relative bg-apply-card-radial grid grid-flow-row-dense grid-cols-10"
             onMouseMove={handleMouseMove}>
             <motion.div
                 className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
@@ -40,7 +40,7 @@ export default function TeamPositionsCard({tags, prio, position_name, descriptio
                 }}
             />
 
-            <div className="px-8 py-6 col-span-5">
+            <div className="xl:px-8 px-2 py-6 col-span-10 xl:col-span-5">
                 <div>
                     {tags && tags.map((tag: any, index: any) => (
                         <span key={index} className="px-2 text-[11px] py-1 bg-white/10 rounded mr-2">{tag}</span>
@@ -55,17 +55,17 @@ export default function TeamPositionsCard({tags, prio, position_name, descriptio
                         {description}
                     </p>
 
-                    <Link href={`/apply/${positionId}`} className="text-baltic-tuerkis py-2 px-4 cursor-pointer group">Jetzt bewerben <Image
+                    <Link href={`/apply/${positionId}`} className="text-baltic-tuerkis py-2 px-4 hidden xl:block cursor-pointer group">Jetzt bewerben <Image
                         height={20} width={20} alt="alt"
                         className="inline transition-all ease-in-out group-hover:ml-3 ml-2 h-4 w-4"
                         src="/assets/images/icons/arrow_right.png"/></Link>
                 </div>
 
             </div>
-            <div className="px-8 py-6 col-span-5">
+            <div className="xl:px-8 px-2 py-6 col-span-10 xl:col-span-5">
 
 
-                <div className="mt-6">
+                <div className="mt-6 mb-6 xl:mb-0">
                     <h2 className="text-[18px]">Du bringst folgendes mit</h2>
 
                     <ul>
@@ -82,8 +82,13 @@ export default function TeamPositionsCard({tags, prio, position_name, descriptio
                         </li>
                     </ul>
 
-                </div>
 
+
+                </div>
+                <Link href={`/apply/${positionId}`} className="text-baltic-tuerkis py-2 px-0 xl:hidden cursor-pointer group">Jetzt bewerben <Image
+                    height={20} width={20} alt="alt"
+                    className="inline transition-all ease-in-out group-hover:ml-3 ml-2 h-4 w-4"
+                    src="/assets/images/icons/arrow_right.png"/></Link>
             </div>
 
         </div>

@@ -18,19 +18,18 @@ export default function ApplyPositionCard({singlePosition, reqs}: any) {
 
     if (!singlePosition && !reqs) return <h1>No profile data</h1>
     return (
-        <div
-            className=" mt-12 px-6 py-2  border-white/10 bg-white/5 rounded-xl text-white relative grid grid-flow-row-dense grid-cols-10">
+        <div className="mt-12 py-2  border-white/10 bg-white/5 rounded-xl text-white relative grid grid-flow-row-dense grid-cols-10">
 
-            <div className="px-8 py-6 col-span-5">
+            <div className="px-8 py-6 col-span-10 xl:col-span-5">
 
                 <div>
-                    <span className="text-[18px] text-white rounded mr-2">Du bewirbst dich für die Position</span>
+                    <span className="xl:text-[22px] text-[16px] text-white rounded mr-2">Du bewirbst dich für die Position</span>
                 </div>
 
 
                 <div className="mt-1">
-                    <h1 className="text-[52px] font-bold text-blue-400">{singlePosition.position_name}</h1>
-                    <p className="mt-4 mb-4 text-[15px] text-white">
+                    <h1 className="xl:text-[52px] text-[26px] font-bold text-blue-400">{singlePosition.position_name}</h1>
+                    <p className="mt-4 mb-4 text-[15px] text-gray-300">
                         {singlePosition.description}
                     </p>
 
@@ -42,7 +41,7 @@ export default function ApplyPositionCard({singlePosition, reqs}: any) {
                 </div>
 
             </div>
-            <div className="px-8 py-6 col-span-5">
+            <div className="px-8 py-6 col-span-10 xl:col-span-5">
 
 
                 <div className="mt-6">

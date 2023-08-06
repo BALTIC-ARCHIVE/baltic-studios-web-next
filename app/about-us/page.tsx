@@ -80,10 +80,10 @@ export default function Home() {
     // @ts-ignore
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
-            <div className=" heading mx-auto max-w-4xl">
-                <h4 className="mt-52">UNSERE MISSION</h4>
-                <h1>Wir schaffen großartiges für Augen und Ohren</h1>
-                <p className="mt-6">Seit nun mehreren Jahren arbeiten wir als talentiertes Team daran, dir eine unvergessliche Zeit zu erschaffen.
+            <div className="heading h-[100vh] xl:w-3/4 w-5/6">
+                <h4 className="mt-32 xl:mt-52">UNSERE MISSION</h4>
+                <h1 className="text-[35px] xl:text-[35px] font-bold mt-0">Wir schaffen großartiges für Augen und Ohren</h1>
+                <p className="text-[15px] xl:text-[18px] mt-4 font-normal text-gray-400">Seit nun mehreren Jahren arbeiten wir als talentiertes Team daran, dir eine unvergessliche Zeit zu erschaffen.
                     Wir schreiben, denken, entwickeln, designen, bauen, komponieren, modellieren und investieren all unsere Leidenschaft in unseren aktuellen,
                     sowie zukünftigen Projekten. Du möchtest ein Teil davon sein? Dann nichts wie ab!
                 </p>
@@ -95,58 +95,55 @@ export default function Home() {
                 </div>
 
             </div>
-            <div className="h-1/2 w-3/4 mx-auto text-white">
-                <h1 className="text-white text-[32px] font-bold">Das ultimative Team</h1>
+            <div className="h-1/2 xl:w-3/4 w-5/6 mx-auto text-white">
+                <h1 className="text-white text-[30px] font-bold">Das ultimative Team</h1>
 
 
                 <p className="text-[15px] mt-4 text-white/70">
                     Keine Sorge, du lernst uns noch kennen. Filmabende, Spieleabende, aufregende Talks über die neusten Serien - das alles gehört dazu!
                 </p>
                 <div className="mt-4">
-                    <ul className="inline-flex float-left">
-                        <li className="mr-2 mt-1">Filtern nach:</li>
-
-                        {buttons.map((tab, index) => (
-                            <button
-                                key={index}
-                                onClick={() => {
-                                    handleTeamMember(tab.value);
-                                    setActiveTab(tab.value);
-                                }}
-                                value={tab.value}
-                                className={`${
-                                    activeTab === tab.value ? "active" : ""
-                                } relative badge`}
-                                style={{
-                                    WebkitTapHighlightColor: "transparent",
-                                }}
-                            >
-                                {activeTab === tab.value && (
-                                    <motion.span
-                                        layoutId="bubble"
-                                        className="absolute inset-0 z-10 bg-white/10 mix-blend-difference"
-                                        style={{ borderRadius: 9999 }}
-                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                                    />
-                                )}
-                                {tab.name}
-                            </button>
-                        ))}
+                    <ul className="">
+                        <li className="mr-2 inline mt-1">Filtern nach:</li>
+                        <li className="inline-flex flex-wrap mt-2">
+                            {buttons.map((tab, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => {
+                                        handleTeamMember(tab.value);
+                                        setActiveTab(tab.value);
+                                    }}
+                                    value={tab.value}
+                                    className={`${
+                                        activeTab === tab.value ? "active" : ""
+                                    } relative badge mt-1 mr-2`}
+                                    style={{
+                                        WebkitTapHighlightColor: "transparent",
+                                    }}
+                                >
+                                    {activeTab === tab.value && (
+                                        <motion.span
+                                            layoutId="bubble"
+                                            className="absolute inset-0 z-10 bg-white/10 mix-blend-difference"
+                                            style={{ borderRadius: 9999 }}
+                                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                        />
+                                    )}
+                                    {tab.name}
+                                </button>
+                            ))}
+                        </li>
 
 
                     </ul>
 
 
-                    <ul className="float-right">
-                        <li>Sortien nach: Keine</li>
-                    </ul>
-                    <br/>
                     <br/>
                     <p className="text-white/70">{filteredTeamMember && filteredTeamMember.length} Mitglieder werden angezeigt. </p>
                 </div>
 
 
-                <div className="mt-20 grid grid-cols-3 gap-x-5 gap-y-16">
+                <div className="mt-20 grid grid-cols-1 xl:grid-cols-3 gap-x-2 gap-y-16 xl:gap-x-5 xl:gap-y-16">
 
 
                     {filteredTeamMember && filteredTeamMember.map((member: any, index: any) => (
@@ -167,38 +164,38 @@ export default function Home() {
 
             </div>
 
-            <div className="h-1/2 w-3/4 mt-32 mx-auto text-white">
-                <h1 className="text-white text-[32px]">Stelle dir vor...</h1>
-                <div className="mt-16 grid grid-cols-4 gap-8">
+            <div className="h-1/2 xl:w-3/4 w-5/6 mt-32 mx-auto text-white">
+                <h1 className="text-white text-[32px] font-bold">Stelle dir vor...</h1>
+                <div className="mt-16 grid xl:grid-cols-4 grid-cols-1 gap-12 xl:gap-8">
 
                     <div className=" hover:scale-105 cursor-pointer transition-all ease">
-                        <span><Image className="h-8" src="/assets/images/icons/heart.png" alt="alt" width={40}
+                        <span><Image className="h-8" src="/assets/images/icons/heart.png" alt="alt" width={35}
                                      height={80}/></span>
-                        <p className="mt-6 text-[22px]">
+                        <p className="mt-6 text-gray-300 text-[18px] xl:text-[22px]">
                             Ein Umfeld, bei dem du dich wohlfühlst, Spaß hast und dein Talent frei entfalten kannst. Ohne Druck.
                         </p>
                     </div>
 
                     <div className=" hover:scale-105 cursor-pointer transition-all ease">
-                        <span><Image className="h-8" src="/assets/images/icons/house.png" alt="alt" width={40}
+                        <span><Image className="h-8" src="/assets/images/icons/house.png" alt="alt" width={35}
                                      height={80}/></span>
-                        <p className="mt-6 text-[22px]">
+                        <p className="mt-6 text-gray-300 text-[18px] xl:text-[22px]">
                             Ein Team, welches dir jederzeit unter die Arme greift und nicht das gesamte Projekt auf deinen Schultern lastet.
                         </p>
                     </div>
 
                     <div className=" hover:scale-105 cursor-pointer transition-all ease">
-                        <span><Image className="h-8" src="/assets/images/icons/rocket.png" alt="alt" width={40}
+                        <span><Image className="h-8" src="/assets/images/icons/rocket.png" alt="alt" width={35}
                                      height={80}/></span>
-                        <p className="mt-6 text-[22px]">
+                        <p className="mt-6 text-gray-300 text-[18px] xl:text-[22px]">
                             Ein Ort, bei dem dir niemand sagt, wie du dein Können in die Tat umsetzt. An dem du mitbestimmen darfst.
                         </p>
                     </div>
 
                     <div className=" hover:scale-105 cursor-pointer transition-all ease">
-                        <span><Image className="h-8" src="/assets/images/icons/bulb.png" alt="alt" width={40}
+                        <span><Image className="h-8" src="/assets/images/icons/bulb.png" alt="alt" width={35}
                                      height={80}/></span>
-                        <p className="mt-6 text-[22px]">
+                        <p className="mt-6 text-gray-300 text-[18px] xl:text-[22px]">
                             Ein Projekt, welches über jahrelange Planung und finanzielle Sicherheit verfügt.
                         </p>
                     </div>
@@ -206,14 +203,16 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="h-1/2 w-3/4 mt-32 mx-auto text-white">
+            <div className="h-1/2 xl:w-3/4 w-5/6 mt-32 mx-auto text-white">
                 <h1 className="text-white text-[32px] font-bold">Unsere offenen Positionen</h1>
                 <p className="text-[15px] text-red-300">
                     Die mit Flammenmarkierung suchen wir zurzeit besonders!
                 </p>
 
                 <div className="mt-8">
-                    <ul className="inline-flex float-left">
+                    <ul className="">
+                        <li className="mr-2 inline mt-1">Filtern nach:</li>
+                        <li className="inline-flex flex-wrap mt-2">
                         {depbuttons.map((tab, index) => (
                             <button
                                 key={index}
@@ -224,7 +223,7 @@ export default function Home() {
                                 value={tab.value}
                                 className={`${
                                     activeTabPos === tab.value ? "active" : ""
-                                } relative badge`}
+                                } relative badge mt-1 mr-2`}
                                 style={{
                                     WebkitTapHighlightColor: "transparent",
                                 }}
@@ -240,12 +239,9 @@ export default function Home() {
                                 {tab.name}
                             </button>
                         ))}
+                        </li>
                     </ul>
 
-                    <ul className="float-right">
-                        <li>Sortien nach: Keine</li>
-                    </ul>
-                    <br/>
                     <br/>
                     <p className="text-white/70">{filteredTeamPositions && filteredTeamPositions.length} Positionen sind offen </p>
                 </div>

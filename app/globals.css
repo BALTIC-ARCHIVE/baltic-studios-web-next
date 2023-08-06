@@ -159,82 +159,25 @@ body {
   padding-top: 15vh;
 }
 
-.header h1 {
-  /* H1 */
-  top: 15vh;
-  z-index: 99999999999999;
-  width: 60vw;
-  position: relative;
-  left: 20%;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 73px;
-  text-align: center;
-  color: white;
 
-}
 .header h1 span {
   color: #7EFFD1;
 }
 
-.header h4 {
-  margin-top: 18vh;
-  z-index: 9999999999999999;
-  position: relative;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-
-  color: #FFFFFF;
-}
 
 
-.heading {
-  position: relative;
-  height: 90vh;
-  z-index: 1;
-  overflow: hidden;
-}
 
-.heading h1 {
-  /* H1 */
-  z-index: 99999999999999;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 43px;
-
-  color: #FFFFFF;
-
-}
 .heading h1 span {
   color: #7EFFD1;
 }
 
 .heading h4 {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
-
   background: linear-gradient(90.14deg, #ABFFE6 0.12%, #00FFB2 100.06%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
 
-}
-
-.heading p {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 20px;
-
-  color: rgba(255, 255, 255, 0.7);
 }
 
 
