@@ -21,7 +21,7 @@ export default function MobileNavbar() {
             className="menu flex lg:hidden items-center justify-between w-4/4 py-6 px-4 z-99999 bg-black"
         >
             <div className="flex lg:flex-1">
-                <a href="#" className="-m-1.5 p-1.5">
+                <a href="/" className="-m-1.5 p-1.5">
                     <span className="sr-only">Lol</span>
                     <Image
                         src="/assets/logo.png"

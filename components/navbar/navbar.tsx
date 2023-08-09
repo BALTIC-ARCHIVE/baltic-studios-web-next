@@ -15,7 +15,7 @@ export default function Navbar() {
     return (
         <nav className="mx-auto hidden lg:flex xl:w-3/4 w-5/6 items-center justify-between py-6 z-99999" aria-label="Global">
             <div className="flex lg:flex-1">
-                <a href="#" className="-m-1.5 p-1.5">
+                <a href="/" className="-m-1.5 p-1.5">
                     <span className="sr-only">Lol</span>
                     <Image
                         src="/assets/logo.png"
