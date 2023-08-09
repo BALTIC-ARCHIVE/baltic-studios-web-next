@@ -6,6 +6,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 // These styles apply to every route in the application
 import './globals.css'
+import Navbar from "@/components/navbar/navbar";
+import MobileNavbar from "@/components/mobile-navbar/mobile-navbar";
 
 export const metadata = {
   title: 'Baltic Studios',
@@ -17,51 +19,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+
   return (
     <html lang="de">
       <body className={`bg-black text-white ${inter.className}`}>
 
       <header className="bg-transparent absolute top-0 left-0 w-full">
-          <nav className="mx-auto flex xl:w-3/4 w-5/6 items-center justify-between py-6 z-99999" aria-label="Global">
-              <div className="flex lg:flex-1">
-                  <a href="#" className="-m-1.5 p-1.5">
-                      <span className="sr-only">Lol</span>
-                      <Image
-                          src="/assets/logo.png"
-                          alt="Vercel Logo"
-                          width={200}
-                          height={48}
-                          priority
-                      />
-                  </a>
-              </div>
-              <div className="flex lg:hidden">
-                  <button type="button"
-                          className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-                      <span className="sr-only">Open main menu</span>
-                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                           aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
-                      </svg>
-                  </button>
-              </div>
-              <div className="hidden lg:flex lg:gap-x-12">
-
-              </div>
-              <div className="hidden lg:flex lg:flex-1 lg:gap-x-12 mt-2 lg:justify-end">
-                  <a href="/" className="text-white px-3 py-2 nav-link rounded-md text-sm font-medium">STARTSEITE</a>
-                  <a href="about-us"
-                     className="text-white px-3 py-2 nav-link text-[#ABABAB] rounded-md text-sm font-medium">TEAM</a>
-                  <a href="apply"
-                     className="text-white px-3 py-2 rounded-md bg-white/[.10] hover:border-white text-sm font-medium">🚀
-                      Wir suchen dich!</a>
-
-              </div>
-          </nav>
-
+        <Navbar></Navbar>
+          <MobileNavbar></MobileNavbar>
       </header>
-
       {children}
 
       <div className=" p-10 xl:p-10 pb-12 mt-22 ">
@@ -85,30 +52,28 @@ export default function RootLayout({
           <div className="grid grid-cols-4 gap-x-4 xl:mx-24 justify-items-center pt-10 py-38">
               <div className="h-fit col-span-4 xl:col-span-1">
                   <h2 className="text-white">© BALTIC STUDIOS</h2>
-                  <p className="text-gray-400 text-sm mt-3">Lorem ipsum dolor sit, sed sit amet, consetetur sadipscing
-                      elitr, sed diam nonumy eirmod tempor.</p>
+                  <p className="text-gray-400 text-sm mt-3">Kreative Projekte, galaktische Videos: Wenn Minecraft, Star Wars und Leidenschaft verschmelzen.</p>
                   <p className="text-gray-400 text-sm mt-3">Dieses Projekt steht in keiner Verbindung mit Minecraft®, Disney® und
                       deren Marken</p>
 
               </div>
               <div className="h-fit mt-6 xl:mt-0 col-span-4 xl:col-span-2">
                   <ul className="grid grid-cols-2 gap-x-8 xl:gap-x-52 text-gray-500">
-                      <li><a className="hover:text-gray-400 hover:cursor-pointer">Homepage</a></li>
-                      <li><a className="hover:text-gray-400 hover:cursor-pointer">Über Uns</a></li>
-                      <li><a className="hover:text-gray-400 hover:cursor-pointer">Bewerben</a></li>
-                      <li><a className="hover:text-gray-400 hover:cursor-pointer">AGB</a></li>
-                      <li><a className="hover:text-gray-400 hover:cursor-pointer">Datenschutzerklärung</a></li>
-                      <li><a className="hover:text-gray-400 hover:cursor-pointer">Impressum</a></li>
+                      <li><a href="/" className="hover:text-gray-400 hover:cursor-pointer">Homepage</a></li>
+                      <li><a href="about-us" className="hover:text-gray-400 hover:cursor-pointer">Über Uns</a></li>
+                      <li><a href="apply" className="hover:text-gray-400 hover:cursor-pointer">Bewerben</a></li>
+                      <li><a href="datenschutz" className="hover:text-gray-400 hover:cursor-pointer">Datenschutzerklärung</a></li>
+                      <li><a href="impressum" className="hover:text-gray-400 hover:cursor-pointer">Impressum</a></li>
                   </ul>
               </div>
               <div className="h-fit mt-5 text-white col-span-4 xl:col-span-1">
 
-                  <a className="px-4 py-3 mt-5 xl:mt-0 rounded bg-white/[0.07] hover:bg-white/[0.1] hover:cursor-pointer">Baltic
+                  <a href="https://baltic-galaxy.de" className="px-4 py-3 mt-5 xl:mt-0 rounded bg-white/[0.07] hover:bg-white/[0.1] hover:cursor-pointer">Baltic
                       Galaxy besuchen</a>
                   <div className="flex xl:justify-end px-4 bg-transparent text-white">
                       <div className="py-6 flex">
                           <div className="flex xl:flex items-center space-x-5">
-                              <a className="flex hover:text-gray-200" href="#">
+                              <a className="flex hover:text-gray-200" href="https://www.tiktok.com/@balticgalaxy">
                                   <Image
                                       src="/assets/images/tiktok.svg"
                                       width={40}
@@ -116,7 +81,7 @@ export default function RootLayout({
                                       alt="Picture of the author"
                                   />
                               </a>
-                              <a className="flex items-center hover:text-gray-200" href="#">
+                              <a className="flex items-center hover:text-gray-200" href="https://twitter.com/BALTICStudios_">
                                   <Image
                                       src="/assets/images/twitter.svg"
                                       width={40}
@@ -125,7 +90,7 @@ export default function RootLayout({
                                   />
                               </a>
 
-                              <a className="flex items-center hover:text-gray-200" href="#">
+                              <a className="flex items-center hover:text-gray-200" href="https://www.youtube.com/@balticstudios9008">
                                   <Image
                                       src="/assets/images/youtube.svg"
                                       width={40}

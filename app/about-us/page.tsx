@@ -91,12 +91,12 @@ export default function Home() {
                 <div className="flex mt-8 relative z-50">
                     <a href="#"
                        className="text-black px-8 py-3 rounded-md hover:bg-[#00FFA3]/90 bg-[#00FFA3] border-[#7E89B1] text-sm font-medium mr-5">Offene
-                        Stellen abchecken</a>
+                        Positionen</a>
                 </div>
 
             </div>
             <div className="h-1/2 xl:w-3/4 w-5/6 mx-auto text-white">
-                <h1 className="text-white text-[30px] font-bold">Das ultimative Team</h1>
+                <h1 className="text-white text-[30px] font-bold">Die Söldnerbande</h1>
 
 
                 <p className="text-[15px] mt-4 text-white/70">
