@@ -4,6 +4,7 @@ import {IoPlay} from "react-icons/io5";
 import AudioListItem from "@/components/audio-list-item/comp";
 import {useEffect, useState} from "react";
 import Link from "next/link";
+import {motion} from "framer-motion";
 import InputGroup from "@/components/utils/InputGroup";
 import InputTextArea from "@/components/utils/InputTextArea";
 import {useRouter} from "next/navigation";
