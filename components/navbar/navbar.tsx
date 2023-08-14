@@ -31,7 +31,7 @@ export default function Navbar() {
                 <a href="/" className="text-white px-3 py-2 nav-link rounded-md text-sm font-medium">STARTSEITE</a>
                 <a href="about-us"
                    className="text-white px-3 py-2 nav-link text-[#ABABAB] rounded-md text-sm font-medium">TEAM</a>
-                <a href="apply"
+                <a href="about-us#positions"
                    className="text-white px-3 py-2 rounded-md bg-white/[.10] hover:border-white text-sm font-medium">🚀
                     Wir suchen dich!</a>
 

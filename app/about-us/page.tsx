@@ -80,7 +80,7 @@ export default function Home() {
     // @ts-ignore
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
-            <div className="heading h-[100vh] xl:w-3/4 w-5/6">
+            <div className="heading h-[85vh] xl:w-2/4 w-5/6">
                 <h4 className="mt-32 xl:mt-52">UNSERE MISSION</h4>
                 <h1 className="text-[35px] xl:text-[35px] font-bold mt-0">Wir schaffen großartiges für Augen und Ohren</h1>
                 <p className="text-[15px] xl:text-[18px] mt-4 font-normal text-gray-400">Seit nun mehreren Jahren arbeiten wir als talentiertes Team daran, dir eine unvergessliche Zeit zu erschaffen.
@@ -89,7 +89,7 @@ export default function Home() {
                 </p>
 
                 <div className="flex mt-8 relative z-50">
-                    <a href="#"
+                    <a href="#positions"
                        className="text-black px-8 py-3 rounded-md hover:bg-[#00FFA3]/90 bg-[#00FFA3] border-[#7E89B1] text-sm font-medium mr-5">Offene
                         Positionen</a>
                 </div>
@@ -169,32 +169,60 @@ export default function Home() {
                 <div className="mt-16 grid xl:grid-cols-4 grid-cols-1 gap-12 xl:gap-8">
 
                     <div className=" hover:scale-105 cursor-pointer transition-all ease">
-                        <span><Image className="h-8" src="/assets/images/icons/heart.png" alt="alt" width={35}
-                                     height={80}/></span>
+                        <span>
+                            <Image
+                            className="h-8"
+                            src="/assets/images/icons/heart.svg"
+                            alt="heart icon"
+                            width={40}
+                            height={40}
+                            />
+                        </span>
                         <p className="mt-6 text-gray-300 text-[18px] xl:text-[22px]">
                             Ein Umfeld, bei dem du dich wohlfühlst, Spaß hast und dein Talent frei entfalten kannst. Ohne Druck.
                         </p>
                     </div>
 
                     <div className=" hover:scale-105 cursor-pointer transition-all ease">
-                        <span><Image className="h-8" src="/assets/images/icons/house.png" alt="alt" width={35}
-                                     height={80}/></span>
+                        <span>
+                            <Image
+                                className="h-8"
+                                src="/assets/images/icons/house.svg"
+                                alt="heart icon"
+                                width={40}
+                                height={40}
+                            />
+                        </span>
                         <p className="mt-6 text-gray-300 text-[18px] xl:text-[22px]">
                             Ein Team, welches dir jederzeit unter die Arme greift und nicht das gesamte Projekt auf deinen Schultern lastet.
                         </p>
                     </div>
 
                     <div className=" hover:scale-105 cursor-pointer transition-all ease">
-                        <span><Image className="h-8" src="/assets/images/icons/rocket.png" alt="alt" width={35}
-                                     height={80}/></span>
+                        <span>
+                            <Image
+                                className="h-8"
+                                src="/assets/images/icons/rocket.svg"
+                                alt="heart icon"
+                                width={40}
+                                height={40}
+                            />
+                        </span>
                         <p className="mt-6 text-gray-300 text-[18px] xl:text-[22px]">
                             Ein Ort, bei dem dir niemand sagt, wie du dein Können in die Tat umsetzt. An dem du mitbestimmen darfst.
                         </p>
                     </div>
 
                     <div className=" hover:scale-105 cursor-pointer transition-all ease">
-                        <span><Image className="h-8" src="/assets/images/icons/bulb.png" alt="alt" width={35}
-                                     height={80}/></span>
+                        <span>
+                            <Image
+                                className="h-8"
+                                src="/assets/images/icons/bulb.svg"
+                                alt="heart icon"
+                                width={40}
+                                height={40}
+                            />
+                        </span>
                         <p className="mt-6 text-gray-300 text-[18px] xl:text-[22px]">
                             Ein Projekt, welches über jahrelange Planung und finanzielle Sicherheit verfügt.
                         </p>
@@ -203,7 +231,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="h-1/2 xl:w-3/4 w-5/6 mt-32 mx-auto text-white">
+            <div id="positions" className="h-1/2 xl:w-3/4 w-5/6 mt-32 mx-auto text-white">
                 <h1 className="text-white text-[32px] font-bold">Unsere offenen Positionen</h1>
                 <p className="text-[15px] text-red-300">
                     Die mit Flammenmarkierung suchen wir zurzeit besonders!

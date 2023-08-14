@@ -2,7 +2,7 @@ export default function InputCheckbox({label, placeholder, id, extraClass, value
 
     return (
         <div className={extraClass}>
-            <input type="checkbox" id={id} name={id} placeholder={placeholder} className="styled-checkbox" onChange={change} required={required}/>
+            <input type="checkbox" id={id} name={id} placeholder={placeholder} className="styled-checkbox " onChange={change} required={required}/>
             <label htmlFor={id} className="text-[18px] inline">{label}</label>
         </div>
     )

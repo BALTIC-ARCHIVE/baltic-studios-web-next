@@ -33,7 +33,7 @@ export default function ApplyPositionCard({singlePosition, reqs}: any) {
                         {singlePosition.description}
                     </p>
 
-                    <a className="text-gray-400 py-1 px-2 text-[15px] cursor-pointer group">Ich möchte mich für eine
+                    <a className="text-gray-400 py-1 text-[15px] cursor-pointer group">Ich möchte mich für eine
                         andere Position bewerben <Image
                             height={20} width={20} alt="alt"
                             className="inline transition-all ease-in-out group-hover:ml-3 ml-2 h-4 w-4"

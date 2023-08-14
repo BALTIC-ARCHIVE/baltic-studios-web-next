@@ -206,10 +206,12 @@ body {
   vertical-align: text-top;
   width: 18px;
   height: 18px;
+  transition: ease-in-out 0.2s;
   background: rgba(255, 255, 255, 0.1);
 }
 .styled-checkbox:hover + label:before {
   background: #00FFB2;
+  transition: ease-in-out 0.2s;
 }
 .styled-checkbox:focus + label:before {
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);

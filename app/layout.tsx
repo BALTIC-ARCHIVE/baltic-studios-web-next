@@ -31,9 +31,9 @@ export default function RootLayout({
       </header>
       {children}
 
-      <div className=" p-10 xl:p-10 pb-12 mt-22 ">
-          <div className="grid xl:grid-cols-3 grid-cols-2 xl:h-16 h-10 gap-x-4 xl:mx-24 border-gray-800 border-b">
-              <div className="h-fit">
+      <div className="w-4/4 xl:w-3/4 mx-auto pb-12 mt-28 ">
+          <div className="grid xl:grid-cols-5 grid-cols-2 xl:h-16 h-10 gap-x-1 border-gray-800 border-b">
+              <div className="h-fit col-span-1">
                   <Image
                       src="/assets/logo.png"
                       width={200}
@@ -41,15 +41,13 @@ export default function RootLayout({
                       alt="Baltic Studios Logo"
                   />
               </div>
-              <div className="h-fit w-full">
+              <div className="h-fit w-full col-span-3">
                   <p className="xl:text-xl mt-1 text-[12px] text-gray-500">Ein Universum voller Ideen</p>
-              </div>
-              <div className="h-fit">
               </div>
 
           </div>
 
-          <div className="grid grid-cols-4 gap-x-4 xl:mx-24 justify-items-center pt-10 py-38">
+          <div className="grid grid-cols-4 gap-x-4 w-full pt-10 py-38">
               <div className="h-fit col-span-4 xl:col-span-1">
                   <h2 className="text-white">© BALTIC STUDIOS</h2>
                   <p className="text-gray-400 text-sm mt-3">Kreative Projekte, galaktische Videos: Wenn Minecraft, Star Wars und Leidenschaft verschmelzen.</p>
@@ -57,35 +55,37 @@ export default function RootLayout({
                       deren Marken</p>
 
               </div>
-              <div className="h-fit mt-6 xl:mt-0 col-span-4 xl:col-span-2">
-                  <ul className="grid grid-cols-2 gap-x-8 xl:gap-x-52 text-gray-500">
+              <div className="h-fit mt-6 xl:ml-20 xl:mt-0 col-span-4 xl:col-span-2">
+                  <ul className="grid grid-cols-2 gap-x-8 xl:gap-x-20 text-gray-500">
                       <li><a href="/" className="hover:text-gray-400 hover:cursor-pointer">Homepage</a></li>
-                      <li><a href="about-us" className="hover:text-gray-400 hover:cursor-pointer">Über Uns</a></li>
-                      <li><a href="apply" className="hover:text-gray-400 hover:cursor-pointer">Bewerben</a></li>
                       <li><a href="datenschutz" className="hover:text-gray-400 hover:cursor-pointer">Datenschutzerklärung</a></li>
+                      <li><a href="about-us" className="hover:text-gray-400 hover:cursor-pointer">Über Uns</a></li>
                       <li><a href="impressum" className="hover:text-gray-400 hover:cursor-pointer">Impressum</a></li>
+                      <li><a href="apply" className="hover:text-gray-400 hover:cursor-pointer">Bewerben</a></li>
                   </ul>
               </div>
-              <div className="h-fit mt-5 text-white col-span-4 xl:col-span-1">
+              <div className="h-fit mt-2 text-white float-right col-span-4 xl:col-span-1">
 
-                  <a href="https://baltic-galaxy.de" className="px-4 py-3 mt-5 xl:mt-0 rounded bg-white/[0.07] hover:bg-white/[0.1] hover:cursor-pointer">Baltic
+                  <a href="https://baltic-galaxy.de" className="px-4 py-3 float-right block mt-5 xl:mt-0 rounded bg-white/[0.07] hover:bg-white/[0.1] hover:cursor-pointer">Baltic
                       Galaxy besuchen</a>
+                  <br/>
+                  <br/>
                   <div className="flex xl:justify-end px-4 bg-transparent text-white">
                       <div className="py-6 flex">
                           <div className="flex xl:flex items-center space-x-5">
                               <a className="flex hover:text-gray-200" href="https://www.tiktok.com/@balticgalaxy">
                                   <Image
                                       src="/assets/images/tiktok.svg"
-                                      width={40}
-                                      height={40}
+                                      width={25}
+                                      height={25}
                                       alt="Picture of the author"
                                   />
                               </a>
                               <a className="flex items-center hover:text-gray-200" href="https://twitter.com/BALTICStudios_">
                                   <Image
                                       src="/assets/images/twitter.svg"
-                                      width={40}
-                                      height={40}
+                                      width={25}
+                                      height={25}
                                       alt="Picture of the author"
                                   />
                               </a>
@@ -93,8 +93,8 @@ export default function RootLayout({
                               <a className="flex items-center hover:text-gray-200" href="https://www.youtube.com/@balticstudios9008">
                                   <Image
                                       src="/assets/images/youtube.svg"
-                                      width={40}
-                                      height={40}
+                                      width={25}
+                                      height={25}
                                       alt="Picture of the author"
                                   />
                               </a>

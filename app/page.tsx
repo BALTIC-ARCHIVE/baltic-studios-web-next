@@ -84,7 +84,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-20 xl:mt-40 grid grid-cols-1 xl:grid-cols-2 px-4 xl:px-48">
+      <div className="mt-20 xl:mt-40 w-4/4 xl:w-3/4 mx-auto grid grid-cols-1 xl:grid-cols-2">
         <div className="mb-8">
 
           <div className="mb-8">
@@ -117,7 +117,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-32 mb-24 h-1/2 w-4/4 xl:w-3/4 px-4 mx-auto text-white">
+      <div className="mt-32 mb-24 h-1/2 w-4/4 xl:w-3/4 mx-auto text-white">
         <h1 className="text-white mb-8 text-[32px] font-bold">Du möchtest mit uns zusammenarbeiten?</h1>
 
         <form className="grid grid-cols-1 xl:grid-cols-2 gap-8" onSubmit={handleSubmit}>

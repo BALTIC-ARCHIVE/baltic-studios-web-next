@@ -55,7 +55,7 @@ export default function TeamPositionsCard({tags, prio, position_name, descriptio
                         {description}
                     </p>
 
-                    <Link href={`/apply/${positionId}`} className="text-baltic-tuerkis py-2 px-4 hidden xl:block cursor-pointer group">Jetzt bewerben <Image
+                    <Link href={`/apply/${positionId}`} className="text-baltic-tuerkis py-2 hidden xl:block cursor-pointer group">Jetzt bewerben <Image
                         height={20} width={20} alt="alt"
                         className="inline transition-all ease-in-out group-hover:ml-3 ml-2 h-4 w-4"
                         src="/assets/images/icons/arrow_right.png"/></Link>
