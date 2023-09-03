@@ -25,13 +25,13 @@ export default function RootLayout({
     <html lang="de">
       <body className={`bg-black text-white ${inter.className}`}>
 
-      <header className="bg-transparent absolute top-0 left-0 w-full">
+      <header className="bg-transparent px-4 absolute z-50 top-0 left-0 w-full">
         <Navbar></Navbar>
           <MobileNavbar></MobileNavbar>
       </header>
       {children}
 
-      <div className="w-4/4 xl:w-3/4 mx-auto pb-12 mt-28 ">
+      <div className="w-4/4 xl:w-3/4 w-5/6 mx-auto pb-12 mt-28 ">
           <div className="grid xl:grid-cols-5 grid-cols-2 xl:h-16 h-10 gap-x-1 border-gray-800 border-b">
               <div className="h-fit col-span-1">
                   <Image

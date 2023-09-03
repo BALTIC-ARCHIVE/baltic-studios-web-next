@@ -68,7 +68,7 @@ export default function Home() {
       </div>
 
       <div className="pt-0 xl:pt-24 w-full">
-        <div className="h-[55vh] xl:h-[90vh] relative rounded-3xl mx-auto max-w-7xl bg-blog-heading-gradient bg-cover px-2 py-2 xl:px-20 xl:py-48">
+        <div className="h-[55vh] xl:h-[90vh]  w-4/4 xl:w-3/4 relative rounded-3xl mx-auto bg-blog-heading-gradient bg-cover px-2 py-2 xl:px-20 xl:py-48">
           <div className="absolute bottom-10 xl:bottom-20 px-4">
             <h4 className="gradient-h4 drop-shadow-lg">Jetzt BALTIC GALAXY entdecken</h4>
             <h1 className="text-white text-4xl xl:text-6xl drop-shadow-lg font-medium leading-tight">Stürze dich ins Abenteuer</h1>
@@ -84,7 +84,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-20 xl:mt-40 w-4/4 xl:w-3/4 mx-auto grid grid-cols-1 xl:grid-cols-2">
+      <div className="mt-20 xl:mt-40 xl:w-3/4 w-5/6 mx-auto grid grid-cols-1 xl:grid-cols-2">
         <div className="mb-8">
 
           <div className="mb-8">
@@ -117,7 +117,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-32 mb-24 h-1/2 w-4/4 xl:w-3/4 mx-auto text-white">
+      <div className="mt-32 mb-24 h-1/2 xl:w-3/4 w-5/6 mx-auto text-white">
         <h1 className="text-white mb-8 text-[32px] font-bold">Du möchtest mit uns zusammenarbeiten?</h1>
 
         <form className="grid grid-cols-1 xl:grid-cols-2 gap-8" onSubmit={handleSubmit}>

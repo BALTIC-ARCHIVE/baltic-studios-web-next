@@ -29,9 +29,9 @@ export default function Navbar() {
 
             <div className="hidden lg:flex lg:flex-1 lg:gap-x-12 mt-2 lg:justify-end">
                 <a href="/" className="text-white px-3 py-2 nav-link rounded-md text-sm font-medium">STARTSEITE</a>
-                <a href="about-us"
+                <a href="/about-us"
                    className="text-white px-3 py-2 nav-link text-[#ABABAB] rounded-md text-sm font-medium">TEAM</a>
-                <a href="about-us#positions"
+                <a href="/apply"
                    className="text-white px-3 py-2 rounded-md bg-white/[.10] hover:border-white text-sm font-medium">🚀
                     Wir suchen dich!</a>
 

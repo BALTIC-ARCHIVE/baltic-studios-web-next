@@ -282,3 +282,26 @@ body {
   text-fill-color: transparent;
 
 }
+
+
+.ellipse-about-purple {
+  border-radius: 460px;
+  background: rgba(36, 0, 255, 0.15);
+  filter: blur(182px);
+  width: 460px;
+  height: 460px;
+}
+.ellipse-about-purple-light {
+  border-radius: 460px;
+  background: rgba(0, 133, 255, 0.15);
+  filter: blur(182px);
+  width: 460px;
+  height: 460px;
+}
+.ellipse-about-green {
+  border-radius: 460px;
+  background: rgba(0, 255, 209, 0.15);
+  filter: blur(182px);
+  width: 460px;
+  height: 460px;
+}

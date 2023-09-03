@@ -14,14 +14,10 @@ import { useRouter } from 'next/navigation'
 export default function Home() {
 
     const [teamData, setTeamData] = useState([] as any)
-    const [teamPositions, setTeamPositions] = useState([] as any)
 
     const [isLoading, setLoading] = useState(false)
     const [filteredTeamMember, setFilteredTeamMember] = useState([] as any)
-    const [filteredTeamPositions, setFilteredTeamPositions] = useState([] as any)
     let [activeTab, setActiveTab] = useState(buttons[0].value);
-    let [activeTabPos, setActiveTabPos] = useState(depbuttons[0].value);
-    const [inputs, setInputs] = useState({} as any);
     const router = useRouter()
     let clickedRank: any;
     let clickedPos: any;
@@ -34,30 +30,19 @@ export default function Home() {
                 setTeamData(teamData)
                 setFilteredTeamMember(teamData)
             });
-        fetch('https://plexus.baltic-galaxy.de/api/tpos')
-            .then((res) => res.json())
-            .then((teamPositions) => {
-                setTeamPositions(teamPositions)
-                setFilteredTeamPositions(teamPositions)
-            });
-        setLoading(false);
         wait(10);
+        setLoading(false);
 
-        setFilteredTeamPositions(teamPositions);
         setFilteredTeamMember(teamData);
     }, [])
 
 
     if (isLoading) return <p>Loading...</p>
-    if (!teamData && !teamPositions) return <p>No profile data</p>
+    if (!teamData) return <p>No profile data</p>
 
      function filterTeamMember(rankName: any) {
          // @ts-ignore
          return teamData.filter(rank => rank.rank === rankName);
-    }
-    function filterTeamPositions(departmentName: any) {
-        // @ts-ignore
-        return teamPositions.filter(dep => dep.department === departmentName);
     }
     function handleTeamMember(e: any) {
         let rankTeamMember = e;
@@ -67,21 +52,14 @@ export default function Home() {
             : setFilteredTeamMember(teamData);
         console.log(rankTeamMember);
     }
-    function handleTeamPositions(e: any) {
-        let pos = e;
-        clickedPos = pos;
-        pos !== "all"
-            ? setFilteredTeamPositions(filterTeamPositions(pos))
-            : setFilteredTeamPositions(teamPositions);
-    }
 
 
     // @ts-ignore
     // @ts-ignore
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
-            <div className="heading h-[85vh] xl:w-2/4 w-5/6">
-                <h4 className="mt-32 xl:mt-52">UNSERE MISSION</h4>
+            <div className="heading relative h-[75vh] lg:h-[65vh] xl:w-2/4 w-5/6">
+                <h4 className="mt-32 text-[18px] xl:mt-52">UNSERE MISSION</h4>
                 <h1 className="text-[35px] xl:text-[35px] font-bold mt-0">Wir schaffen großartiges für Augen und Ohren</h1>
                 <p className="text-[15px] xl:text-[18px] mt-4 font-normal text-gray-400">Seit nun mehreren Jahren arbeiten wir als talentiertes Team daran, dir eine unvergessliche Zeit zu erschaffen.
                     Wir schreiben, denken, entwickeln, designen, bauen, komponieren, modellieren und investieren all unsere Leidenschaft in unseren aktuellen,
@@ -89,11 +67,12 @@ export default function Home() {
                 </p>
 
                 <div className="flex mt-8 relative z-50">
-                    <a href="#positions"
+                    <a href="/apply"
                        className="text-black px-8 py-3 rounded-md hover:bg-[#00FFA3]/90 bg-[#00FFA3] border-[#7E89B1] text-sm font-medium mr-5">Offene
                         Positionen</a>
                 </div>
-
+                <div className="ellipse-about-purple z-0 top-24 absolute"></div>
+                <div className="ellipse-about-purple-light z-0 top-12 right-32 absolute"></div>
             </div>
             <div className="h-1/2 xl:w-3/4 w-5/6 mx-auto text-white">
                 <h1 className="text-white text-[30px] font-bold">Die Söldnerbande</h1>
@@ -164,123 +143,18 @@ export default function Home() {
 
             </div>
 
-            <div className="h-1/2 xl:w-3/4 w-5/6 mt-32 mx-auto text-white">
-                <h1 className="text-white text-[32px] font-bold">Stelle dir vor...</h1>
-                <div className="mt-16 grid xl:grid-cols-4 grid-cols-1 gap-12 xl:gap-8">
+            <div className="heading h-[65vh] relative xl:w-2/4 w-5/6">
+                <h4 className="mt-32 text-[18px] text-center font-normal xl:mt-52">JETZT TEIL DES TEAMS WERDEN!</h4>
+                <h1 className="text-[35px] xl:text-[52px] text-center font-bold mt-0">Entfalte deine Kreativität<br/>
+                    für aufregende Projekte</h1>
 
-                    <div className=" hover:scale-105 cursor-pointer transition-all ease">
-                        <span>
-                            <Image
-                            className="h-8"
-                            src="/assets/images/icons/heart.svg"
-                            alt="heart icon"
-                            width={40}
-                            height={40}
-                            />
-                        </span>
-                        <p className="mt-6 text-gray-300 text-[18px] xl:text-[22px]">
-                            Ein Umfeld, bei dem du dich wohlfühlst, Spaß hast und dein Talent frei entfalten kannst. Ohne Druck.
-                        </p>
-                    </div>
-
-                    <div className=" hover:scale-105 cursor-pointer transition-all ease">
-                        <span>
-                            <Image
-                                className="h-8"
-                                src="/assets/images/icons/house.svg"
-                                alt="heart icon"
-                                width={40}
-                                height={40}
-                            />
-                        </span>
-                        <p className="mt-6 text-gray-300 text-[18px] xl:text-[22px]">
-                            Ein Team, welches dir jederzeit unter die Arme greift und nicht das gesamte Projekt auf deinen Schultern lastet.
-                        </p>
-                    </div>
-
-                    <div className=" hover:scale-105 cursor-pointer transition-all ease">
-                        <span>
-                            <Image
-                                className="h-8"
-                                src="/assets/images/icons/rocket.svg"
-                                alt="heart icon"
-                                width={40}
-                                height={40}
-                            />
-                        </span>
-                        <p className="mt-6 text-gray-300 text-[18px] xl:text-[22px]">
-                            Ein Ort, bei dem dir niemand sagt, wie du dein Können in die Tat umsetzt. An dem du mitbestimmen darfst.
-                        </p>
-                    </div>
-
-                    <div className=" hover:scale-105 cursor-pointer transition-all ease">
-                        <span>
-                            <Image
-                                className="h-8"
-                                src="/assets/images/icons/bulb.svg"
-                                alt="heart icon"
-                                width={40}
-                                height={40}
-                            />
-                        </span>
-                        <p className="mt-6 text-gray-300 text-[18px] xl:text-[22px]">
-                            Ein Projekt, welches über jahrelange Planung und finanzielle Sicherheit verfügt.
-                        </p>
-                    </div>
-
+                <div className="flex mt-8 relative justify-center z-50">
+                    <a href="/apply"
+                       className="text-black px-8 py-3 rounded-3xl hover:bg-[#00FFA3]/90 bg-[#00FFA3] border-[#7E89B1] text-sm font-medium mr-5">Offene
+                        Positionen</a>
                 </div>
-            </div>
-
-            <div id="positions" className="h-1/2 xl:w-3/4 w-5/6 mt-32 mx-auto text-white">
-                <h1 className="text-white text-[32px] font-bold">Unsere offenen Positionen</h1>
-                <p className="text-[15px] text-red-300">
-                    Die mit Flammenmarkierung suchen wir zurzeit besonders!
-                </p>
-
-                <div className="mt-8">
-                    <ul className="">
-                        <li className="mr-2 inline mt-1">Filtern nach:</li>
-                        <li className="inline-flex flex-wrap mt-2">
-                        {depbuttons.map((tab, index) => (
-                            <button
-                                key={index}
-                                onClick={() => {
-                                    handleTeamPositions(tab.value);
-                                    setActiveTabPos(tab.value);
-                                }}
-                                value={tab.value}
-                                className={`${
-                                    activeTabPos === tab.value ? "active" : ""
-                                } relative badge mt-1 mr-2`}
-                                style={{
-                                    WebkitTapHighlightColor: "transparent",
-                                }}
-                            >
-                                {activeTabPos === tab.value && (
-                                    <motion.span
-                                        layoutId="bubble2"
-                                        className="absolute inset-0 z-10 bg-white/10 mix-blend-difference"
-                                        style={{ borderRadius: 9999 }}
-                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                                    />
-                                )}
-                                {tab.name}
-                            </button>
-                        ))}
-                        </li>
-                    </ul>
-
-                    <br/>
-                    <p className="text-white/70">{filteredTeamPositions && filteredTeamPositions.length} Positionen sind offen </p>
-                </div>
-
-                <div className="mt-10 transition ease-in-out">
-
-                    {filteredTeamPositions && filteredTeamPositions.map((position: any, index: any) => (
-                        <TeamPositionsCard key={index} prio={position.prio} positionId={position.position_id} position_name={position.position_name} description={position.description} tags={position.tags} requirements={position.requirements} />
-                    ))}
-                </div>
-
+                <div className="ellipse-about-green z-0 top-32 absolute"></div>
+                <div className="ellipse-about-green z-0 top-0 right-20 absolute"></div>
             </div>
 
         </main>

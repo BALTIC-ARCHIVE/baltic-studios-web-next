@@ -18,11 +18,11 @@ export default function MobileNavbar() {
         <motion.nav
             initial={false}
             animate={isOpen ? "open" : "closed"}
-            className="menu flex lg:hidden items-center justify-between w-4/4 py-6 px-4 z-99999 bg-black"
+            className="menu flex lg:hidden items-center justify-between w-4/4 py-6 px-4 z-99999"
         >
             <div className="flex lg:flex-1">
                 <a href="/" className="-m-1.5 p-1.5">
-                    <span className="sr-only">Lol</span>
+                    <span className="sr-only">Menu</span>
                     <Image
                         src="/assets/logo.png"
                         alt="Vercel Logo"
@@ -56,7 +56,7 @@ export default function MobileNavbar() {
             </motion.button>
             </div>
             <motion.ul
-                className="absolute bg-black/90 text-center h-[25vh] w-full top-20 left-0 mx-auto"
+                className="absolute bg-black/90 text-center min-h-[15vh] py-6 w-96 top-20 left-2"
                 variants={{
                     open: {
                         clipPath: "inset(0% 0% 0% 0% round 10px)",
@@ -79,9 +79,9 @@ export default function MobileNavbar() {
                 }}
                 style={{ pointerEvents: isOpen ? "auto" : "none" }}
             >
-                <motion.li className="block text-sm px-2 py-4 hover:bg-green-500" variants={itemVariants}><a href="/">STARTSEITE</a></motion.li>
-                <motion.li className="block text-sm px-2 py-4 hover:bg-green-500" variants={itemVariants}><a href="about-us">TEAM</a></motion.li>
-                <motion.li className="block text-sm px-2 py-4 hover:bg-green-500" variants={itemVariants}><a href="about-us">🚀 Wir suchen dich!</a></motion.li>
+                <motion.li className="block text-sm px-2 py-4 hover:bg-white/10" variants={itemVariants}><a href="/">STARTSEITE</a></motion.li>
+                <motion.li className="block text-sm px-2 py-4 hover:bg-white/10" variants={itemVariants}><a href="/about-us">TEAM</a></motion.li>
+                <motion.li className="block text-sm px-2 py-4 hover:bg-white/10" variants={itemVariants}><a href="/apply">🚀 Wir suchen dich!</a></motion.li>
             </motion.ul>
         </motion.nav>
     );
