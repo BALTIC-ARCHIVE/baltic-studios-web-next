@@ -58,10 +58,10 @@ export default function RootLayout({
               <div className="h-fit mt-6 xl:ml-20 xl:mt-0 col-span-4 xl:col-span-2">
                   <ul className="grid grid-cols-2 gap-x-8 xl:gap-x-20 text-gray-500">
                       <li><a href="/" className="hover:text-gray-400 hover:cursor-pointer">Homepage</a></li>
-                      <li><a href="datenschutz" className="hover:text-gray-400 hover:cursor-pointer">Datenschutzerklärung</a></li>
-                      <li><a href="about-us" className="hover:text-gray-400 hover:cursor-pointer">Über Uns</a></li>
-                      <li><a href="impressum" className="hover:text-gray-400 hover:cursor-pointer">Impressum</a></li>
-                      <li><a href="apply" className="hover:text-gray-400 hover:cursor-pointer">Bewerben</a></li>
+                      <li><a href="/datenschutz" className="hover:text-gray-400 hover:cursor-pointer">Datenschutzerklärung</a></li>
+                      <li><a href="/about-us" className="hover:text-gray-400 hover:cursor-pointer">Über Uns</a></li>
+                      <li><a href="/impressum" className="hover:text-gray-400 hover:cursor-pointer">Impressum</a></li>
+                      <li><a href="/apply" className="hover:text-gray-400 hover:cursor-pointer">Bewerben</a></li>
                   </ul>
               </div>
               <div className="h-fit mt-2 text-white float-right col-span-4 xl:col-span-1">
