@@ -100,7 +100,7 @@ export default function Home({ params }: { params: { position: string } }) {
 
                     <div className="text-white row-span-2">
                         <div className="col-span-2 xl:col-span-1">
-                        <InputCheckbox label="Ich bin bereits dem Baltic Galaxy Discord beigetreten." id="have_discord" change={handleChange}/>
+                        <InputCheckbox label="Ich bin bereits dem BALTIC GALAXY Discord beigetreten." id="have_discord" change={handleChange}/>
                         </div>
                         <div className="col-span-2 xl:col-span-1">
                         <InputCheckbox extraClass="mt-8" label="Ich besitze bereits die Vollversion der Minecraft Java-Edition." id="have_minecraft" change={handleChange}/>
@@ -113,10 +113,10 @@ export default function Home({ params }: { params: { position: string } }) {
                     <InputGroup label="Wie lautet deine Discord-ID?" id="discord_id" placeholder="Steve#2009"  change={handleChange} required={true}/>
                     </div>
                     <InputTextArea label="Stelle dich und die spannendsten Dinge an dir vor. Kleiner Pro-Tipp: Kompakte Texte kommen sehr gut an!" placeholder="Tippe hier deinen Text ein..." rows={8} id="about" change={handleChange} required={true}/>
-                    <InputTextArea label="Warum ist deine Motivation für diese Bewerbung?" placeholder="Tippe hier deinen Text ein..." rows={8} id="motivation" change={handleChange} required={true}/>
+                    <InputTextArea label="Was ist deine Motivation für diese Bewerbung?" placeholder="Tippe hier deinen Text ein..." rows={8} id="motivation" change={handleChange} required={true}/>
                     <InputTextArea label="Warum passt du ins Baltic Galaxy Team?" placeholder="Tippe hier deinen Text ein..." rows={8} id="why" change={handleChange} required={true}/>
                     <InputTextArea label="Möchtest du uns deine Werke zeigen? Dann füge hier die
-                            Links zu den jeweiligen Websiten hinzu." placeholder="Tippe hier deinen Text ein..." rows={8} id="werke" change={handleChange} required={true}/>
+                                Links zu den jeweiligen Websiten hinzu." placeholder="Tippe hier deinen Text ein..." rows={8} id="werke" change={handleChange} required={true}/>
 
 
                     <InputCheckbox extraClass="col-span-2" label="Ich habe verstanden, dass nach dem Klicken des folgenden Buttons ich die Bewerbung nicht mehr bearbeiten kann. Ich habe ebenfalls in Kenntnis genommen, dass die Teammitglieder von Baltic Studios Zugang zu meiner Bewerbung haben." id="accept-privacy" required={true}/>
