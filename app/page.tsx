@@ -8,6 +8,7 @@ import {motion} from "framer-motion";
 import InputGroup from "@/components/utils/InputGroup";
 import InputTextArea from "@/components/utils/InputTextArea";
 import {useRouter} from "next/navigation";
+import useFetch from "@/app/hooks/useFetch";
 
 
 export default function Home() {
@@ -15,14 +16,29 @@ export default function Home() {
   const router = useRouter()
   const [inputs, setInputs] = useState({} as any);
 
-  useEffect(() => {
-    fetch('https://plexus.baltic-galaxy.de/api/tracks')
-        .then((res) => res.json())
-        .then((tracks) => {
-          setTracks(tracks)
-        });
-  })
+  const { loading, error, data, refetch } = useFetch({
+    url: "https://plexus.baltic-galaxy.de/api/tracks",
+    method: "get",
+    key: [],
+    cache: {
+      enabled: true,
+      ttl: 100
+    }
+  });
 
+
+  useEffect(() => {
+    if (data){
+      setTracks(data.data);
+    }
+  }, [data])
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+  if (error) {
+    return <p>Something went wrong</p>;
+  }
 
   const handleChange = (event: any) => {
     const name = event.target.name;
@@ -58,6 +74,7 @@ export default function Home() {
       <div className="header w-full h-[100vh] bg-header-radial px-4 xl:px-0 justify-center items-center">
         <h1 className="text-[40px] xl:text-[60px] text-center font-bold mt-20">Ein Universum<br/>voller Ideen</h1>
         <h4 className="text-[14px] xl:text-[18px] mt-4 font-normal text-center">Wir schaffen großartiges für Augen und Ohren. Möchtest du Teil der Reise sein?</h4>
+
 
         <div className="flex justify-center mt-12 relative z-50">
           <Link href="/about-us"

@@ -1,52 +1,61 @@
 'use client';
 import Image from 'next/image'
 import PositionTile from "@/app/apply/PositionTile";
-import {useEffect, useState} from "react";
+import {useEffect, useLayoutEffect, useState} from "react";
 import {wait} from "next/dist/build/output/log";
 import {buttons, depbuttons} from "@/utils/buttons";
 import {motion} from "framer-motion";
 import TeamPositionsCard from "@/components/team-positions-card/page";
 import {useRouter} from "next/navigation";
+import useFetch from "@/app/hooks/useFetch";
 
 export default function Home() {
 
-    const [teamPositions, setTeamPositions] = useState([] as any)
-
-    const [isLoading, setLoading] = useState(false)
-    const [filteredTeamPositions, setFilteredTeamPositions] = useState([] as any)
+    let [filteredTeamPositions, setFilteredTeamPositions] = useState([] as any)
     let [activeTabPos, setActiveTabPos] = useState(depbuttons[0].value);
     const router = useRouter()
     let clickedRank: any;
     let clickedPos: any;
 
+    const { loading, error, data, refetch } = useFetch({
+        url: "https://plexus.baltic-galaxy.de/api/tpos",
+        method: "get",
+        key: [],
+        cache: {
+            enabled: true,
+            ttl: 100
+        }
+    });
+
     useEffect(() => {
-        setLoading(true);
-        fetch('https://plexus.baltic-galaxy.de/api/tpos')
-            .then((res) => res.json())
-            .then((teamPositions) => {
-                setTeamPositions(teamPositions)
-                setFilteredTeamPositions(teamPositions)
-            });
-        setLoading(false);
-        wait(10);
+        if (data){
+            handleTeamPositions('all');
+        }
 
-        setFilteredTeamPositions(teamPositions);
-    }, [])
+    }, [data])
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+    if (error) {
+        return <p>Something went wrong</p>;
+    }
 
 
-    if (isLoading) return <p>Loading...</p>
-    if (!teamPositions) return <p>No Data loaded</p>
     function filterTeamPositions(departmentName: any) {
         // @ts-ignore
-        return teamPositions.filter(dep => dep.department === departmentName);
+        console.log('filter: ' + departmentName);
+        return data.data.filter((dep: { department: any; }) => dep.department === departmentName);
     }
     function handleTeamPositions(e: any) {
         let pos = e;
         clickedPos = pos;
         pos !== "all"
             ? setFilteredTeamPositions(filterTeamPositions(pos))
-            : setFilteredTeamPositions(teamPositions);
+            : setFilteredTeamPositions(data.data)
+        console.log('handle: ' + pos);
     }
+
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
@@ -62,7 +71,6 @@ export default function Home() {
             <div className="h-1/2 xl:w-3/4 w-5/6 mt-32 mx-auto text-white">
                 <h1 className="text-white text-[32px] font-bold">Stelle dir vor...</h1>
                 <div className="mt-16 grid xl:grid-cols-4 grid-cols-1 gap-12 xl:gap-8">
-
                     <div className=" transition-all ease">
                         <span>
                             <Image
@@ -134,6 +142,9 @@ export default function Home() {
 
                 <div className="mt-8">
                     <ul className="">
+
+
+
                         <li className="mr-2 inline mt-1">Filtern nach:</li>
                         <li className="inline-flex flex-wrap mt-2">
                             {depbuttons.map((tab, index) => (
@@ -171,7 +182,7 @@ export default function Home() {
 
                 <div className="mt-10 transition ease-in-out">
 
-                    {filteredTeamPositions && filteredTeamPositions.map((position: any, index: any) => (
+                    {filteredTeamPositions &&  filteredTeamPositions.map((position: any, index: any) => (
                         <TeamPositionsCard key={index} prio={position.prio} positionId={position.position_id} position_name={position.position_name} description={position.description} tags={position.tags} requirements={position.requirements} />
                     ))}
                 </div>

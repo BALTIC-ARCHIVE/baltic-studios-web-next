@@ -8,16 +8,20 @@ export const buttons = [
         value: "9_pl"
     },
     {
-        name: "Management",
-        value: "9_management"
+        name: "Administrator",
+        value: "8_admistration"
+    },
+    {
+        name: "Media",
+        value: "7_media"
     },
     {
         name: "Entwicklung",
-        value: "8_developer"
+        value: "7_developer"
     },
     {
         name: "Moderation",
-        value: "7_moderation"
+        value: "6_moderation"
     },
     {
         name: "Architektur",

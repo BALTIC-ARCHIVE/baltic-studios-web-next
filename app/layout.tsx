@@ -1,113 +1,123 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import {Inter} from 'next/font/google'
 import Image from "next/image";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({subsets: ['latin']})
 
 // These styles apply to every route in the application
 import './globals.css'
 import Navbar from "@/components/navbar/navbar";
 import MobileNavbar from "@/components/mobile-navbar/mobile-navbar";
+import CacheProvider from "@/app/cache-provider";
 
 export const metadata = {
-  title: 'BALTIC STUDIOS',
-  description: 'Wir schaffen großartiges für Augen und Ohren.',
+    title: 'BALTIC STUDIOS',
+    description: 'Wir schaffen großartiges für Augen und Ohren.',
 }
 
 export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
+                                       children,
+                                   }: {
+    children: React.ReactNode
 }) {
 
 
-  return (
-    <html lang="de">
-      <body className={`bg-black text-white ${inter.className}`}>
+    return (
+        <CacheProvider>
+            <html lang="de">
+            <body className={`bg-black text-white ${inter.className}`}>
 
-      <header className="bg-transparent px-4 absolute z-50 top-0 left-0 w-full">
-        <Navbar></Navbar>
-          <MobileNavbar></MobileNavbar>
-      </header>
-      {children}
+            <header className="bg-transparent px-4 absolute z-50 top-0 left-0 w-full">
+                <Navbar></Navbar>
+                <MobileNavbar></MobileNavbar>
+            </header>
+            {children}
 
-      <div className="w-4/4 xl:w-3/4 w-5/6 mx-auto pb-12 mt-28 ">
-          <div className="grid xl:grid-cols-5 grid-cols-2 xl:h-16 h-10 gap-x-1 border-gray-800 border-b">
-              <div className="h-fit col-span-1">
-                  <Image
-                      src="/assets/logo.png"
-                      width={200}
-                      height={200}
-                      alt="Baltic Studios Logo"
-                  />
-              </div>
-              <div className="h-fit w-full col-span-3">
-                  <p className="xl:text-xl mt-1 text-[12px] text-gray-500">Ein Universum voller Ideen</p>
-              </div>
+            <div className="w-4/4 xl:w-3/4 w-5/6 mx-auto pb-12 mt-28 ">
+                <div className="grid xl:grid-cols-5 grid-cols-2 xl:h-16 h-10 gap-x-1 border-gray-800 border-b">
+                    <div className="h-fit col-span-1">
+                        <Image
+                            src="/assets/logo.png"
+                            width={200}
+                            height={200}
+                            alt="Baltic Studios Logo"
+                        />
+                    </div>
+                    <div className="h-fit w-full col-span-3">
+                        <p className="xl:text-xl mt-1 text-[12px] text-gray-500">Ein Universum voller Ideen</p>
+                    </div>
 
-          </div>
+                </div>
 
-          <div className="grid grid-cols-4 gap-x-4 w-full pt-10 py-38">
-              <div className="h-fit col-span-4 xl:col-span-1">
-                  <h2 className="text-white">© BALTIC STUDIOS</h2>
-                  <p className="text-gray-400 text-sm mt-3">Kreative Projekte, galaktische Videos: Wenn Minecraft, Star Wars und Leidenschaft verschmelzen.</p>
-                  <p className="text-gray-400 text-sm mt-3">Dieses Projekt steht in keiner Verbindung mit Minecraft®, Disney® und
-                      deren Marken</p>
+                <div className="grid grid-cols-4 gap-x-4 w-full pt-10 py-38">
+                    <div className="h-fit col-span-4 xl:col-span-1">
+                        <h2 className="text-white">© BALTIC STUDIOS</h2>
+                        <p className="text-gray-400 text-sm mt-3">Kreative Projekte, galaktische Videos: Wenn Minecraft,
+                            Star Wars und Leidenschaft verschmelzen.</p>
+                        <p className="text-gray-400 text-sm mt-3">Dieses Projekt steht in keiner Verbindung mit
+                            Minecraft®, Disney® und
+                            deren Marken</p>
 
-              </div>
-              <div className="h-fit mt-6 xl:ml-20 xl:mt-0 col-span-4 xl:col-span-2">
-                  <ul className="grid grid-cols-2 gap-x-8 xl:gap-x-20 text-gray-500">
-                      <li><a href="/" className="hover:text-gray-400 hover:cursor-pointer">Homepage</a></li>
-                      <li><a href="/datenschutz" className="hover:text-gray-400 hover:cursor-pointer">Datenschutzerklärung</a></li>
-                      <li><a href="/about-us" className="hover:text-gray-400 hover:cursor-pointer">Über Uns</a></li>
-                      <li><a href="/impressum" className="hover:text-gray-400 hover:cursor-pointer">Impressum</a></li>
-                      <li><a href="/apply" className="hover:text-gray-400 hover:cursor-pointer">Bewerben</a></li>
-                  </ul>
-              </div>
-              <div className="h-fit mt-2 text-white float-right col-span-4 xl:col-span-1">
+                    </div>
+                    <div className="h-fit mt-6 xl:ml-20 xl:mt-0 col-span-4 xl:col-span-2">
+                        <ul className="grid grid-cols-2 gap-x-8 xl:gap-x-20 text-gray-500">
+                            <li><a href="/" className="hover:text-gray-400 hover:cursor-pointer">Homepage</a></li>
+                            <li><a href="/datenschutz"
+                                   className="hover:text-gray-400 hover:cursor-pointer">Datenschutzerklärung</a></li>
+                            <li><a href="/about-us" className="hover:text-gray-400 hover:cursor-pointer">Über Uns</a>
+                            </li>
+                            <li><a href="/impressum" className="hover:text-gray-400 hover:cursor-pointer">Impressum</a>
+                            </li>
+                            <li><a href="/apply" className="hover:text-gray-400 hover:cursor-pointer">Bewerben</a></li>
+                        </ul>
+                    </div>
+                    <div className="h-fit mt-2 text-white float-right col-span-4 xl:col-span-1">
 
-                  <a href="https://baltic-galaxy.de" className="px-4 py-3 float-right block mt-5 xl:mt-0 rounded bg-white/[0.07] hover:bg-white/[0.1] hover:cursor-pointer">Baltic
-                      Galaxy besuchen</a>
-                  <br/>
-                  <br/>
-                  <div className="flex xl:justify-end px-4 bg-transparent text-white">
-                      <div className="py-6 flex">
-                          <div className="flex xl:flex items-center space-x-5">
-                              <a className="flex hover:text-gray-200" href="https://www.tiktok.com/@balticgalaxy">
-                                  <Image
-                                      src="/assets/images/tiktok.svg"
-                                      width={25}
-                                      height={25}
-                                      alt="Picture of the author"
-                                  />
-                              </a>
-                              <a className="flex items-center hover:text-gray-200" href="https://twitter.com/BALTICStudios_">
-                                  <Image
-                                      src="/assets/images/twitter.svg"
-                                      width={25}
-                                      height={25}
-                                      alt="Picture of the author"
-                                  />
-                              </a>
+                        <a href="https://baltic-galaxy.de"
+                           className="px-4 py-3 float-right block mt-5 xl:mt-0 rounded bg-white/[0.07] hover:bg-white/[0.1] hover:cursor-pointer">Baltic
+                            Galaxy besuchen</a>
+                        <br/>
+                        <br/>
+                        <div className="flex xl:justify-end px-4 bg-transparent text-white">
+                            <div className="py-6 flex">
+                                <div className="flex xl:flex items-center space-x-5">
+                                    <a className="flex hover:text-gray-200" href="https://www.tiktok.com/@balticgalaxy">
+                                        <Image
+                                            src="/assets/images/tiktok.svg"
+                                            width={25}
+                                            height={25}
+                                            alt="Picture of the author"
+                                        />
+                                    </a>
+                                    <a className="flex items-center hover:text-gray-200"
+                                       href="https://twitter.com/BALTICStudios_">
+                                        <Image
+                                            src="/assets/images/twitter.svg"
+                                            width={25}
+                                            height={25}
+                                            alt="Picture of the author"
+                                        />
+                                    </a>
 
-                              <a className="flex items-center hover:text-gray-200" href="https://www.youtube.com/@balticstudios9008">
-                                  <Image
-                                      src="/assets/images/youtube.svg"
-                                      width={25}
-                                      height={25}
-                                      alt="Picture of the author"
-                                  />
-                              </a>
+                                    <a className="flex items-center hover:text-gray-200"
+                                       href="https://www.youtube.com/@balticstudios9008">
+                                        <Image
+                                            src="/assets/images/youtube.svg"
+                                            width={25}
+                                            height={25}
+                                            alt="Picture of the author"
+                                        />
+                                    </a>
 
-                          </div>
-                      </div>
-                  </div>
-              </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-          </div>
+                </div>
 
-      </div>
-      </body>
-    </html>
-  )
+            </div>
+            </body>
+            </html>
+        </CacheProvider>
+    )
 }

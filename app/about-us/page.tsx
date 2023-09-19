@@ -10,46 +10,51 @@ import AudioListItem from "@/components/audio-list-item/comp";
 import InputGroup from "@/components/utils/InputGroup";
 import InputTextArea from "@/components/utils/InputTextArea";
 import { useRouter } from 'next/navigation'
+import useFetch from "@/app/hooks/useFetch";
 /* eslint-disable */
 export default function Home() {
 
-    const [teamData, setTeamData] = useState([] as any)
-
-    const [isLoading, setLoading] = useState(false)
     const [filteredTeamMember, setFilteredTeamMember] = useState([] as any)
     let [activeTab, setActiveTab] = useState(buttons[0].value);
     const router = useRouter()
     let clickedRank: any;
     let clickedPos: any;
 
+    const { loading, error, data, refetch } = useFetch({
+        url: "https://plexus.baltic-galaxy.de/api/team",
+        method: "get",
+        key: [],
+        cache: {
+            enabled: true,
+            ttl: 100
+        }
+    });
+
     useEffect(() => {
-        setLoading(true);
-        fetch('https://plexus.baltic-galaxy.de/api/team')
-            .then((res) => res.json())
-            .then((teamData) => {
-                setTeamData(teamData)
-                setFilteredTeamMember(teamData)
-            });
-        wait(10);
-        setLoading(false);
+        if (data){
+            handleTeamMember('all');
+        }
+    }, [data])
 
-        setFilteredTeamMember(teamData);
-    }, [])
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+    if (error) {
+        return <p>Something went wrong</p>;
+    }
 
 
-    if (isLoading) return <p>Loading...</p>
-    if (!teamData) return <p>No profile data</p>
 
-     function filterTeamMember(rankName: any) {
+    function filterTeamMember(rankName: any) {
          // @ts-ignore
-         return teamData.filter(rank => rank.rank === rankName);
+         return data.data.filter(rank => rank.rank === rankName);
     }
     function handleTeamMember(e: any) {
         let rankTeamMember = e;
         clickedRank = rankTeamMember;
         rankTeamMember !== "all"
             ? setFilteredTeamMember(filterTeamMember(rankTeamMember))
-            : setFilteredTeamMember(teamData);
+            : setFilteredTeamMember(data.data);
         console.log(rankTeamMember);
     }
 
