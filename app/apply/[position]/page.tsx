@@ -43,23 +43,22 @@ export default function Home({ params }: { params: { position: string } }) {
         console.log(inputs);
 
         const request = new XMLHttpRequest();
-        request.open("POST", "https://discord.com/api/webhooks/1121458216577020087/r9oKTsayw_BZqFMXBWqsdWdf1AGEt41iAClhHW7N09aCda3xWZKeOfpqav2ZeyOPpIUs");
+        request.open("POST", "https://plexus.baltic-galaxy.de/api/application");
         request.setRequestHeader('Content-type', 'application/json');
 
         const params = {
-            username: "Bewerbi",
-            avatar_url: "https://www.baltic-galaxy.de/assets/images/logo.png",
-            content: "Neue Bewerbung für " + (singlePosition && singlePosition.position_name) + " von " + inputs.name + " (" + inputs.minecraft_ign + ") @everyone \n\n" +
-                "**E-Mail:** \n" + inputs.email + "\n\n" +
-                "**Discord: **\n" + inputs.discord_id + "\n\n" +
-                "**Ist dem Discord beigetreten:**\n " + (inputs.have_discord = "on" ? 'Ja': 'Nein') + "\n\n" +
-                "**Hat ein Mikrofon:** \n" + (inputs.have_micro = "on" ? 'Ja': 'Nein') + "\n\n" +
-                "**Hat einen Minecraft-Account:** \n" + (inputs.have_minecraft = "on" ? 'Ja': 'Nein') + "\n\n" +
-                "**Vorstellung:**\n" + inputs.about + "\n\n" +
-                "**Motivation:**\n" + inputs.motivation + "\n\n" +
-                "**Warum möchtest du dich bewerben?**\n" + inputs.why + "\n\n" +
-                "**Portfolio:**\n" + inputs.werke + "\n",
-
+            position_name: (singlePosition && singlePosition.position_name),
+            first_name: inputs.name,
+            minecraft_ign: inputs.minecraft_ign,
+            email: inputs.email,
+            discord_id: inputs.discord_id,
+            have_discord: (inputs.have_discord = "on" ? 1 : 0),
+            have_micro: (inputs.have_micro = "on" ? 1 : 0),
+            have_minecraft: (inputs.have_minecraft = "on" ? 1 : 0),
+            about: inputs.about,
+            motivation: inputs.motivation,
+            why: inputs.why,
+            portfolio: inputs.werke,
         }
 
         request.send(JSON.stringify(params));
