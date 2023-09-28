@@ -73,8 +73,7 @@ export default function RootLayout({
                     <div className="h-fit mt-2 text-white float-right col-span-4 xl:col-span-1">
 
                         <a href="https://baltic-galaxy.de"
-                           className="px-4 py-3 float-right block mt-5 xl:mt-0 rounded bg-white/[0.07] hover:bg-white/[0.1] hover:cursor-pointer">Baltic
-                            Galaxy besuchen</a>
+                           className="px-4 py-3 float-right block mt-5 xl:mt-0 rounded bg-white/[0.07] hover:bg-white/[0.1] hover:cursor-pointer">BALTIC GALAXY besuchen</a>
                         <br/>
                         <br/>
                         <div className="flex xl:justify-end px-4 bg-transparent text-white">
