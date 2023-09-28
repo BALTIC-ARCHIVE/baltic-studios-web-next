@@ -8,7 +8,7 @@ export const buttons = [
         value: "9_pl"
     },
     {
-        name: "Administrator",
+        name: "Administration",
         value: "8_admistration"
     },
     {
