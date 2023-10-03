@@ -113,8 +113,7 @@ export default function Home() {
           <h1 className="text-white text-4xl font-medium leading-tight">Unsere exklusiven Soundtracks</h1>
           <div className="w-3/3 xl:w-2/3 mt-7 mb-4">
             <p className="text-gray-400 text-[16px] flex-wrap">
-              Wir möchten dich in eine atemberaubende Welt abtauchen lassen. Dafür braucht es mehr als eine große Leinwand.
-              Seit Monaten arbeiten wir eng mit dem talentierten Komponisten Alexander Rose zusammen, um dir diese Meisterwerke zu präsentieren!
+              Wir möchten dich in eine atemberaubende Welt abtauchen lassen. Dafür braucht es mehr als eine große Leinwand. Seit Monaten arbeiten wir eng mit dem talentierten Komponisten Alexander Rose zusammen, um dir unsere eigenen Soundtracks zu präsentieren! Höre dir erste Proben an.
             </p>
           </div>
           <a className="text-baltic-tuerkis py-2 cursor-pointer group">Demnächst auf Spotify <Image

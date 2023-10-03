@@ -114,7 +114,7 @@ export default function Home({ params }: { params: { position: string } }) {
                     </div>
                     <InputTextArea label="Stelle dich und die spannendsten Dinge an dir vor. Kleiner Pro-Tipp: Kompakte Texte kommen sehr gut an!" placeholder="Tippe hier deinen Text ein..." rows={8} id="about" change={handleChange} required={true}/>
                     <InputTextArea label="Was ist deine Motivation für diese Bewerbung?" placeholder="Tippe hier deinen Text ein..." rows={8} id="motivation" change={handleChange} required={true}/>
-                    <InputTextArea label="Warum passt du ins Baltic Galaxy Team?" placeholder="Tippe hier deinen Text ein..." rows={8} id="why" change={handleChange} required={true}/>
+                    <InputTextArea label="Warum passt du ins BALTIC GALAXY Team?" placeholder="Tippe hier deinen Text ein..." rows={8} id="why" change={handleChange} required={true}/>
                     <InputTextArea label="Möchtest du uns deine Werke zeigen? Dann füge hier die
                                 Links zu den jeweiligen Websiten hinzu." placeholder="Tippe hier deinen Text ein..." rows={8} id="werke" change={handleChange} required={true}/>
 
