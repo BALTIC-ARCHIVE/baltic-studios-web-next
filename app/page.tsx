@@ -71,7 +71,7 @@ export default function Home() {
 
   return (
     <main className="flex justify-center min-h-screen flex-col items-center justify-between">
-      <div className="header w-full h-[100vh] bg-header-radial px-4 xl:px-0 justify-center items-center">
+      <div className="header w-full h-[80vh] bg-header-radial px-4 xl:px-0 justify-center items-center">
         <h1 className="text-[40px] xl:text-[60px] text-center font-bold mt-20">Ein Universum<br/>voller Ideen</h1>
         <h4 className="text-[14px] xl:text-[18px] mt-4 font-normal text-center">Wir schaffen großartiges für Augen und Ohren. Möchtest du Teil der Reise sein?</h4>
 
@@ -117,7 +117,7 @@ export default function Home() {
               Seit Monaten arbeiten wir eng mit dem talentierten Komponisten Alexander Rose zusammen, um dir diese Meisterwerke zu präsentieren!
             </p>
           </div>
-          <a className="text-baltic-tuerkis py-2 cursor-pointer group">Alle Tracks anhören <Image
+          <a className="text-baltic-tuerkis py-2 cursor-pointer group">Demnächst auf Spotify <Image
               height={20} width={20} alt="alt"
               className="inline transition-all ease-in-out group-hover:ml-3 ml-2 h-4 w-4"
               src="/assets/images/icons/arrow_right.png"/></a>
