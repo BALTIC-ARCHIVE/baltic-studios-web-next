@@ -93,7 +93,7 @@ export default function Home() {
               <p className="text-gray-100 drop-shadow-lg text-[16px] flex-wrap">Ein einzigartiges Star Wars MMORPG, basierend auf Minecraft - jemals davon geträumt? Wir auch!
                 Kreiere deinen Charakter und gestalte deinen Weg, erkunde komplexe Dungeons, baue deine Heimat, gründe eine Fraktion, verteidige deine Flotte!</p>
             </div>
-            <a className="text-baltic-tuerkis py-2 cursor-pointer group">BALTIC GALAXY entdecken <Image
+            <a href="https://baltic-galaxy.de" className="text-baltic-tuerkis py-2 cursor-pointer group">BALTIC GALAXY entdecken <Image
                 height={20} width={20} alt="alt"
                 className="inline transition-all ease-in-out group-hover:ml-3 ml-2 h-4 w-4"
                 src="/assets/images/icons/arrow_right.png"/></a>

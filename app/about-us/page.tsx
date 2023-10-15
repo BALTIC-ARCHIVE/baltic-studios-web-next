@@ -135,7 +135,7 @@ export default function Home() {
                                   userName={member.username}
                                   realName={member.username}
                                   rankName={member.rank_name}
-                                  bio={member.rank}
+                                  bio={member.bio}
                                   twitterHandle={member.twitter_handle}
                                   entryDate={member.joined}
                         />
