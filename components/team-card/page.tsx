@@ -58,11 +58,12 @@ export default function TeamCard({userName, realName, bio, rankName, twitterHand
 
             <div className="mt-2">
                 <div className="hidden xl:flex items-center space-x-5">
-                    <a className="flex items-center hover:text-gray-200"
-                       href="https://twitter.com/{{member.twitter_handle}}">
+
+                    {twitterHandle ? <a className="flex items-center hover:text-gray-200"
+                                         href={"https://twitter.com/" + twitterHandle}>
                         <Image src="assets/images/icons/twitter_gray.svg" width={20} height={20}
                                alt="alt text" className="h-5 w-5"/>
-                    </a>
+                    </a>: ''}
 
                 </div>
             </div>

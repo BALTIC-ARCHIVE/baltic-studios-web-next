@@ -35,12 +35,14 @@ export default function RootLayout({
             <div className="w-4/4 xl:w-3/4 w-5/6 mx-auto pb-12 mt-28 ">
                 <div className="grid xl:grid-cols-5 grid-cols-2 xl:h-16 h-10 gap-x-1 border-gray-800 border-b">
                     <div className="h-fit col-span-1">
+                        <a href="https://baltic-studios.de">
                         <Image
                             src="/assets/logo.png"
                             width={200}
                             height={200}
                             alt="Baltic Studios Logo"
                         />
+                        </a>
                     </div>
                     <div className="h-fit w-full col-span-3">
                         <p className="xl:text-xl mt-1 text-[12px] text-gray-500">Ein Universum voller Ideen</p>
@@ -84,7 +86,7 @@ export default function RootLayout({
                                             src="/assets/images/tiktok.svg"
                                             width={25}
                                             height={25}
-                                            alt="Picture of the author"
+                                            alt="TikTok Logo"
                                         />
                                     </a>
                                     <a className="flex items-center hover:text-gray-200"
@@ -93,7 +95,7 @@ export default function RootLayout({
                                             src="/assets/images/twitter.svg"
                                             width={25}
                                             height={25}
-                                            alt="Picture of the author"
+                                            alt="Twitter/X Logo"
                                         />
                                     </a>
 
@@ -103,7 +105,7 @@ export default function RootLayout({
                                             src="/assets/images/youtube.svg"
                                             width={25}
                                             height={25}
-                                            alt="Picture of the author"
+                                            alt="YouTube Logo"
                                         />
                                     </a>
 
