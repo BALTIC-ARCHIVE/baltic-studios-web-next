@@ -21,7 +21,7 @@ export default function TeamCard({userName, realName, bio, rankName, twitterHand
     }
 
     return (
-        <div className="px-10 group py-5 border-2 border-white/10 rounded-xl relative bg-team-card-radial"
+        <div className="px-10 group pt-8 pb-16 relative border-2 border-white/10 rounded-xl relative bg-team-card-radial"
              onMouseMove={handleMouseMove}>
             <motion.div
                 className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
@@ -56,12 +56,12 @@ export default function TeamCard({userName, realName, bio, rankName, twitterHand
                 <p className="text-[12px] text-white">{bio}</p>
             </div>
 
-            <div className="mt-2">
-                <div className="hidden xl:flex items-center space-x-5">
+            <div className="absolute mt-4 bottom-6">
+                <div className=" xl:flex items-center space-x-5">
 
                     {twitterHandle ? <a className="flex items-center hover:text-gray-200"
                                          href={"https://twitter.com/" + twitterHandle}>
-                        <Image src="assets/images/icons/twitter_gray.svg" width={20} height={20}
+                        <Image src="assets/images/icons/x-logo.svg" width={20} height={20}
                                alt="alt text" className="h-5 w-5"/>
                     </a>: ''}
 
