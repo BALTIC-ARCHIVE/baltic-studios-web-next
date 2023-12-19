@@ -56,8 +56,6 @@ export default function Home({ params }: { params: { position: string } }) {
             have_micro: (inputs.have_micro = "on" ? 1 : 0),
             have_minecraft: (inputs.have_minecraft = "on" ? 1 : 0),
             about: inputs.about,
-            motivation: inputs.motivation,
-            why: inputs.why,
             portfolio: inputs.werke,
         }
 
@@ -71,59 +69,72 @@ export default function Home({ params }: { params: { position: string } }) {
     return (
         <main className="bg-black mt-24 mx-auto xl:w-3/4 w-5/6">
 
-            <div>
-                <div className="px-6 py-4 rounded-t-xl bg-white/5">
-                    <h3 className="text-lg font-bold text-white">Wähle deine Position aus, für die du dich bewerben möchtest.</h3>
-                </div>
-                <div className="rounded-b-xl overflow-hidden">
-
-                    {teamPositions.map((teamPosition: any, index: any) => (
-                        <PositionTile key={index} positionName={teamPosition.position_name} positionId={teamPosition.position_id} positionDesc={teamPosition.short_description}/>
-                    ))}
-                </div>
-            </div>
 
             <ApplyPositionCard singlePosition={singlePosition} reqs={singlePosition.requirements}/>
 
-            <form className="mt-16" onSubmit={handleSubmit}>
-                <div className="grid xl:grid-cols-2 grid-cols-1 gap-8">
+            <form className="mt-16 border-white/10 bg-white/5 p-16" onSubmit={handleSubmit}>
+
+                <h1 className="text-center font-bold text-5xl mb-20">Schaffst du es in 5 Minuten?</h1>
+
+                <div className="grid xl:grid-cols-2  grid-cols-1 gap-8">
                     <div className="col-span-2 xl:col-span-1">
-                    <InputGroup label="Wie lautet dein Name?" placeholder="Steve" id="name" change={handleChange} required={true} />
+                        <InputGroup label="Wie lautet dein Name?" placeholder="Steve" id="name" change={handleChange}
+                                    required={true}/>
                     </div>
 
                     <div className="col-span-2 xl:col-span-1">
-                    <InputGroup label="Wie lautet deine E-Mail Adreese?" id="email" placeholder="steve@lovesalex.de" change={handleChange} required={true}/>
+                        <InputGroup label="Wie lautet deine E-Mail Adreese?" id="email" placeholder="steve@lovesalex.de"
+                                    change={handleChange} required={true}/>
                     </div>
                     <div className="col-span-2 xl:col-span-1">
-                    <InputGroup label="Wie lautet dein Minecraft-Ingame Name?" id="minecraft_ign" placeholder="Steve" change={handleChange} required={true}/>
+                        <InputGroup label="Wie lautet dein Minecraft-Ingame Name?" id="minecraft_ign"
+                                    placeholder="Steve" change={handleChange} required={true}/>
                     </div>
 
                     <div className="text-white row-span-2">
                         <div className="col-span-2 xl:col-span-1">
-                        <InputCheckbox label="Ich bin bereits dem BALTIC GALAXY Discord beigetreten." id="have_discord" change={handleChange}/>
+                            <InputCheckbox label="Ich bin bereits dem BALTIC GALAXY Discord beigetreten."
+                                           id="have_discord" change={handleChange}/>
                         </div>
                         <div className="col-span-2 xl:col-span-1">
-                        <InputCheckbox extraClass="mt-8" label="Ich besitze bereits die Vollversion der Minecraft Java-Edition." id="have_minecraft" change={handleChange}/>
+                            <InputCheckbox extraClass="mt-8"
+                                           label="Ich besitze bereits die Vollversion der Minecraft Java-Edition."
+                                           id="have_minecraft" change={handleChange}/>
                         </div>
                         <div className="col-span-2 xl:col-span-1">
-                        <InputCheckbox extraClass="mt-8" label="Ich besitze ein Mikrofon mit angemessener Tonqualität." id="have_micro" change={handleChange}/>
+                            <InputCheckbox extraClass="mt-8"
+                                           label="Ich besitze ein Mikrofon mit angemessener Tonqualität."
+                                           id="have_micro" change={handleChange}/>
                         </div>
                     </div>
                     <div className="col-span-2 xl:col-span-1">
-                    <InputGroup label="Wie lautet deine Discord-ID?" id="discord_id" placeholder="Steve#2009"  change={handleChange} required={true}/>
+                        <InputGroup label="Wie lautet deine Discord-ID?" id="discord_id" placeholder="Steve#2009"
+                                    change={handleChange} required={true}/>
                     </div>
-                    <InputTextArea label="Stelle dich und die spannendsten Dinge an dir vor. Kleiner Pro-Tipp: Kompakte Texte kommen sehr gut an!" placeholder="Tippe hier deinen Text ein..." rows={8} id="about" change={handleChange} required={true}/>
-                    <InputTextArea label="Was ist deine Motivation für diese Bewerbung?" placeholder="Tippe hier deinen Text ein..." rows={8} id="motivation" change={handleChange} required={true}/>
-                    <InputTextArea label="Warum passt du ins BALTIC GALAXY Team?" placeholder="Tippe hier deinen Text ein..." rows={8} id="why" change={handleChange} required={true}/>
+                    <div className="text-white col-span-2">
+                        <label className="text-[18px] block mb-2">Schreibe einen Text in kurzer aber spannender Form über dich und stelle dir dabei folgende Fragen: <br/>
+                        <ul className="list-disc ml-8 mt-2 mb-4">
+                            <li className="">Wer bist du? Wo stehst du im Leben? Was ist cool an dir?</li>
+                            <li>Welche beeindruckenden Skills und Erfahrung bringst du so mit?</li>
+                        </ul></label>
+                        <textarea placeholder={"Tippe hier deinen Text ein..."} name={"about"} rows={12} id={"about"}
+                                  className="px-6 w-full py-2 bg-white/10 placeholder:text-white/30 focus:border-white/30 focus:outline-0 border-2 hover:border-white/20 border-white/10 rounded"
+                                  onChange={handleChange} required={true}></textarea>
+                    </div>
                     <InputTextArea label="Möchtest du uns deine Werke zeigen? Dann füge hier die
-                                Links zu den jeweiligen Websiten hinzu." placeholder="Tippe hier deinen Text ein..." rows={8} id="werke" change={handleChange} required={true}/>
+                                Links zu den jeweiligen Websiten hinzu." placeholder="Tippe hier deinen Text ein..."
+                                   rows={8} id="werke" change={handleChange} required={true}/>
 
 
-                    <InputCheckbox extraClass="col-span-2" label="Ich habe verstanden, dass nach dem Klicken des folgenden Buttons ich die Bewerbung nicht mehr bearbeiten kann. Ich habe ebenfalls in Kenntnis genommen, dass die Teammitglieder von Baltic Studios Zugang zu meiner Bewerbung haben." id="accept-privacy" required={true}/>
+                    <InputCheckbox extraClass="col-span-2"
+                                   label="Ich habe verstanden, dass nach dem Klicken des folgenden Buttons ich die Bewerbung nicht mehr bearbeiten kann. Ich habe ebenfalls in Kenntnis genommen, dass die Teammitglieder von Baltic Studios Zugang zu meiner Bewerbung haben."
+                                   id="accept-privacy" required={true}/>
 
 
                     <div className="col-span-2 mx-auto">
-                        <button type="submit" className="px-12 py-4 text-black rounded bg-baltic-tuerkis hover:bg-baltic-tuerkis/90">Jetzt Bewerbung
+                        <button type="submit"
+                                className="px-12 py-4 text-black font-bold rounded bg-baltic-tuerkis hover:bg-baltic-tuerkis/90">Jetzt
+                            Bewerbung
                             abschicken!
                         </button>
                     </div>

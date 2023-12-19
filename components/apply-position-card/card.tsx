@@ -4,6 +4,7 @@ import Image from "next/image";
 import {MouseEvent, useEffect, useState} from "react";
 import flameImage from "@/public/assets/images/icons/flamme.png";
 import {tag} from "postcss-selector-parser";
+import Link from "next/link";
 
 export default function ApplyPositionCard({singlePosition, reqs}: any) {
     let mouseX = useMotionValue(0);
@@ -18,7 +19,7 @@ export default function ApplyPositionCard({singlePosition, reqs}: any) {
 
     if (!singlePosition && !reqs) return <h1>No profile data</h1>
     return (
-        <div className="mt-12 py-2  border-white/10 bg-white/5 rounded-xl text-white relative grid grid-flow-row-dense grid-cols-10">
+        <div className="mt-12 py-2 rounded-xl text-white relative grid grid-flow-row-dense grid-cols-10">
 
             <div className="px-8 py-6 col-span-10 xl:col-span-5">
 
@@ -33,11 +34,11 @@ export default function ApplyPositionCard({singlePosition, reqs}: any) {
                         {singlePosition.description}
                     </p>
 
-                    <a className="text-gray-400 py-1 text-[15px] cursor-pointer group">Ich möchte mich für eine
+                    <Link href={'/apply'} className=" py-1 text-[15px] cursor-pointer text-baltic-tuerkis group">Ich möchte mich für eine
                         andere Position bewerben <Image
                             height={20} width={20} alt="alt"
                             className="inline transition-all ease-in-out group-hover:ml-3 ml-2 h-4 w-4"
-                            src="/assets/images/icons/arrow_right.png"/></a>
+                            src="/assets/images/icons/arrow_right.png"/></Link>
                 </div>
 
             </div>
