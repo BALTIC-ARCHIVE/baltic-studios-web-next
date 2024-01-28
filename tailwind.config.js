@@ -25,7 +25,13 @@ module.exports = {
       },
       textColor: {
         'baltic-tuerkis': '#00FFB2',
+        'bal-tuerkis': '#00FFB2',
         'bal-blue': '#7E89B1',
+        'bal-dev-blue': '#00A3FF',
+        'bal-yellow': '#FFE500',
+        'bal-purple': '#FF00A8',
+        'bal-green': '#8FFF00',
+        'bal-dark-purple': '#AD00FF'
       },
       listStyleImage: {
         checkmark: 'url("/assets/images/icons/check.png")',

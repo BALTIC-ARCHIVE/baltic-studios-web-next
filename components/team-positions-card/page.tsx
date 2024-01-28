@@ -49,7 +49,7 @@ export default function TeamPositionsCard({tags, prio, position_name, descriptio
                 </div>
 
                 <div className="mt-4">
-                    <h1 className="text-[22px]">{is_high_priority ? <Image className="inline h-7 w-7 -mt-1 mr-4" alt="alt"
+                    <h1 className={'text-[22px]' }>{is_high_priority ? <Image className="inline h-7 w-7 -mt-1 mr-4" alt="alt"
                                                                            src={flameImage} /> : ''}{position_name}</h1>
                     <p className="mt-4 mb-4 text-[15px]">
                         {description}

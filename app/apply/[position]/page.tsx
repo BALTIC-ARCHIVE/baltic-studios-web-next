@@ -70,7 +70,7 @@ export default function Home({ params }: { params: { position: string } }) {
         <main className="bg-black mt-24 mx-auto xl:w-3/4 w-5/6">
 
 
-            <ApplyPositionCard singlePosition={singlePosition} reqs={singlePosition.requirements}/>
+            <ApplyPositionCard singlePosition={singlePosition} reqs={singlePosition.requirements} color_tag={singlePosition.color_tag}/>
 
             <form className="mt-16 border-white/10 bg-white/5 p-16" onSubmit={handleSubmit}>
 

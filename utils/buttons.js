@@ -12,8 +12,8 @@ export const buttons = [
         value: "8_admistration"
     },
     {
-        name: "Media",
-        value: "7_media"
+        name: "Artist",
+        value: "6_media"
     },
     {
         name: "Entwicklung",
@@ -21,11 +21,11 @@ export const buttons = [
     },
     {
         name: "Moderation",
-        value: "6_moderation"
+        value: "5_moderation"
     },
     {
         name: "Architektur",
-        value: "6_architektur"
+        value: "5_architektur"
     }
 ];
 

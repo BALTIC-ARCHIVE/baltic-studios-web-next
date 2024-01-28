@@ -6,7 +6,7 @@ import flameImage from "@/public/assets/images/icons/flamme.png";
 import {tag} from "postcss-selector-parser";
 import Link from "next/link";
 
-export default function ApplyPositionCard({singlePosition, reqs}: any) {
+export default function ApplyPositionCard({singlePosition, reqs, color_tag}: any) {
     let mouseX = useMotionValue(0);
     let mouseY = useMotionValue(0);
     const is_high_priority = true;
@@ -17,7 +17,7 @@ export default function ApplyPositionCard({singlePosition, reqs}: any) {
     }
 
 
-    if (!singlePosition && !reqs) return <h1>No profile data</h1>
+    if (!singlePosition && !reqs && !color_tag) return <h1>No profile data</h1>
     return (
         <div className="mt-12 py-2 rounded-xl text-white relative grid grid-flow-row-dense grid-cols-10">
 
@@ -29,7 +29,7 @@ export default function ApplyPositionCard({singlePosition, reqs}: any) {
 
 
                 <div className="mt-1">
-                    <h1 className="xl:text-[52px] text-[26px] font-bold text-blue-400">{singlePosition.position_name}</h1>
+                    <h1 className={'xl:text-[52px] text-[26px] font-bold text-' + color_tag }>{singlePosition.position_name}</h1>
                     <p className="mt-4 mb-4 text-[15px] text-gray-300">
                         {singlePosition.description}
                     </p>
