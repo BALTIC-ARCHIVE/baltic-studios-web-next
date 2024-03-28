@@ -1,0 +1,50 @@
+<svg width="595" height="411" viewBox="0 0 595 411" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="595" height="411" rx="10" fill="#44466C"/>
+<rect width="595" height="411" rx="10" fill="url(#paint0_radial_1638_2501)" fill-opacity="0.5" style="mix-blend-mode:overlay"/>
+<rect x="117" y="99" width="360" height="210" rx="7" fill="black" fill-opacity="0.5"/>
+<rect width="360" height="22" transform="translate(117 99)" fill="black" fill-opacity="0.3"/>
+<circle cx="128" cy="110" r="4" fill="#FF0000"/>
+<circle cx="146" cy="110" r="4" fill="#FFB800"/>
+<circle cx="164" cy="110" r="4" fill="#56DC27"/>
+<rect x="124" y="128" width="105" height="6" rx="3" fill="white" fill-opacity="0.7"/>
+<rect x="124" y="144" width="183" height="6" rx="3" fill="white" fill-opacity="0.7"/>
+<rect x="124" y="160" width="76" height="6" rx="3" fill="white" fill-opacity="0.7"/>
+<rect x="124" y="176" width="174" height="6" rx="3" fill="white" fill-opacity="0.7"/>
+<rect x="124" y="192" width="144" height="6" rx="3" fill="white" fill-opacity="0.7"/>
+<rect x="124" y="208" width="127" height="6" rx="3" fill="white" fill-opacity="0.7"/>
+<rect x="124" y="224" width="137" height="6" rx="3" fill="white" fill-opacity="0.7"/>
+<rect x="124" y="240" width="105" height="6" rx="3" fill="white" fill-opacity="0.7"/>
+<rect x="124" y="256" width="15" height="6" rx="3" fill="white" fill-opacity="0.7"/>
+<rect x="380" y="128" width="90" height="90" rx="5" fill="white" fill-opacity="0.7"/>
+<line x1="9" y1="98.5" x2="586" y2="98.5" stroke="url(#paint1_linear_1638_2501)" stroke-opacity="0.7" stroke-dasharray="12 12"/>
+<line x1="9" y1="308.5" x2="586" y2="308.5" stroke="url(#paint2_linear_1638_2501)" stroke-opacity="0.7" stroke-dasharray="12 12"/>
+<line x1="117.5" y1="388" x2="117.5" y2="23" stroke="url(#paint3_linear_1638_2501)" stroke-opacity="0.7" stroke-dasharray="12 12"/>
+<line x1="477.5" y1="388" x2="477.5" y2="23" stroke="url(#paint4_linear_1638_2501)" stroke-opacity="0.7" stroke-dasharray="12 12"/>
+<rect x="19.5" y="23.5" width="556" height="364" rx="4.5" stroke="white" stroke-opacity="0.05" stroke-dasharray="12 12"/>
+<defs>
+<radialGradient id="paint0_radial_1638_2501" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300.971 -3.75562e-06) rotate(90.4838) scale(411.015 595.151)">
+<stop stop-opacity="0"/>
+<stop offset="1"/>
+</radialGradient>
+<linearGradient id="paint1_linear_1638_2501" x1="9" y1="99.5" x2="586" y2="99.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="0.52" stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint2_linear_1638_2501" x1="9" y1="309.5" x2="586" y2="309.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="0.52" stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint3_linear_1638_2501" x1="118.5" y1="388" x2="118.5" y2="23" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="0.52" stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint4_linear_1638_2501" x1="478.5" y1="388" x2="478.5" y2="23" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="0.52" stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,159 +1,133 @@
-'use client';
-import Image from 'next/image'
-import {IoPlay} from "react-icons/io5";
-import AudioListItem from "@/components/audio-list-item/comp";
-import {useEffect, useState} from "react";
+import Image from "next/image";
+import { IoPlay } from "react-icons/io5";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import InputGroup from "@/components/utils/InputGroup";
 import InputTextArea from "@/components/utils/InputTextArea";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import useFetch from "@/app/hooks/useFetch";
+import { Button } from "@/components/ui/button";
+import TeamCard from "@/components/team-card/component";
+import TeamPositionsCard from "@/components/team-position-card/component";
+import Card from "@/components/team-position-card/cardtest";
 
-
-export default function Home() {
-  const [tracks, setTracks] = useState([] as any)
-  const router = useRouter()
-  const [inputs, setInputs] = useState({} as any);
-
-  const { loading, error, data, refetch } = useFetch({
-    url: "https://plexus.baltic-galaxy.de/api/tracks",
-    method: "get",
-    key: [],
-    cache: {
-      enabled: true,
-      ttl: 100
-    }
+export default async function Home() {
+  const data = await fetch("https://plexuspro.baltic-galaxy.de/api/team", {
+    cache: "no-cache",
   });
+  const json = await data.json();
 
-
-  useEffect(() => {
-    if (data){
-      setTracks(data.data);
+  const teamPositionsData = await fetch(
+    "https://plexuspro.baltic-galaxy.de/api/tpos",
+    {
+      cache: "no-cache",
     }
-  }, [data])
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-  if (error) {
-    return <p>Something went wrong</p>;
-  }
-
-  const handleChange = (event: any) => {
-    const name = event.target.name;
-    const value: any = event.target.value;
-    setInputs((values: any) => ({...values, [name]: value}))
-  }
-
-
-  const handleSubmit = (event: any) => {
-
-    event.preventDefault();
-    console.log(inputs);
-
-    const request = new XMLHttpRequest();
-    request.open("POST", "https://discord.com/api/webhooks/1122843083944497204/NLQDvSzpihYVgC4Zt963cjrWaf4P9etM-IBBJ0T-7hHEBTjELSRdLKWJNeQ6j1M3J1kW");
-    request.setRequestHeader('Content-type', 'application/json');
-
-    const params = {
-      username: "Kontakti",
-      avatar_url: "https://www.baltic-galaxy.de/assets/images/logo.png",
-      content: "Neue Anfrage von " + inputs.name + " @everyone \n\n" +
-          "**E-Mail:** \n" + inputs.email + "\n\n" +
-          "**Anfrage: **\n" + inputs.anfrage + "\n\n",
-
-    }
-
-    request.send(JSON.stringify(params));
-    router.push('/apply/success');
-  }
+  );
+  const teamPositions = await teamPositionsData.json();
 
   return (
-    <main className="flex justify-center min-h-screen flex-col items-center justify-between">
-      <div className="header w-full h-[80vh] bg-header-radial px-4 xl:px-0 justify-center items-center">
-        <h1 className="text-[40px] xl:text-[60px] text-center font-bold mt-20">Ein Universum<br/>voller Ideen</h1>
-        <h4 className="text-[14px] xl:text-[18px] mt-4 font-normal text-center">Wir schaffen großartiges für Augen und Ohren. Möchtest du Teil der Reise sein?</h4>
-
-
-        <div className="flex justify-center mt-12 relative z-50">
-          <Link href="/about-us"
-             className="text-black/70 px-8 py-4 rounded-md bg-[#00FFA3] text-black border-[#7E89B1] text-sm font-medium mr-5">OFFENE POSITIONEN</Link>
-        </div>
-
-
-      </div>
-
-      <div className="pt-0 xl:pt-24 w-full">
-        <div className="h-[55vh] xl:h-[90vh]  w-4/4 xl:w-3/4 relative rounded-3xl mx-auto bg-blog-heading-gradient bg-cover px-2 py-2 xl:px-20 xl:py-48">
-          <div className="absolute bottom-10 xl:bottom-20 px-4">
-            <h4 className="gradient-h4 drop-shadow-lg">Jetzt BALTIC GALAXY entdecken</h4>
-            <h1 className="text-white text-4xl xl:text-6xl drop-shadow-lg font-medium leading-tight">Stürze dich ins Abenteuer</h1>
-            <div className="w-3/3 xl:w-2/3 mt-7 mb-6 xl:mb-4">
-              <p className="text-gray-100 drop-shadow-lg text-[16px] flex-wrap">Ein einzigartiges Star Wars MMORPG, basierend auf Minecraft - jemals davon geträumt? Wir auch!
-                Kreiere deinen Charakter und gestalte deinen Weg, erkunde komplexe Dungeons, baue deine Heimat, gründe eine Fraktion, verteidige deine Flotte!</p>
-            </div>
-            <a href="https://baltic-galaxy.de" className="text-baltic-tuerkis py-2 cursor-pointer group">BALTIC GALAXY entdecken <Image
-                height={20} width={20} alt="alt"
-                className="inline transition-all ease-in-out group-hover:ml-3 ml-2 h-4 w-4"
-                src="/assets/images/icons/arrow_right.png"/></a>
+    <main className=" xl:w-3/4 w-5/6 mx-auto min-h-screen flex-col items-center">
+      <section className="flex py-28">
+        <div className="my-auto xl:w-2/4 w-5/6">
+          <h4 className=" text-[24px]">WIR SUCHEN DICH</h4>
+          <h1 className="text-[35px] xl:text-[32px] font-bold mt-0">
+            Bereit für die Herausforderung?
+            <br />
+            Werde Teil unseres Teams!
+          </h1>
+          <p className="text-[15px] xl:text-[18px] mt-4 font-normal text-gray-400">
+            Tauche ein in unsere inspirierende Welt und werde Teil unseres
+            Teams! Nutze die Chance, dich für eine Vielzahl von coolen und
+            spannenden Projekten einzubringen, bei denen du deine Leidenschaft.
+          </p>
+          <div className="flex mt-8 relative z-50">
+            <Button>Offene Positionen</Button>
+            <Button variant="outline" className="ml-4">
+              Discord beitreten
+            </Button>
           </div>
         </div>
-      </div>
 
-      <div className="mt-20 xl:mt-40 xl:w-3/4 w-5/6 mx-auto grid grid-cols-1 xl:grid-cols-2">
-        <div className="mb-8">
+        <div className=" xl:w-2/4 w-5/6">
+          <Image
+            src="/assets/images/custom/header.svg"
+            width={1000}
+            height={1000}
+            alt="Picture of the author"
+          />
+        </div>
+      </section>
 
-          <div className="mb-8">
-            <Image src="/assets/images/alex-44.png" alt="alt" width={44} height={44} className="rounded-full float-left mr-5"/>
-            <p className="pt-2 pl-4 text-white/70 underline">Alexander Rose Music</p>
-          </div>
-
-          <h4 className="gradient-h4">Musikalisch genießen</h4>
-          <h1 className="text-white text-4xl font-medium leading-tight">Unsere exklusiven Soundtracks</h1>
-          <div className="w-3/3 xl:w-2/3 mt-7 mb-4">
-            <p className="text-gray-400 text-[16px] flex-wrap">
-              Wir möchten dich in eine atemberaubende Welt abtauchen lassen. Dafür braucht es mehr als eine große Leinwand. Seit Monaten arbeiten wir eng mit dem talentierten Komponisten Alexander Rose zusammen, um dir unsere eigenen Soundtracks zu präsentieren! Höre dir erste Proben an.
-            </p>
-          </div>
-          <a className="text-baltic-tuerkis py-2 cursor-pointer group">Demnächst auf Spotify <Image
-              height={20} width={20} alt="alt"
-              className="inline transition-all ease-in-out group-hover:ml-3 ml-2 h-4 w-4"
-              src="/assets/images/icons/arrow_right.png"/></a>
+      <section className="">
+        <div className="text-center">
+          <h1 className="text-[35px] xl:text-[32px] mt-0">
+            Arbeite mit einem hervorragendem Team
+          </h1>
+          <p className="text-[15px] xl:text-[18px] mx-auto w-3/4 mt-4 font-normal text-gray-400">
+            Tauche ein in unsere inspirierende Welt und werde Teil unseres
+            Teams! Nutze die Chance, dich für eine Vielzahl von coolen und
+            spannenden Projekten einzubringen, bei denen du deine Leidenschaft.
+          </p>
         </div>
 
-        <div className="bg-white/5 h-fit rounded-2xl">
-          <ul>
-            {tracks && tracks.map((track: any, index: any) => (
-                <AudioListItem key={index} title={track.title} author={track.author} duration="2:30" audioUrl={track.audioUrl}/>
+        <div className=" mt-8 scroll">
+          <div className="scroll-items flex">
+            {json.map((member: any, index: any) => (
+              <TeamCard
+                key={index}
+                userName={member.username}
+                realName={member.username}
+                rankName={member.rank_name}
+                bio={member.bio}
+                twitterHandle={member.twitter_handle}
+                entryDate={member.joined}
+              />
             ))}
-
-          </ul>
-
+          </div>
+          <div className="scroll-items flex">
+            {json.map((member: any, index: any) => (
+              <TeamCard
+                key={index}
+                userName={member.username}
+                realName={member.username}
+                rankName={member.rank_name}
+                bio={member.bio}
+                twitterHandle={member.twitter_handle}
+                entryDate={member.joined}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mt-32 mb-24 h-1/2 xl:w-3/4 w-5/6 mx-auto text-white">
-        <h1 className="text-white mb-8 text-[32px] font-bold">Du möchtest mit uns zusammenarbeiten?</h1>
-
-        <form className="grid grid-cols-1 xl:grid-cols-2 gap-8" onSubmit={handleSubmit}>
-          <div className="col-span-2 xl:col-span-1">
-            <InputGroup label="Dein Name" placeholder="Lucas" id="name" change={handleChange} required={true} />
-          </div>
-          <div className="col-span-2 xl:col-span-1">
-          <InputGroup label="E-Mail Adresse" placeholder="steve@liebtalex.de" id="email" change={handleChange} required={true} />
-          </div>
-          <InputTextArea label="Deine Anfrage" rows={16} placeholder="Schreib hier deine Anfrage.." change={handleChange} id="anfrage" required={true}/>
-
-          <div className="col-span-2">
-            <button type="submit" className="px-12 py-4 text-black rounded bg-baltic-tuerkis hover:bg-baltic-tuerkis/90">Anfrage abschicken
-            </button>
-          </div>
-        </form>
-
-      </div>
-
-      <audio id="audio"></audio>
+      <section className=" mt-32 text-white">
+        <div>
+          <h1 className="text-white text-[32px] font-bold">
+            Unsere offenen Positionen
+          </h1>
+          <p className="text-[15px] text-red-300">
+            Die mit Flammenmarkierung suchen wir zurzeit besonders!
+          </p>
+        </div>
+        <div className="grid grid-cols-4 gap-x-6 gap-y-6">
+          {teamPositions &&
+            teamPositions.map((position: any, index: any) => (
+              <TeamPositionsCard
+                key={index}
+                prio={position.prio}
+                positionId={position.position_id}
+                position_name={position.position_name}
+                description={position.description}
+                tags={position.tags}
+                requirements={position.requirements}
+                bonus_requirements={position.bonus_requirements}
+                colorTag={position.color_tag}
+              />
+            ))}
+        </div>
+      </section>
     </main>
-  )
+  );
 }
