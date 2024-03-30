@@ -1,17 +1,7 @@
 import Image from "next/image";
-import { IoPlay } from "react-icons/io5";
-
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import InputGroup from "@/components/utils/InputGroup";
-import InputTextArea from "@/components/utils/InputTextArea";
-import { useRouter } from "next/navigation";
-import useFetch from "@/app/hooks/useFetch";
 import { Button } from "@/components/ui/button";
 import TeamCard from "@/components/team-card/component";
 import TeamPositionsCard from "@/components/team-position-card/component";
-import Card from "@/components/team-position-card/cardtest";
 
 export default async function Home() {
   const data = await fetch("https://plexuspro.baltic-galaxy.de/api/team", {

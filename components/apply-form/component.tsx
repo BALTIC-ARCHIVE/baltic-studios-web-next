@@ -25,7 +25,7 @@ export default function ApplyForm({ position }: { position: string }) {
         setSinglePosition(singlePosition);
       });
     setLoading(false);
-  }, []);
+  }, [position]);
 
   const [inputs, setInputs] = useState({} as any);
 
