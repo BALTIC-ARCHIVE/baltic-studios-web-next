@@ -94,14 +94,14 @@ export default function TeamPositionsCard({
             height="16"
             viewBox="0 0 12 12"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/2000/svg"
           >
             <path
               d="M6 1V11M11 6L1 6"
               stroke="black"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </span>
@@ -130,9 +130,9 @@ export default function TeamPositionsCard({
                 <path
                   d="M16 8L1 8M1 8L7.75 14.75M1 8L7.75 1.25"
                   stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
               Zurück zur Startseite

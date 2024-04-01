@@ -51,7 +51,7 @@ const config = {
         "blog-article-gradient":
           "linear-gradient(to right top, rgba(1, 2, 3, 1), rgba(0, 0, 0, 0.0))",
         "apply-card-radial":
-          "radial-gradient(62.35% 115.02% at 50% 100%, rgba(255, 153, 0, 0.15) 0%, rgba(255, 153, 0, 0) 100%)",
+          "radial-gradient(62.35% 135.02% at 50% 100%, rgba(217,217,217, 0.1) 0%, rgba(255, 153, 0, 0) 100%)",
         "team-card-radial":
           "radial-gradient(62.35% 115.02% at 50% 100%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%)",
         "header-radial":

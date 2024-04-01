@@ -1,16 +1,19 @@
 "use client";
-import PositionTile from "@/app/apply/PositionTile";
 import { useEffect, useState } from "react";
 import InputGroup from "@/components/utils/InputGroup";
 import InputCheckbox from "@/components/utils/InputCheckbox";
 import InputTextArea from "@/components/utils/InputTextArea";
 import { EmbedBuilder, WebhookClient } from "discord.js";
 import { useRouter } from "next/navigation";
+import { v4 as uuidv4 } from "uuid";
+
 export default function ApplyForm({ position }: { position: string }) {
   const [teamPositions, setTeamPositions] = useState([] as any);
   const [singlePosition, setSinglePosition] = useState({} as any);
   const [isLoading, setLoading] = useState(false);
   const router = useRouter();
+  const randPassword = randomString(10);
+  const application_uuid = uuidv4();
 
   useEffect(() => {
     setLoading(true);
@@ -35,12 +38,23 @@ export default function ApplyForm({ position }: { position: string }) {
     setInputs((values: any) => ({ ...values, [name]: value }));
   };
 
+  function randomString(len: any, charSet?: any) {
+    charSet =
+      charSet ||
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var randomString = "";
+    for (var i = 0; i < len; i++) {
+      var randomPoz = Math.floor(Math.random() * charSet.length);
+      randomString += charSet.substring(randomPoz, randomPoz + 1);
+    }
+    return randomString;
+  }
   const handleSubmit = (event: any) => {
     event.preventDefault();
     console.log(inputs);
 
     const request = new XMLHttpRequest();
-    request.open("POST", "https://plexus.baltic-galaxy.de/api/application");
+    request.open("POST", "https://plexuspro.baltic-galaxy.de/api/application");
     request.setRequestHeader("Content-type", "application/json");
 
     const params = {
@@ -54,10 +68,12 @@ export default function ApplyForm({ position }: { position: string }) {
       have_minecraft: (inputs.have_minecraft = "on" ? 1 : 0),
       about: inputs.about,
       portfolio: inputs.werke,
+      application_uuid: application_uuid,
+      application_password: randPassword,
     };
 
     request.send(JSON.stringify(params));
-    router.push("/apply/success");
+    router.push("/application/" + application_uuid + "/" + randPassword);
   };
 
   if (isLoading) return <p>Loading...</p>;
@@ -70,7 +86,7 @@ export default function ApplyForm({ position }: { position: string }) {
         onSubmit={handleSubmit}
       >
         <h1 className="text-center font-bold text-5xl mb-20">
-          Schaffst du es in 5 Minuten?
+          Schaffst du es in 5 Minuten? {randPassword}
         </h1>
 
         <div className="grid xl:grid-cols-2  grid-cols-1 gap-8">

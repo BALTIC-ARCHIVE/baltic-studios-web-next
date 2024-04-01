@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import TeamCard from "@/components/team-card/component";
 import TeamPositionsCard from "@/components/team-position-card/component";
+import FaqCard from "@/components/faq-card/component";
 
 export default async function Home() {
   const data = await fetch("https://plexuspro.baltic-galaxy.de/api/team", {
@@ -117,6 +118,9 @@ export default async function Home() {
               />
             ))}
         </div>
+      </section>
+      <section className="mt-36">
+        <FaqCard></FaqCard>
       </section>
     </main>
   );
