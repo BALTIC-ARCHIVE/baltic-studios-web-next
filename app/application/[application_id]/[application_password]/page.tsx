@@ -11,6 +11,13 @@ import { Terminal } from "lucide-react";
 import Image from "next/image";
 import { MouseEvent } from "react";
 
+import oneImage from "@/public/assets/images/custom/one.svg";
+import twoImage from "@/public/assets/images/custom/two.svg";
+import threeImage from "@/public/assets/images/custom/three.svg";
+import onboardingImage from "@/public/assets/images/custom/onboarding.png";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
 export default async function ApplicationViewPage({
   params,
 }: {
@@ -27,6 +34,10 @@ export default async function ApplicationViewPage({
   );
   const application = await applicationData.json();
 
+  const state1 = application.status == "einladung" ? "bg-green-500" : "";
+  const state2 = application.status == "testprojekt" ? "bg-green-500" : "";
+  const state3 = application.status == "feedback" ? "bg-green-500" : "";
+
   // @ts-ignore
   function getImageUrl(userName): any {
     return "https://cravatar.eu/helmavatar/" + userName + "/250.png";
@@ -35,7 +46,8 @@ export default async function ApplicationViewPage({
   return (
     <main className="xl:w-3/4 w-5/6 mx-auto min-h-screen flex-col items-center">
       <section className="flex py-12 mt-16 w-full relative">
-        <span
+        <Link
+          href="/"
           className={`bg-white/10 absolute hover:bg-white/20 hover:cursor-pointer duration-200 transition-all ease-in px-4 py-2 rounded-md `}
         >
           <svg
@@ -55,7 +67,7 @@ export default async function ApplicationViewPage({
             />
           </svg>
           Zurück zur Startseite
-        </span>
+        </Link>
 
         <div className="text-center mx-auto mt-32">
           <h1 className="text-[35px] xl:text-[45px] mt-0">
@@ -67,12 +79,12 @@ export default async function ApplicationViewPage({
           </p>
         </div>
       </section>
-      <section className="flex w-1/2 mx-auto flex-col items-center">
+      <section className="flex w-2/3 mx-auto flex-col items-center">
         <hr className="h-[2px] w-24  bg-gray-200/60 border-0" />
         <span className="text-gray-200/60 mt-4 mb-2">
           STATUS DEINER BEWERBUNG
         </span>
-        <ApplyStatus variant={application.status}>
+        <ApplyStatus className="w-1/2" variant={application.status}>
           <ApplyStatusTitle>
             {application.status === "ausstehend" && "In Bearbeitung"}
             {application.status === "einladung" && "Einladung zum Kennenlernen"}
@@ -111,6 +123,75 @@ export default async function ApplicationViewPage({
             <div className="mt-4">{application.feedback}</div>
           </CardContent>
         </Card>
+      </section>
+      <section className=" w-full mx-auto ">
+        <div className="mt-32">
+          <h1 className="text-[35px] xl:text-[35px] mt-0">
+            Unser Bewerbungsprozess
+          </h1>
+        </div>
+
+        <div className="mt-4 w-full grid grid-cols-3 gap-x-4">
+          <Card className={`h-72 ${state1} ${state2}`}>
+            <CardContent className=" h-full relative">
+              <span className="absolute bottom-3 left-3 text-[22px]">
+                Kennenlerngespräch
+              </span>
+              <Image
+                className="absolute bottom-0 right-8"
+                src={oneImage}
+                alt="one"
+              />
+            </CardContent>
+          </Card>
+          <Card className={`h-72 ${state2} ${state3}`}>
+            <CardContent className=" h-full relative">
+              <span className="absolute bottom-3 left-3 text-[22px]">
+                Test-Aufgabe
+              </span>
+              <Image
+                className="absolute bottom-0 right-8"
+                src={twoImage}
+                alt="one"
+              />
+            </CardContent>
+          </Card>
+          <Card className={`h-72 ${state3}`}>
+            <CardContent className=" h-full relative">
+              <span className="absolute bottom-3 left-3 text-[22px]">
+                Feedback
+              </span>
+              <Image
+                className="absolute bottom-0 right-8"
+                src={threeImage}
+                alt="one"
+              />
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+      <section className="flex py-28">
+        <div className="my-auto xl:w-2/4 w-5/6 heading">
+          <h4 className=" text-[15px]">SUPER LEICHTER EINSTIEG</h4>
+          <h1 className="text-[35px] xl:text-[32px] font-bold mt-0">
+            Klasse Onboarding
+          </h1>
+          <p className="text-[15px] xl:text-[18px] mt-4 font-normal text-gray-400">
+            Tauche ein in unsere inspirierende Welt und werde Teil unseres
+            Teams! Nutze die Chance, dich für eine Vielzahl von coolen und
+            spannenden Projekten einzubringen, bei denen du deine Leidenschaft.
+          </p>
+        </div>
+
+        <div className=" xl:w-2/4 w-5/6">
+          <Image
+            src={onboardingImage}
+            width={1000}
+            height={1000}
+            className="rounded-xl"
+            alt="Picture of the author"
+          />
+        </div>
       </section>
     </main>
   );
