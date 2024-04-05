@@ -8,7 +8,6 @@ const inter = Inter({ subsets: ["latin"] });
 import "./globals.css";
 import Navbar from "@/components/navbar/navbar";
 import MobileNavbar from "@/components/mobile-navbar/mobile-navbar";
-import { AnimatePresence } from "framer-motion";
 import Template from "./template";
 import { usePathname } from "next/navigation";
 import { ThemeProvider } from "@/components/theme-provider";

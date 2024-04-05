@@ -1,20 +1,20 @@
-import Image from "next/image";
+"use client";
 import { Button } from "@/components/ui/button";
 import TeamCard from "@/components/team-card/component";
 import TeamPositionsCard from "@/components/team-position-card/component";
 import FaqCard from "@/components/faq-card/component";
 
+import ParallaxBadgeCard from "@/components/ParallaxBadgeCard/component";
+
 export default async function Home() {
   const data = await fetch("https://plexuspro.baltic-galaxy.de/api/team", {
-    cache: "no-cache",
+    next: { revalidate: 3600 },
   });
   const json = await data.json();
 
   const teamPositionsData = await fetch(
     "https://plexuspro.baltic-galaxy.de/api/tpos",
-    {
-      cache: "no-cache",
-    }
+    { next: { revalidate: 3600 } }
   );
   const teamPositions = await teamPositionsData.json();
 
@@ -41,14 +41,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className=" xl:w-2/4 w-5/6">
-          <Image
-            src="/assets/images/custom/header.svg"
-            width={1000}
-            height={1000}
-            alt="Picture of the author"
-          />
-        </div>
+        <ParallaxBadgeCard />
       </section>
 
       <section className="">

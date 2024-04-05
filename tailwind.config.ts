@@ -27,6 +27,11 @@ const config = {
     "group-hover:from-[#00A3FF]",
     "group-hover:from-[#FFE500]",
     "group-hover:from-[#FF00A8]",
+    "bg-[#FF00C7]",
+    "bg-[#5CC599]",
+    "bg-[#FF0000]",
+    "bg-[#0085FF]",
+    "bg-[#8C9937]",
   ],
   prefix: "",
   theme: {
