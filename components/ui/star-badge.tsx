@@ -6,7 +6,6 @@ import React from "react";
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   username: string;
   color: string;
-  duration?: number;
   x?: MotionValue<number>;
   y?: MotionValue<number>;
 }
@@ -21,15 +20,7 @@ const StarBadge = React.forwardRef<HTMLDivElement, BadgeProps>(
         }}
         className={cn(" z-50 absolute h-8 inline-block w-[200px] ", className)}
       >
-        <motion.div
-          transition={{
-            ease: "linear",
-            duration: props.duration || 0.5,
-            repeat: Infinity,
-          }}
-          animate={{ rotate: [0, 360, 720] }}
-          className=" h-6 w-6 flex justify-center items-center"
-        >
+        <div className=" h-6 w-6 flex justify-center items-center">
           <svg
             className="p-0 m-0 h-full w-full"
             viewBox="0 0 22 22"
@@ -56,7 +47,7 @@ const StarBadge = React.forwardRef<HTMLDivElement, BadgeProps>(
               </clipPath>
             </defs>
           </svg>
-        </motion.div>
+        </div>
         <span
           className={`ml-5 -mt-4 px-[4px] py-[1px] rounded-sm bg-[${props.color}]`}
         >
