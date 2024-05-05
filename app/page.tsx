@@ -56,6 +56,8 @@ export default async function Home() {
           </p>
         </div>
 
+        
+
         <div className=" mt-8 scroll">
           <div className="scroll-items flex">
             {json.map((member: any, index: any) => (
