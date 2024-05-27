@@ -5,7 +5,6 @@ import { Badge } from "../ui/badge";
 import Image from "next/image";
 
 import flameImage from "@/public/assets/images/icons/flamme.svg";
-import codeImage from "@/public/assets/images/custom/code.png";
 import ApplyForm from "../apply-form/component";
 
 export default function TeamPositionsCard({
@@ -17,6 +16,7 @@ export default function TeamPositionsCard({
   requirements,
   bonus_requirements,
   positionId,
+  screenshot_url,
   is_public,
 }: any) {
   const is_high_priority = prio === 1;
@@ -25,8 +25,8 @@ export default function TeamPositionsCard({
     left: "20px",
     width: "800px",
   };
-  const hoverbgColor = "group-hover:bg-[" + colorTag + "]";
-  const bgColor = "bg-[" + colorTag + "]";
+  const hoverbgColor = "group-hover:bg-team-" + colorTag + "-radial";
+  const bgColor = "" + colorTag + "";
   const fromColor = "group-hover:from-[" + colorTag + "]";
   // @ts-ignore
   function getImageUrl(userName): any {
@@ -62,7 +62,9 @@ export default function TeamPositionsCard({
             <Image
               className="  group-hover:-ml-4  duration-200 transition-all ease-in group-hover:-mt-4 mr-4 absolute"
               alt="alt"
-              src={codeImage}
+              src={screenshot_url}
+              width={1920}
+              height={1080}
               style={imageStyle}
             />
           </div>
@@ -86,7 +88,7 @@ export default function TeamPositionsCard({
         <p className="mt-4 mb-4 text-white/50 text-[15px]">{description}</p>
 
         <span
-          className={`bg-[#333635] ${hoverbgColor} duration-200 transition-all ease-in h-10 w-10 rounded-full absolute`}
+          className={`bg-[#333635] hover:bg-red-400 duration-200 transition-all ease-in h-10 w-10 rounded-full absolute`}
         >
           <svg
             className="mx-auto mt-3"
@@ -113,7 +115,7 @@ export default function TeamPositionsCard({
           layoutId={positionId}
         >
           <div
-            className={`h-3/5 overflow-hidden  px-20 py-10 relative ${bgColor}`}
+            className={`h-3/5 overflow-hidden  px-20 py-10 relative bg-team-${colorTag}-radial`}
           >
             <span
               onClick={() => setSelectedId(null)}
@@ -169,7 +171,9 @@ export default function TeamPositionsCard({
             <Image
               className=" group-hover:-ml-4  w-3/5 -right-20 top-16  duration-200 transition-all ease-in group-hover:-mt-4 z-10 mr-4 absolute"
               alt="alt"
-              src={codeImage}
+              src={screenshot_url}
+              width={1920}
+              height={1080}
             />
           </div>
           <div className="w-2/3 my-16 mx-auto">

@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: "cdn.discordapp.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "i.imgur.com",
+        port: "",
+      },
     ],
   },
 };

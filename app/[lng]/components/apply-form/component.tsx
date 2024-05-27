@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import InputGroup from "@/components/utils/InputGroup";
-import InputCheckbox from "@/components/utils/InputCheckbox";
-import InputTextArea from "@/components/utils/InputTextArea";
+import InputGroup from "@/app/[lng]/components/utils/InputGroup";
+import InputCheckbox from "@/app/[lng]/components/utils/InputCheckbox";
+import InputTextArea from "@/app/[lng]/components/utils/InputTextArea";
 import { EmbedBuilder, WebhookClient } from "discord.js";
 import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";

@@ -32,6 +32,10 @@ const config = {
     "bg-[#FF0000]",
     "bg-[#0085FF]",
     "bg-[#8C9937]",
+    "bg-team-content-radial",
+    "group-hover:bg-team-content-radial",
+    "bg-team-voice-radial",
+    "group-hover:bg-team-voice-radial",
   ],
   prefix: "",
   theme: {
@@ -59,6 +63,10 @@ const config = {
           "radial-gradient(62.35% 135.02% at 50% 100%, rgba(217,217,217, 0.1) 0%, rgba(255, 153, 0, 0) 100%)",
         "team-card-radial":
           "radial-gradient(62.35% 115.02% at 50% 100%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%)",
+        "team-content-radial":
+          "radial-gradient(62.35% 115.02% at 50% 100%, rgba(81, 68, 61, 0.7) 0%, rgba(81, 68, 61, 0.4) 100%)",
+        "team-voice-radial":
+          "radial-gradient(62.35% 115.02% at 50% 100%, rgba(74, 56, 65, 0.7) 0%, rgba(74, 56, 65, 0.4) 100%)",
         "header-radial":
           "radial-gradient(70.19% 92.24% at 50% 100%, rgba(0, 255, 178, 0.12) 0%, rgba(0, 255, 178, 0) 100%);",
       },

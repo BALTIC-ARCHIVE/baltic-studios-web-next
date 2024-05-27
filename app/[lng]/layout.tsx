@@ -6,19 +6,31 @@ const inter = Inter({ subsets: ["latin"] });
 
 // These styles apply to every route in the application
 import "./globals.css";
-import Navbar from "@/components/navbar/navbar";
-import MobileNavbar from "@/components/mobile-navbar/mobile-navbar";
+import Navbar from "@/app/[lng]/components/navbar/navbar";
+import MobileNavbar from "@/app/[lng]/components/mobile-navbar/mobile-navbar";
 import Template from "./template";
 import { usePathname } from "next/navigation";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/app/[lng]/components/theme-provider";
+import { dir } from "i18next";
+
+import { languages } from "../i18n/settings";
+
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }));
+}
+
 export default function RootLayout({
   children,
+  params: { lng },
 }: {
   children: React.ReactNode;
+  params: {
+    lng: string;
+  };
 }) {
   const routeParam = usePathname();
   return (
-    <html lang="de">
+    <html lang={lng} dir={dir(lng)}>
       <body
         suppressHydrationWarning={true}
         className={`bg-black text-white w-max-screen ${inter.className}`}

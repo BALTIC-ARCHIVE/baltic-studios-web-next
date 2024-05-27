@@ -219,7 +219,7 @@ body {
 }
 
 .list-checkmark {
-  list-style: disc url("../public/assets/images/icons/check.png") inside;
+  list-style: disc url("../../public/assets/images/icons/check.png") inside;
 }
 
 .styled-checkbox {

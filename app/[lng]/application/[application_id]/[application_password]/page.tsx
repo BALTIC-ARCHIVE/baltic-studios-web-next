@@ -1,11 +1,15 @@
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "@/app/[lng]/components/ui/alert";
 import {
   ApplyStatus,
   ApplyStatusDescription,
   ApplyStatusTitle,
-} from "@/components/ui/applystatus";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+} from "@/app/[lng]/components/ui/applystatus";
+import { Badge } from "@/app/[lng]/components/ui/badge";
+import { Card, CardContent, CardHeader } from "@/app/[lng]/components/ui/card";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { Terminal } from "lucide-react";
 import Image from "next/image";
@@ -16,7 +20,7 @@ import twoImage from "@/public/assets/images/custom/two.svg";
 import threeImage from "@/public/assets/images/custom/three.svg";
 import onboardingImage from "@/public/assets/images/custom/onboarding.png";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/[lng]/components/ui/button";
 
 export default async function ApplicationViewPage({
   params,

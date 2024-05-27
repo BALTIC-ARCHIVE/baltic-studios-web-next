@@ -1,0 +1,20 @@
+{
+  "page": {
+    "header": {
+      "subtitle": "WE WANT YOU!",
+      "title": "Ready for the challenge? \nJoin our team!",
+      "description": "Immerse yourself in our inspiring world and become part of our team! Take the opportunity to get involved in a variety of cool and exciting projects where you can apply your passion.",
+      "button-open-positions": "Open positions",
+      "button-join-discord": "Join Discord"
+    },
+    "team": {
+      "title": "Work with an outstanding team",
+      "description": "Immerse yourself in our inspiring world and become part of our team! Take the opportunity to get involved in a variety of cool and exciting projects where you can apply your passion.",
+      "open-positions": "Our open positions",
+      "flame-important-position": "We are particularly looking for those with flame markings at the moment!"
+    }
+  },
+  "visit-baltic-galaxy": "visit BALTIC GALAXY",
+  "en": "🇺🇸",
+  "de": "🇩🇪"
+}

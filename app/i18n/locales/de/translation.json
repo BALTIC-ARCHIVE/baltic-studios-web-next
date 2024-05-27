@@ -1,0 +1,20 @@
+{
+  "page": {
+    "header": {
+      "subtitle": "WIR SUCHEN DICH!",
+      "title": "Bereit für die Herausforderung? <br />Werde Teil unseres Teams!",
+      "description": "Tauche ein in unsere inspirierende Welt und werde Teil unseres Teams! Nutze die Chance, dich für eine Vielzahl von coolen und spannenden Projekten einzubringen, bei denen du deine Leidenschaft.",
+      "button-open-positions": "Offene Positionen",
+      "button-join-discord": "Discord beitreten"
+    },
+    "team": {
+      "title": "Arbeite mit einem hervorragendem Team",
+      "description": "Tauche ein in unsere inspirierende Welt und werde Teil unseres Teams! Nutze die Chance, dich für eine Vielzahl von coolen und spannenden Projekten einzubringen, bei denen du deine Leidenschaft.",
+      "open-positions": "Unsere offenen Positionen",
+      "flame-important-position": "Die mit Flammenmarkierung suchen wir zurzeit besonders!"
+    }
+  },
+  "visit-baltic-galaxy": "BALTIC GALAXY besuchen",
+  "en": "🇺🇸",
+  "de": "🇩🇪"
+}

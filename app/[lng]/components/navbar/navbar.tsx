@@ -4,8 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { MouseEvent } from "react";
 import { Button } from "../ui/button";
+import { LanguageSwitcher } from "@/app/i18n/components/LanguageSwitcher/client";
+import { useCookies } from "react-cookie";
+import { cookieName } from "@/app/i18n/settings";
+import { useParams } from "next/navigation";
+import { useTranslation } from "@/app/i18n/client";
 
 export default function Navbar() {
+  const params = useParams();
+  const { t } = useTranslation(params.lng);
   function mobileMenu(e: any) {
     // Grab HTML Elements
     const btn = document.querySelector("button.mobile-menu-button");
@@ -24,17 +31,17 @@ export default function Navbar() {
           <span className="sr-only">Lol</span>
           <Image
             src="/assets/logo.png"
-            alt="Vercel Logo"
+            alt="Logo"
             width={200}
             height={48}
             priority
           />
         </a>
       </div>
-
-      <div className="hidden lg:flex lg:flex-1 lg:gap-x-12 mt-2 lg:justify-end">
+      <div className="hidden lg:flex lg:flex-1 lg:gap-x-2 mt-2 lg:justify-end">
+        <LanguageSwitcher lng={params.lng} />
         <Button variant="default" size="lg" className="rounded-full">
-          BALTIC GALAXY besuchen
+          lol
         </Button>
       </div>
     </nav>
