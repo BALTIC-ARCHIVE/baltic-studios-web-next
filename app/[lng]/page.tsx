@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/app/[lng]/components/ui/button";
 import TeamCard from "@/app/[lng]/components/team-card/component";
 import TeamPositionsCard from "@/app/[lng]/components/team-position-card/component";
@@ -7,6 +6,7 @@ import FaqCard from "@/app/[lng]/components/faq-card/component";
 import ParallaxBadgeCard from "@/app/[lng]/components/ParallaxBadgeCard/component";
 import Link from "next/link";
 import { useTranslation } from "../i18n";
+
 export default async function Home({ params: { lng } }: any) {
   const { t } = await useTranslation(lng); // t is a function that takes a key and returns a translation
 
