@@ -16,5 +16,22 @@
   },
   "visit-baltic-galaxy": "visit BALTIC GALAXY",
   "en": "🇺🇸",
-  "de": "🇩🇪"
+  "de": "🇩🇪",
+  "form": {
+    "check_basics": "Kurz nochmal die Basics abchecken...",
+    "name": "Wie lautet dein Name222?",
+    "email": "Wie lautet deine E-Mail Adresse?",
+    "minecraft_ign": "Wie lautet dein Minecraft-Ingame Name?",
+    "joined_discord": "Ich bin bereits dem BALTIC GALAXY Discord-Server beigetreten.",
+    "have_minecraft": "Ich besitze bereits die Vollversion der Minecraft Java-Edition.",
+    "have_microphone": "Ich besitze ein Mikrofon mit angemessener Tonqualität.",
+    "discord_id": "Wie lautet deine Discord-ID?",
+    "about-label-title": "Schreibe einen Text in kurzer aber spannender Form über dich!",
+    "about-label-description": "Kleine Hilfestellung: Wer bist du? Wo stehst du im Leben? Was ist cool an dir? Welche beeindruckenden Skills und Erfahrung bringst du so mit?",
+    "about_placeholder": "Tippe hier deinen Text ein...",
+    "werke": "Möchtest du uns deine Werke zeigen? Dann füge hier die Links zu den jeweiligen Websiten hinzu.",
+    "werke_placeholder": "Tippe hier deinen Text ein...",
+    "accept_privacy": "Ich habe verstanden, dass nach dem Klicken des folgenden Buttons ich die Bewerbung nicht mehr bearbeiten kann. Ich habe ebenfalls in Kenntnis genommen, dass die Teammitglieder von BALTIC Studios Zugang zu meiner Bewerbung haben.",
+    "submit": "Jetzt Bewerbung abschicken!"
+  }
 }

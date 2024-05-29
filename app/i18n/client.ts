@@ -36,26 +36,30 @@ export function useTranslation({ lng, ns, options }: any) {
   const [cookies, setCookie] = useCookies([cookieName]);
   const ret = useTranslationOrg(ns, options);
   const { i18n } = ret;
+
+  const [activeLng, setActiveLng] = useState(i18n.resolvedLanguage);
+
+  useEffect(() => {
+    if (i18n.resolvedLanguage !== lng && lng) {
+      i18n.changeLanguage(lng);
+    }
+  }, [lng, i18n]);
+
+  useEffect(() => {
+    if (activeLng !== i18n.resolvedLanguage) {
+      setActiveLng(i18n.resolvedLanguage);
+    }
+  }, [i18n.resolvedLanguage]);
+
+  useEffect(() => {
+    if (cookies.i18next !== lng && lng) {
+      setCookie(cookieName, lng, { path: "/" });
+    }
+  }, [lng, cookies.i18next, setCookie]);
+
   if (runsOnServerSide && lng && i18n.resolvedLanguage !== lng) {
     i18n.changeLanguage(lng);
-  } else {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [activeLng, setActiveLng] = useState(i18n.resolvedLanguage);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(() => {
-      if (activeLng === i18n.resolvedLanguage) return;
-      setActiveLng(i18n.resolvedLanguage);
-    }, [activeLng, i18n.resolvedLanguage]);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(() => {
-      if (!lng || i18n.resolvedLanguage === lng) return;
-      i18n.changeLanguage(lng);
-    }, [lng, i18n]);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(() => {
-      if (cookies.i18next === lng) return;
-      setCookie(cookieName, lng, { path: "/" });
-    }, [lng, cookies.i18next]);
   }
+
   return ret;
 }

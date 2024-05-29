@@ -4,16 +4,7 @@ import { motion } from "framer-motion";
 import { StarBadge } from "../ui/star-badge";
 import { useParallax } from "@/lib/framer-utils";
 
-export default function ParallaxBadgeCard() {
-  const {
-    primaryX,
-    primaryY,
-    secondaryX,
-    secondaryY,
-    onMouseMoveHandler,
-    onMouseLeaveHandler,
-  } = useParallax();
-
+export default function ParallaxBadgeCard({ primaryX, primaryY }: any) {
   // @ts-ignore
   function getImageUrl(userName): any {
     return "https://cravatar.eu/helmavatar/" + userName + "/250.png";
@@ -22,11 +13,7 @@ export default function ParallaxBadgeCard() {
   const StarBadgeMotion = motion(StarBadge);
 
   return (
-    <motion.div
-      onMouseMove={onMouseMoveHandler}
-      onMouseLeave={onMouseLeaveHandler}
-      className=" xl:w-2/4 w-2/6 relative "
-    >
+    <div className=" xl:w-2/4 w-4/6 hidden xl:block lg:block relative ">
       <StarBadgeMotion
         username="dieserjohn"
         color="#FF00C7"
@@ -69,6 +56,6 @@ export default function ParallaxBadgeCard() {
         height={1000}
         alt="A Desktop App"
       />
-    </motion.div>
+    </div>
   );
 }

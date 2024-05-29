@@ -18,6 +18,7 @@ export default function TeamPositionsCard({
   positionId,
   screenshot_url,
   is_public,
+  lng,
 }: any) {
   const is_high_priority = prio === 1;
   const imageStyle = {
@@ -115,7 +116,7 @@ export default function TeamPositionsCard({
           layoutId={positionId}
         >
           <div
-            className={`h-3/5 overflow-hidden  px-20 py-10 relative bg-team-${colorTag}-radial`}
+            className={`xl:h-3/5 h-2/5 overflow-hidden px-6  md:px-20 lg:px-20 xl:px-20 py-10 relative bg-team-${colorTag}-radial`}
           >
             <span
               onClick={() => setSelectedId(null)}
@@ -153,7 +154,7 @@ export default function TeamPositionsCard({
                 ))}
             </div>
 
-            <div className="bottom-5 absolute  h-12 w-1/3">
+            <div className="xl:bottom-5 bottom-16 absolute z-50  h-12 w-1/3">
               <h1 className="text-[32px] duration-200 transition-all ease-in ">
                 {is_high_priority ? (
                   <Image
@@ -169,14 +170,14 @@ export default function TeamPositionsCard({
             </div>
 
             <Image
-              className=" group-hover:-ml-4  w-3/5 -right-20 top-16  duration-200 transition-all ease-in group-hover:-mt-4 z-10 mr-4 absolute"
+              className=" group-hover:-ml-4  xl:w-3/5 w-5/5 z-0 -right-20 xl:top-16 top-32  duration-200 transition-all ease-in group-hover:-mt-4 z-10 mr-4 absolute"
               alt="alt"
               src={screenshot_url}
               width={1920}
               height={1080}
             />
           </div>
-          <div className="w-2/3 my-16 mx-auto">
+          <div className="xl:w-2/3 px-6 w-5/5 my-16 mx-auto">
             <h1 className="text-white text-[32px] font-bold">
               Deine Aufgaben in unserem Team
             </h1>
@@ -187,7 +188,7 @@ export default function TeamPositionsCard({
               vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum
               auctor.
             </p>
-            <div className="grid grid-cols-2">
+            <div className="grid lg:grid-cols-2 xl:grid-cols-2 grid-cols-1">
               <div className="">
                 <div className="mt-6">
                   <h2 className="text-[18px]">Du bringst folgendes mit:</h2>
@@ -236,7 +237,7 @@ export default function TeamPositionsCard({
               </div>
             </div>
           </div>
-          <ApplyForm position={positionId} />
+          <ApplyForm position={positionId} lng={lng} />
         </motion.div>
       )}
     </div>

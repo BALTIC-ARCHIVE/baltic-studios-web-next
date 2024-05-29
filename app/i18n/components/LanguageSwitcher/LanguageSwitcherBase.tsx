@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const LanguageSwitcherBase = ({ t, lng }: any) => {
   return (
-    <footer>
+    <div>
       {languages
         .filter((l) => lng !== l)
         .map((l, index) => {
@@ -20,6 +20,6 @@ export const LanguageSwitcherBase = ({ t, lng }: any) => {
             </span>
           );
         })}
-    </footer>
+    </div>
   );
 };

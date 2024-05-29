@@ -1,11 +1,11 @@
-"use client";
 import { useEffect, useState } from "react";
 import InputGroup from "@/app/[lng]/components/utils/InputGroup";
 import InputCheckbox from "@/app/[lng]/components/utils/InputCheckbox";
 import InputTextArea from "@/app/[lng]/components/utils/InputTextArea";
 import { EmbedBuilder, WebhookClient } from "discord.js";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";
+import { useTranslation } from "@/app/i18n/client";
 
 export default function ApplyForm({ position }: { position: string }) {
   const [teamPositions, setTeamPositions] = useState([] as any);
@@ -14,6 +14,8 @@ export default function ApplyForm({ position }: { position: string }) {
   const router = useRouter();
   const randPassword = randomString(10);
   const application_uuid = uuidv4();
+  const params = useParams();
+  const { t } = useTranslation(params.lng);
 
   useEffect(() => {
     setLoading(true);
@@ -80,21 +82,31 @@ export default function ApplyForm({ position }: { position: string }) {
   if (!teamPositions && !singlePosition) return <h1>No profile data</h1>;
 
   return (
-    <main className=" rounded-md  mx-auto xl:w-3/4 w-5/6">
+    <main className=" rounded-md  mx-auto xl:w-3/4 w-6/6">
       <form
-        className="mt-16 border-white/10 bg-white/5 rounded-xl p-16"
+        className="mt-16 border-white/10 bg-white/5 rounded-xl xl:p-16 p-6"
         onSubmit={handleSubmit}
       >
-        <h1 className="text-center font-bold text-5xl mb-20">
-          Schaffst du es in 5 Minuten? {randPassword}
+        <h1 className="text-center font-bold xl:text-5xl lg:text-5xl text-3xl mb-20">
+          Schaffst du es in 5 Minuten?
         </h1>
 
-        <div className="grid xl:grid-cols-2  grid-cols-1 gap-8">
+        <div className="grid xl:grid-cols-2  grid-cols-1 xl:gap-8 lg:gap-8 gap-8">
           <div className="col-span-2 xl:col-span-1">
             <InputGroup
-              label="Wie lautet dein Name?"
+              label={t("form.name")}
               placeholder="Steve"
               id="name"
+              change={handleChange}
+              required={true}
+            />
+          </div>
+
+          <div className="col-span-2 xl:col-span-1">
+            <InputGroup
+              label="Wie lautet dein Minecraft-Ingame Name?"
+              id="minecraft_ign"
+              placeholder="Steve"
               change={handleChange}
               required={true}
             />
@@ -111,15 +123,18 @@ export default function ApplyForm({ position }: { position: string }) {
           </div>
           <div className="col-span-2 xl:col-span-1">
             <InputGroup
-              label="Wie lautet dein Minecraft-Ingame Name?"
-              id="minecraft_ign"
+              label="Wie lautet deine Discord-ID?"
+              id="discord_id"
               placeholder="Steve"
               change={handleChange}
               required={true}
             />
           </div>
-
-          <div className="text-white row-span-2">
+          <hr className="col-span-2 mb-6" />
+          <div className="col-span-1">
+            <h1 className="text-2xl">Kurz nochmal die Basics abchecken...</h1>
+          </div>
+          <div className="text-white ">
             <div className="col-span-2 xl:col-span-1">
               <InputCheckbox
                 label="Ich bin bereits dem BALTIC GALAXY Discord beigetreten."
@@ -144,15 +159,7 @@ export default function ApplyForm({ position }: { position: string }) {
               />
             </div>
           </div>
-          <div className="col-span-2 xl:col-span-1">
-            <InputGroup
-              label="Wie lautet deine Discord-ID?"
-              id="discord_id"
-              placeholder="Steve"
-              change={handleChange}
-              required={true}
-            />
-          </div>
+          <hr className="col-span-2 mt-6" />
           <div className="text-white col-span-2">
             <label className="text-[18px] block mb-2">
               Schreibe einen Text in kurzer aber spannender Form über dich und

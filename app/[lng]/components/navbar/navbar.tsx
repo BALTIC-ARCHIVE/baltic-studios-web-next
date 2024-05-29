@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MouseEvent } from "react";
 import { Button } from "../ui/button";
-import { LanguageSwitcher } from "@/app/i18n/components/LanguageSwitcher/client";
+import { LanguageSwitcher } from "@/app/i18n/components/LanguageSwitcher";
 import { useCookies } from "react-cookie";
 import { cookieName } from "@/app/i18n/settings";
 import { useParams } from "next/navigation";
@@ -41,7 +41,7 @@ export default function Navbar() {
       <div className="hidden lg:flex lg:flex-1 lg:gap-x-2 mt-2 lg:justify-end">
         <LanguageSwitcher lng={params.lng} />
         <Button variant="default" size="lg" className="rounded-full">
-          lol
+          {t("visit-baltic-galaxy")}
         </Button>
       </div>
     </nav>

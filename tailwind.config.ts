@@ -36,6 +36,14 @@ const config = {
     "group-hover:bg-team-content-radial",
     "bg-team-voice-radial",
     "group-hover:bg-team-voice-radial",
+    "bg-team-modelartist-radial",
+    "group-hover:bg-team-modelartist-radial",
+    "bg-team-developer-radial",
+    "group-hover:bg-team-developer-radial",
+    "bg-team-architect-radial",
+    "group-hover:bg-team-architect-radial",
+    "bg-team-videograph-radial",
+    "group-hover:bg-team-videograph-radial",
   ],
   prefix: "",
   theme: {
@@ -67,18 +75,26 @@ const config = {
           "radial-gradient(62.35% 115.02% at 50% 100%, rgba(81, 68, 61, 0.7) 0%, rgba(81, 68, 61, 0.4) 100%)",
         "team-voice-radial":
           "radial-gradient(62.35% 115.02% at 50% 100%, rgba(74, 56, 65, 0.7) 0%, rgba(74, 56, 65, 0.4) 100%)",
+        "team-modelartist-radial":
+          "radial-gradient(62.35% 115.02% at 50% 100%, rgba(57, 62, 77, 0.7) 0%, rgba(57, 62, 77, 0.4) 100%)",
+        "team-developer-radial":
+          "radial-gradient(62.35% 115.02% at 50% 100%, rgba(87, 81, 67, 0.7) 0%, rgba(87, 81, 67, 0.4) 100%)",
+        "team-architect-radial":
+          "radial-gradient(62.35% 115.02% at 50% 100%, rgba(69, 85, 91, 0.7) 0%, rgba(69, 85, 91, 0.4) 100%)",
+        "team-videograph-radial":
+          "radial-gradient(62.35% 115.02% at 50% 100%, rgba(75, 68, 86, 0.7) 0%, rgba(75, 68, 86, 0.4) 100%)",
         "header-radial":
           "radial-gradient(70.19% 92.24% at 50% 100%, rgba(0, 255, 178, 0.12) 0%, rgba(0, 255, 178, 0) 100%);",
       },
       backgroundColor: {
         "bal-blue": "#0d1116",
-        "baltic-tuerkis": "#00FFB2",
+        "baltic-tuerkis": "#7A74FF",
         "bal-gray": "#1A1A1A",
         "bal-dark-purple": "#AD00FF",
       },
       textColor: {
-        "baltic-tuerkis": "#00FFB2",
-        "bal-tuerkis": "#00FFB2",
+        "baltic-tuerkis": "#7A74FF",
+        "bal-tuerkis": "#0d1116",
         "bal-blue": "#7E89B1",
         "bal-dev-blue": "#00A3FF",
         "bal-yellow": "#FFE500",

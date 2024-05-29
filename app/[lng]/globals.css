@@ -244,14 +244,14 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 .styled-checkbox:hover + label:before {
-  background: #00ffb2;
+  background: #7a74ff;
   transition: ease-in-out 0.2s;
 }
 .styled-checkbox:focus + label:before {
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
 }
 .styled-checkbox:checked + label:before {
-  background: #00ffb2;
+  background: #7a74ff;
 }
 .styled-checkbox:disabled + label {
   color: #000;

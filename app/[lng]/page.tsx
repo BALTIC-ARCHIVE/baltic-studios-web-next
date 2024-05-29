@@ -6,6 +6,9 @@ import FaqCard from "@/app/[lng]/components/faq-card/component";
 import ParallaxBadgeCard from "@/app/[lng]/components/ParallaxBadgeCard/component";
 import Link from "next/link";
 import { useTranslation } from "../i18n";
+import { useParallax } from "@/lib/framer-utils";
+import { motion } from "framer-motion";
+import HeroSection from "./components/ParallaxBadgeCard/hero-section";
 
 export default async function Home({ params: { lng } }: any) {
   const { t } = await useTranslation(lng); // t is a function that takes a key and returns a translation
@@ -23,33 +26,13 @@ export default async function Home({ params: { lng } }: any) {
 
   return (
     <main className=" xl:w-3/4 w-5/6 mx-auto min-h-screen flex-col items-center">
-      <section className="flex py-28">
-        <div className="my-auto xl:w-2/4 w-5/6">
-          <h4 className=" text-[24px]">{t("page.header.subtitle")}</h4>
-          <h1 className="text-[35px] xl:text-[32px] font-bold mt-0">
-            {t("page.header.title")}
-          </h1>
-
-          <p className="text-[15px] xl:text-[18px] mt-4 font-normal text-gray-400">
-            {t("page.header.description")}
-          </p>
-          <div className="flex mt-8 relative z-50">
-            <Button>{t("page.header.button-open-positions")}</Button>
-            <Button variant="outline" className="ml-4">
-              {t("page.header.button-join-discord")}
-            </Button>
-          </div>
-        </div>
-
-        <ParallaxBadgeCard />
-      </section>
-
+      <HeroSection />
       <section className="">
         <div className="text-center">
           <h1 className="text-[35px] xl:text-[32px] mt-0">
             {t("page.team.title")}
           </h1>
-          <p className="text-[15px] xl:text-[18px] mx-auto w-3/4 mt-4 font-normal text-gray-400">
+          <p className="text-[15px] xl:text-[18px] mx-auto xl:w-3/4 w-4/4 mt-4 font-normal text-gray-400">
             {t("page.team.description")}
           </p>
         </div>
@@ -93,7 +76,7 @@ export default async function Home({ params: { lng } }: any) {
             {t("page.team.flame-important-position")}
           </p>
         </div>
-        <div className="grid grid-cols-4 gap-x-6 gap-y-6">
+        <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-6">
           {teamPositions &&
             teamPositions.map((position: any, index: any) =>
               lng === "de" ? (
@@ -108,6 +91,7 @@ export default async function Home({ params: { lng } }: any) {
                   bonus_requirements={position.de.bonus_requirements}
                   colorTag={position.de.color_tag}
                   screenshot_url={position.de.screenshot_url}
+                  lng={lng}
                 />
               ) : (
                 <TeamPositionsCard
