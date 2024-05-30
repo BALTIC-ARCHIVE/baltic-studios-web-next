@@ -23,6 +23,7 @@ export async function useTranslation(lng: any, ns?: any, options = {}) {
     t: i18nextInstance.getFixedT(
       lng,
       Array.isArray(ns) ? ns[0] : ns,
+      // @ts-ignore
       options.keyPrefix
     ),
     i18n: i18nextInstance,
