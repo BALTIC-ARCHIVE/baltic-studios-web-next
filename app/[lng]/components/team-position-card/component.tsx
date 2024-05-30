@@ -237,7 +237,7 @@ export default function TeamPositionsCard({
               </div>
             </div>
           </div>
-          <ApplyForm position={positionId} lng={lng} />
+          <ApplyForm position={positionId} />
         </motion.div>
       )}
     </div>
