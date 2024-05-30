@@ -1,3 +1,4 @@
+"use server";
 import { useTranslation } from "../..";
 import { LanguageSwitcherBase } from "./LanguageSwitcherBase";
 

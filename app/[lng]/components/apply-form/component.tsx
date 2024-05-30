@@ -88,7 +88,7 @@ export default function ApplyForm({ position }: { position: string }) {
         onSubmit={handleSubmit}
       >
         <h1 className="text-center font-bold xl:text-5xl lg:text-5xl text-3xl mb-20">
-          Schaffst du es in 5 Minuten?
+          {t("form.title")}
         </h1>
 
         <div className="grid xl:grid-cols-2  grid-cols-1 xl:gap-8 lg:gap-8 gap-8">
@@ -104,7 +104,7 @@ export default function ApplyForm({ position }: { position: string }) {
 
           <div className="col-span-2 xl:col-span-1">
             <InputGroup
-              label="Wie lautet dein Minecraft-Ingame Name?"
+              label={t("form.minecraft_ign")}
               id="minecraft_ign"
               placeholder="Steve"
               change={handleChange}
@@ -114,7 +114,7 @@ export default function ApplyForm({ position }: { position: string }) {
 
           <div className="col-span-2 xl:col-span-1">
             <InputGroup
-              label="Wie lautet deine E-Mail Adreese?"
+              label={t("form.email")}
               id="email"
               placeholder="steve@lovesalex.de"
               change={handleChange}
@@ -123,7 +123,7 @@ export default function ApplyForm({ position }: { position: string }) {
           </div>
           <div className="col-span-2 xl:col-span-1">
             <InputGroup
-              label="Wie lautet deine Discord-ID?"
+              label={t("form.discord_id")}
               id="discord_id"
               placeholder="Steve"
               change={handleChange}
@@ -132,12 +132,12 @@ export default function ApplyForm({ position }: { position: string }) {
           </div>
           <hr className="col-span-2 mb-6" />
           <div className="col-span-1">
-            <h1 className="text-2xl">Kurz nochmal die Basics abchecken...</h1>
+            <h1 className="text-2xl">{t("form.check_basics")}</h1>
           </div>
           <div className="text-white ">
             <div className="col-span-2 xl:col-span-1">
               <InputCheckbox
-                label="Ich bin bereits dem BALTIC GALAXY Discord beigetreten."
+                label={t("form.joined_discord")}
                 id="have_discord"
                 change={handleChange}
               />
@@ -145,7 +145,7 @@ export default function ApplyForm({ position }: { position: string }) {
             <div className="col-span-2 xl:col-span-1">
               <InputCheckbox
                 extraClass="mt-8"
-                label="Ich besitze bereits die Vollversion der Minecraft Java-Edition."
+                label={t("form.have_minecraft")}
                 id="have_minecraft"
                 change={handleChange}
               />
@@ -153,7 +153,7 @@ export default function ApplyForm({ position }: { position: string }) {
             <div className="col-span-2 xl:col-span-1">
               <InputCheckbox
                 extraClass="mt-8"
-                label="Ich besitze ein Mikrofon mit angemessener Tonqualität."
+                label={t("form.have_microphone")}
                 id="have_micro"
                 change={handleChange}
               />
@@ -162,19 +162,13 @@ export default function ApplyForm({ position }: { position: string }) {
           <hr className="col-span-2 mt-6" />
           <div className="text-white col-span-2">
             <label className="text-[18px] block mb-2">
-              Schreibe einen Text in kurzer aber spannender Form über dich und
-              stelle dir dabei folgende Fragen: <br />
-              <ul className="list-disc ml-8 mt-2 mb-4">
-                <li className="">
-                  Wer bist du? Wo stehst du im Leben? Was ist cool an dir?
-                </li>
-                <li>
-                  Welche beeindruckenden Skills und Erfahrung bringst du so mit?
-                </li>
+              {t("form.about_label_title")} <br />
+              <ul className="list-none mt-2 mb-4 text-sm text-white/60">
+                <li className="">{t("form.about_label_description")}</li>
               </ul>
             </label>
             <textarea
-              placeholder={"Tippe hier deinen Text ein..."}
+              placeholder={t("form.about_placeholder")}
               name={"about"}
               rows={12}
               id={"about"}
@@ -184,9 +178,8 @@ export default function ApplyForm({ position }: { position: string }) {
             ></textarea>
           </div>
           <InputTextArea
-            label="Möchtest du uns deine Werke zeigen? Dann füge hier die
-                                Links zu den jeweiligen Websiten hinzu."
-            placeholder="Tippe hier deinen Text ein..."
+            label={t("form.werke")}
+            placeholder={t("form.werke_placeholder")}
             rows={8}
             id="werke"
             change={handleChange}
@@ -195,7 +188,7 @@ export default function ApplyForm({ position }: { position: string }) {
 
           <InputCheckbox
             extraClass="col-span-2"
-            label="Ich habe verstanden, dass nach dem Klicken des folgenden Buttons ich die Bewerbung nicht mehr bearbeiten kann. Ich habe ebenfalls in Kenntnis genommen, dass die Teammitglieder von Baltic Studios Zugang zu meiner Bewerbung haben."
+            label={t("form.accept_privacy")}
             id="accept-privacy"
             required={true}
           />
@@ -205,7 +198,7 @@ export default function ApplyForm({ position }: { position: string }) {
               type="submit"
               className="px-12 py-4 text-black font-bold rounded bg-baltic-tuerkis hover:bg-baltic-tuerkis/90"
             >
-              Jetzt Bewerbung abschicken!
+              {t("form.submit")}
             </button>
           </div>
         </div>

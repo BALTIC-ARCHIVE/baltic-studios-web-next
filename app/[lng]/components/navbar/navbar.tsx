@@ -1,18 +1,11 @@
-"use client";
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { MouseEvent } from "react";
 import { Button } from "../ui/button";
 import { LanguageSwitcher } from "@/app/i18n/components/LanguageSwitcher";
-import { useCookies } from "react-cookie";
-import { cookieName } from "@/app/i18n/settings";
 import { useParams } from "next/navigation";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslation } from "@/app/i18n";
 
-export default function Navbar() {
-  const params = useParams();
-  const { t } = useTranslation(params.lng);
+export default async function Navbar({ language }: any) {
+  const { t } = await useTranslation(language);
   function mobileMenu(e: any) {
     // Grab HTML Elements
     const btn = document.querySelector("button.mobile-menu-button");
@@ -39,7 +32,7 @@ export default function Navbar() {
         </a>
       </div>
       <div className="hidden lg:flex lg:flex-1 lg:gap-x-2 mt-2 lg:justify-end">
-        <LanguageSwitcher lng={params.lng} />
+        <LanguageSwitcher lng={language} />
         <Button variant="default" size="lg" className="rounded-full">
           {t("visit-baltic-galaxy")}
         </Button>

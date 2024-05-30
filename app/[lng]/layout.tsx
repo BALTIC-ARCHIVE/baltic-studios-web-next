@@ -1,4 +1,3 @@
-"use client";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 
@@ -14,6 +13,7 @@ import { ThemeProvider } from "@/app/[lng]/components/theme-provider";
 import { dir } from "i18next";
 
 import { languages } from "../i18n/settings";
+import { headers } from "next/headers";
 
 export default function RootLayout({
   children,
@@ -24,7 +24,9 @@ export default function RootLayout({
     lng: string;
   };
 }) {
-  const routeParam = usePathname();
+  const heads = headers();
+
+  const routeParam = heads.get("next-url");
   return (
     <html lang={lng} dir={dir(lng)}>
       <body
@@ -38,7 +40,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <header className="bg-transparent absolute z-50 top-0 left-0 w-full">
-            <Navbar></Navbar>
+            <Navbar language={lng}></Navbar>
             <MobileNavbar></MobileNavbar>
           </header>
           <Template key={routeParam}>{children}</Template>

@@ -27,7 +27,9 @@ export default function HeroSection() {
         onMouseLeave={onMouseLeaveHandler}
       >
         <div className="my-auto xl:w-2/4 w-6/6">
-          <h4 className=" text-[24px]">{t("page.header.subtitle")}</h4>
+          <h4 suppressHydrationWarning className=" text-[24px]">
+            {t("page.header.subtitle")}
+          </h4>
           <h1
             className="text-[35px] xl:text-[32px] font-bold mt-0"
             dangerouslySetInnerHTML={{ __html: t("page.header.title") }}
