@@ -25,7 +25,7 @@ export default async function Home({ params: { lng } }: any) {
   const teamPositions = await teamPositionsData.json();
 
   return (
-    <main className=" xl:w-3/4 w-5/6 mx-auto min-h-screen flex-col items-center">
+    <main className=" xl:w-3/4 w-5/6 max-w-[1200px] mx-auto min-h-screen flex-col items-center">
       <HeroSection />
       <section className="">
         <div className="text-center">

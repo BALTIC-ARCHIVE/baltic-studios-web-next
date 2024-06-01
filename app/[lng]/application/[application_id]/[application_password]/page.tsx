@@ -48,7 +48,7 @@ export default async function ApplicationViewPage({
   }
 
   return (
-    <main className="xl:w-3/4 w-5/6 mx-auto min-h-screen flex-col items-center">
+    <main className="xl:w-3/4 w-5/6 max-w-[1200px] mx-auto min-h-screen flex-col items-center">
       <section className="flex py-12 mt-16 w-full relative">
         <Link
           href="/"
