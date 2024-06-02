@@ -29,10 +29,12 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="h-fit col-span-1 mt-10 pb-10 xl:text-end">
-          <Button variant="default" size="lg" className="rounded-full">
-            {t("visit-baltic-galaxy")}
-          </Button>
+        <div className="h-fit col-span-1 xl:mt-0 mt-10 pb-10 xl:text-end">
+          <a href="https://baltic-galaxy.com">
+            <Button variant="default" size="lg" className="rounded-full">
+              {t("visit-baltic-galaxy")}
+            </Button>
+          </a>
           <p className="pt-6 text-sm text-white/40">
             COPYRIGHT © BALTIC STUDIOS 2024
           </p>

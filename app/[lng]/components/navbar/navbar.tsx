@@ -21,7 +21,7 @@ export default async function Navbar({ language }: any) {
     >
       <div className="flex lg:flex-1">
         <a href="/" className="">
-          <span className="sr-only">Lol</span>
+          <span className="sr-only">Link</span>
           <Image
             src="/assets/logo.png"
             alt="Logo"
@@ -33,9 +33,11 @@ export default async function Navbar({ language }: any) {
       </div>
       <div className="hidden lg:flex lg:flex-1 lg:gap-x-2 mt-2 lg:justify-end">
         <LanguageSwitcher lng={language} />
-        <Button variant="default" size="lg" className="rounded-full">
-          {t("visit-baltic-galaxy")}
-        </Button>
+        <a href="https://baltic-galaxy.com">
+          <Button variant="default" size="lg" className="rounded-full">
+            {t("visit-baltic-galaxy")}
+          </Button>
+        </a>
       </div>
     </nav>
   );
