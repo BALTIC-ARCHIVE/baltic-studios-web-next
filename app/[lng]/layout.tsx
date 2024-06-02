@@ -16,6 +16,12 @@ import { languages } from "../i18n/settings";
 import { headers } from "next/headers";
 import Link from "next/link";
 import Footer from "./components/footer/component";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "BALTIC STUDIOS",
+  description: "We create great things for the eyes and ears",
+};
 
 export default function RootLayout({
   children,
