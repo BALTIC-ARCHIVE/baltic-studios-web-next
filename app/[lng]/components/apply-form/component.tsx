@@ -79,12 +79,12 @@ export default function ApplyForm({ position }: { position: string }) {
   };
 
   if (isLoading) return <p>Loading...</p>;
-  if (!teamPositions && !singlePosition) return <h1>No profile data</h1>;
+  if (!teamPositions && !singlePosition) return <h1>No position data</h1>;
 
   return (
     <main className=" rounded-md  mx-auto xl:w-3/4 w-6/6">
       <form
-        className="mt-16 border-white/10 bg-white/5 rounded-xl xl:p-16 p-6"
+        className="mt-16 border-white/10 bg-white/5 rounded-xl xl:p-16 p-4 pt-12 xl:pt-4"
         onSubmit={handleSubmit}
       >
         <h1 className="text-center font-bold xl:text-5xl lg:text-5xl text-3xl mb-20">
@@ -131,7 +131,7 @@ export default function ApplyForm({ position }: { position: string }) {
             />
           </div>
           <hr className="col-span-2 mb-6" />
-          <div className="col-span-1">
+          <div className="xl:col-span-1 col-span-2">
             <h1 className="text-2xl">{t("form.check_basics")}</h1>
           </div>
           <div className="text-white ">

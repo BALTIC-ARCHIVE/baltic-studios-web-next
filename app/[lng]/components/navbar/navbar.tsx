@@ -16,7 +16,7 @@ export default async function Navbar({ language }: any) {
 
   return (
     <nav
-      className="mx-auto hidden lg:flex xl:w-3/4 w-5/ items-center justify-between py-6 z-99999"
+      className="mx-auto hidden lg:flex max-w-[1200px] xl:w-4/4 items-center justify-between py-6 z-99999"
       aria-label="Global"
     >
       <div className="flex lg:flex-1">

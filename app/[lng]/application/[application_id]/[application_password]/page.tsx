@@ -1,17 +1,8 @@
 import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "@/app/[lng]/components/ui/alert";
-import {
   ApplyStatus,
-  ApplyStatusDescription,
   ApplyStatusTitle,
 } from "@/app/[lng]/components/ui/applystatus";
-import { Badge } from "@/app/[lng]/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/app/[lng]/components/ui/card";
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
-import { Terminal } from "lucide-react";
 import Image from "next/image";
 import { MouseEvent } from "react";
 
@@ -20,13 +11,14 @@ import twoImage from "@/public/assets/images/custom/two.svg";
 import threeImage from "@/public/assets/images/custom/three.svg";
 import onboardingImage from "@/public/assets/images/custom/onboarding.png";
 import Link from "next/link";
-import { Button } from "@/app/[lng]/components/ui/button";
+import { useTranslation } from "@/app/i18n";
 
 export default async function ApplicationViewPage({
   params,
 }: {
-  params: { application_id: string; application_password: string };
+  params: { application_id: string; application_password: string; lng: string };
 }) {
+  const { t } = await useTranslation(params.lng);
   const applicationData = await fetch(
     "https://plexuspro.baltic-galaxy.de/api/application/" +
       params.application_id +
@@ -48,7 +40,7 @@ export default async function ApplicationViewPage({
   }
 
   return (
-    <main className="xl:w-3/4 w-5/6 max-w-[1200px] mx-auto min-h-screen flex-col items-center">
+    <main className="xl:w-3/4 w-6/6 px-4 xl:px-0 max-w-[1200px] mx-auto min-h-screen flex-col items-center">
       <section className="flex py-12 mt-16 w-full relative">
         <Link
           href="/"
@@ -70,38 +62,41 @@ export default async function ApplicationViewPage({
               strokeLinejoin="round"
             />
           </svg>
-          Zurück zur Startseite
+          {t("back-to-home")}
         </Link>
 
         <div className="text-center mx-auto mt-32">
           <h1 className="text-[35px] xl:text-[45px] mt-0">
-            Vielen Dank für deine Bewerbung!
+            {t("application.thanks")}
           </h1>
           <p className="text-[15px] xl:text-[18px] mx-auto w-3/4 mt-4 font-normal text-gray-400">
-            Vielen Dank für deine Bewerbung! Wir haben deine Bewerbung erhalten
-            und werden uns in Kürze bei dir melden.
+            {t("application.description")}
           </p>
         </div>
       </section>
-      <section className="flex w-2/3 mx-auto flex-col items-center">
+      <section className="flex xl:w-2/3 w-3/3 mx-auto flex-col items-center">
         <hr className="h-[2px] w-24  bg-gray-200/60 border-0" />
         <span className="text-gray-200/60 mt-4 mb-2">
-          STATUS DEINER BEWERBUNG
+          {t("application.title")}
         </span>
-        <ApplyStatus className="w-1/2" variant={application.status}>
+        <ApplyStatus className="xl:w-1/2 w-2/2" variant={application.status}>
           <ApplyStatusTitle>
-            {application.status === "ausstehend" && "In Bearbeitung"}
-            {application.status === "einladung" && "Einladung zum Kennenlernen"}
+            {application.status === "ausstehend" &&
+              t("application.status.pending")}
+            {application.status === "einladung" &&
+              t("application.status.invited")}
             {application.status === "testprojekt" &&
-              "Einladung zum Testprojekt"}
+              t("application.status.test")}
             {application.status === "feedback" &&
-              "Einladung zum Feedback-Gespräch"}
-            {application.status === "angenommen" && "Angenommen"}
-            {application.status === "abgelehnt" && "Abgelehnt"}
+              t("application.status.feedback")}
+            {application.status === "angenommen" &&
+              t("application.status.accepted")}
+            {application.status === "abgelehnt" &&
+              t("application.status.rejected")}
           </ApplyStatusTitle>
         </ApplyStatus>
 
-        <Card className="mt-12 w-full">
+        {/*         <Card className="mt-12 w-full">
           <CardHeader className="inline-block">
             <span className="h-3 w-3 rounded-full inline-block bg-[#FF007A]"></span>
             <p className="ml-2 inline-block text-[#FF007A]">NEUE NACHRICHT</p>
@@ -126,20 +121,20 @@ export default async function ApplicationViewPage({
             </div>
             <div className="mt-4">{application.feedback}</div>
           </CardContent>
-        </Card>
+        </Card> */}
       </section>
       <section className=" w-full mx-auto ">
         <div className="mt-32">
-          <h1 className="text-[35px] xl:text-[35px] mt-0">
-            Unser Bewerbungsprozess
+          <h1 className="text-[25px] xl:text-[35px] mt-0">
+            {t("application.application_process")}
           </h1>
         </div>
 
-        <div className="mt-4 w-full grid grid-cols-3 gap-x-4">
+        <div className="mt-4 w-full grid xl:grid-cols-3 grid-cols-1 gap-y-4 gap-x-4">
           <Card className={`h-72 ${state1} ${state2}`}>
             <CardContent className=" h-full relative">
               <span className="absolute bottom-3 left-3 text-[22px]">
-                Kennenlerngespräch
+                {t("application.interview")}
               </span>
               <Image
                 className="absolute bottom-0 right-8"
@@ -151,7 +146,7 @@ export default async function ApplicationViewPage({
           <Card className={`h-72 ${state2} ${state3}`}>
             <CardContent className=" h-full relative">
               <span className="absolute bottom-3 left-3 text-[22px]">
-                Test-Aufgabe
+                {t("application.test_task")}
               </span>
               <Image
                 className="absolute bottom-0 right-8"
@@ -163,7 +158,7 @@ export default async function ApplicationViewPage({
           <Card className={`h-72 ${state3}`}>
             <CardContent className=" h-full relative">
               <span className="absolute bottom-3 left-3 text-[22px]">
-                Feedback
+                {t("application.feedback")}
               </span>
               <Image
                 className="absolute bottom-0 right-8"
@@ -174,20 +169,18 @@ export default async function ApplicationViewPage({
           </Card>
         </div>
       </section>
-      <section className="flex py-28">
-        <div className="my-auto xl:w-2/4 w-5/6 heading">
-          <h4 className=" text-[15px]">SUPER LEICHTER EINSTIEG</h4>
-          <h1 className="text-[35px] xl:text-[32px] font-bold mt-0">
-            Klasse Onboarding
+      <section className="flex flex-wrap py-28">
+        <div className="my-auto xl:w-2/4 w-6/6 px-4 xl:px-0 heading">
+          <h4 className=" text-[15px]">{t("application.easy_entry")}</h4>
+          <h1 className="text-[25px] xl:text-[32px] font-bold mt-0">
+            {t("application.onboarding")}
           </h1>
           <p className="text-[15px] xl:text-[18px] mt-4 font-normal text-gray-400">
-            Tauche ein in unsere inspirierende Welt und werde Teil unseres
-            Teams! Nutze die Chance, dich für eine Vielzahl von coolen und
-            spannenden Projekten einzubringen, bei denen du deine Leidenschaft.
+            {t("application.onboarding_description")}
           </p>
         </div>
 
-        <div className=" xl:w-2/4 w-5/6">
+        <div className="xl:w-2/4 w-6/6 px-4 xl:px-0 xl:mt-0 mt-10">
           <Image
             src={onboardingImage}
             width={1000}

@@ -10,10 +10,12 @@ import MobileNavbar from "@/app/[lng]/components/mobile-navbar/mobile-navbar";
 import Template from "./template";
 import { usePathname } from "next/navigation";
 import { ThemeProvider } from "@/app/[lng]/components/theme-provider";
-import { dir } from "i18next";
+import { dir, t } from "i18next";
 
 import { languages } from "../i18n/settings";
 import { headers } from "next/headers";
+import Link from "next/link";
+import Footer from "./components/footer/component";
 
 export default function RootLayout({
   children,
@@ -31,7 +33,7 @@ export default function RootLayout({
     <html lang={lng} dir={dir(lng)}>
       <body
         suppressHydrationWarning={true}
-        className={`bg-black text-white w-max-screen ${inter.className}`}
+        className={`bg-black text-white overflow-x-hidden w-max-[1200px] ${inter.className}`}
       >
         <ThemeProvider
           attribute="class"
@@ -45,25 +47,7 @@ export default function RootLayout({
           </header>
           <Template key={routeParam}>{children}</Template>
 
-          <div className="w-4/4 xl:w-3/4 w-5/6 mx-auto pb-12 mt-28 ">
-            <div className="grid xl:grid-cols-5 grid-cols-2 xl:h-16 h-10 gap-x-1 border-gray-800 border-b">
-              <div className="h-fit col-span-1">
-                <a href="https://baltic-studios.de">
-                  <Image
-                    src="/assets/logo.png"
-                    width={200}
-                    height={200}
-                    alt="Baltic Studios Logo"
-                  />
-                </a>
-              </div>
-              <div className="h-fit w-full col-span-3">
-                <p className="xl:text-xl mt-1 text-[12px] text-gray-500">
-                  Ein Universum voller Ideen
-                </p>
-              </div>
-            </div>
-          </div>
+          <Footer></Footer>
         </ThemeProvider>
       </body>
     </html>

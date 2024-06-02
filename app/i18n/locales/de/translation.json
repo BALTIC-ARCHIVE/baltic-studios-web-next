@@ -17,7 +17,14 @@
   "visit-baltic-galaxy": "BALTIC GALAXY besuchen",
   "en": "🇺🇸",
   "de": "🇩🇪",
+  "privacy": "Datenschutzerklärung",
+  "imprint": "Impressum",
   "back-to-home": "Zurück zur Startseite",
+  "team_position_card": {
+    "your_tasks": "Deine Aufgaben in unserem Team",
+    "requirements": "Du bringst folgendes mit:",
+    "bonus_requirements": "Bonus"
+  },
   "form": {
     "title": "Schaffst du es in 5 Minuten?",
     "check_basics": "Kurz nochmal die Basics abchecken...",
@@ -35,5 +42,50 @@
     "werke_placeholder": "Tippe hier deinen Text ein...",
     "accept_privacy": "Ich habe verstanden, dass nach dem Klicken des folgenden Buttons ich die Bewerbung nicht mehr bearbeiten kann. Ich habe ebenfalls in Kenntnis genommen, dass die Teammitglieder von BALTIC Studios Zugang zu meiner Bewerbung haben.",
     "submit": "Jetzt Bewerbung abschicken!"
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "have_question": "Hast du eine Frage?",
+    "button_discord": "Discord beitreten",
+    "questions": {
+      "question1": "Habt ihr ein Mindestalter für die Teampositionen?",
+      "answer1": "Ja, um Teil des Teams zu werden, musst du mindestens 15 Jahre alt sein.",
+
+      "question2": "Bekomme ich Feedback nach einer abgelehnten Bewerbung?",
+      "answer2": "Ja, wir geben dir Feedback, damit du dich verbessern kannst. Dieses kannst du in deinem Bewerbungsportal einsehen.",
+
+      "question3": "Brauche ich umfassende Kenntnisse über Star Wars?",
+      "answer3": "Nein, du musst kein Star Wars Experte sein, um Teil unseres Teams zu werden. Wir erklären dir alles, was du wissen musst.",
+
+      "question4": "Kann ich mich mehrmals bewerben?",
+      "answer4": "Ja, du kannst dich so oft bewerben, wie du möchtest. Jedoch solltest du darauf achten, dass du dich verbessert hast, bevor du dich erneut bewirbst.",
+
+      "question5": "Wie läuft der Bewerbungsprozess ab?",
+      "answer5": "Der Bewerbungsprozess besteht aus mehreren Schritten. Nachdem du deine Bewerbung abgeschickt hast, wird diese von unserem Team geprüft. Wenn deine Bewerbung positiv ausfällt, wirst du zu einem Gespräch eingeladen. Nach dem du das Gespräch erfolgreich absolviert hast, erhältst du eine Test-Aufgabe von uns. Wenn du diese Aufgabe erfolgreich abgeschlossen hast, erhältst du von uns Feedback. Dort entscheiden wir, ob du in unser Team passt."
+    }
+  },
+  "application": {
+    "title": "STATUS DEINER BEWERBUNG",
+    "thanks": "Vielen Dank für deine Bewerbung!",
+    "description": "Vielen Dank für deine Bewerbung! Wir haben deine Bewerbung erhalten und werden uns in Kürze bei dir melden.",
+    "application_process": "Unser Bewerbungsprozess",
+    "interview": "Kennenlerngespräch",
+    "test_task": "Test-Aufgabe",
+    "feedback": "Feedback-Gespräch",
+    "easy_entry": "DEIN EINSTIEG BEI UNS",
+    "onboarding": "Das Onboarding",
+    "onboarding_description": "Wir möchten, dass du dich bei uns wie Zuhause fühlst. Daher nehmen wir dich von Tag eins an die Hand und erklären dir unsere Team-Struktur und was wir großartiges mit dir vor haben! Dabei achten wir drauf, in deinem Tempo zu bleiben. Mit der Zeit lernst du das gesamte Team gut kennen.",
+    "status": {
+      "pending": "In Bearbeitung",
+      "accepted": "Angenommen",
+      "invited": "Einladung zum Kennenlernen",
+      "test": "Einladung zum Testprojekt",
+      "feedback": "Einladung zum Feedback-Gespräch",
+      "rejected": "Abgelehnt"
+    },
+    "button": {
+      "edit": "Bearbeiten",
+      "delete": "Löschen"
+    }
   }
 }

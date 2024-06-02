@@ -6,12 +6,14 @@ import Image from "next/image";
 
 import flameImage from "@/public/assets/images/icons/flamme.svg";
 import ApplyForm from "../apply-form/component";
+import { t } from "i18next";
 
 export default function TeamPositionsCard({
   tags,
   prio,
   position_name,
   description,
+  short_description,
   colorTag,
   requirements,
   bonus_requirements,
@@ -86,7 +88,9 @@ export default function TeamPositionsCard({
             </h1>
           </div>
         </div>
-        <p className="mt-4 mb-4 text-white/50 text-[15px]">{description}</p>
+        <p className="mt-4 mb-4 text-white/50 text-[15px]">
+          {short_description}
+        </p>
 
         <span
           className={`bg-[#333635] hover:bg-red-400 duration-200 transition-all ease-in h-10 w-10 rounded-full absolute`}
@@ -112,86 +116,86 @@ export default function TeamPositionsCard({
 
       {selectedId && (
         <motion.div
-          className="bg-black fixed z-50 top-0 left-0 h-full overflow-scroll overscroll-contain w-full"
+          className="bg-black fixed no-scrollbar z-50 top-0 left-0 h-full overflow-scroll overscroll-contain w-full"
           layoutId={positionId}
         >
           <div
-            className={`xl:h-3/5 h-2/5 overflow-hidden px-6  md:px-20 lg:px-20 xl:px-20 py-10 relative bg-team-${colorTag}-radial`}
+            className={`xl:h-3/5 h-2/5  overflow-hidden px-6  md:px-20 lg:px-20 xl:px-20  relative bg-team-${colorTag}-radial`}
           >
-            <span
-              onClick={() => setSelectedId(null)}
-              className={`bg-white/10 hover:bg-white/20 hover:cursor-pointer ${hoverbgColor} duration-200 transition-all ease-in px-4 py-2 rounded-md `}
+            <div
+              className={`xl:h-full h-full max-w-[1200px] mx-auto overflow-hidden overflow-visible   py-10 relative`}
             >
-              <svg
-                className="inline mr-2 mb-[2px]"
-                width="17"
-                height="16"
-                viewBox="0 0 17 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                onClick={() => setSelectedId(null)}
+                className={`bg-white/10 hover:bg-white/20 hover:cursor-pointer ${hoverbgColor} duration-200 transition-all ease-in px-4 py-2 rounded-md `}
               >
-                <path
-                  d="M16 8L1 8M1 8L7.75 14.75M1 8L7.75 1.25"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              Zurück zur Startseite
-            </span>
-
-            <div className="mt-8">
-              {tags &&
-                tags.map((tag: any, index: any) => (
-                  <Badge
-                    variant="black"
-                    key={index}
-                    className="px-2 text-[16px] rounded-full"
-                  >
-                    {tag}
-                  </Badge>
-                ))}
-            </div>
-
-            <div className="xl:bottom-5 bottom-16 absolute z-50  h-12 w-1/3">
-              <h1 className="text-[32px] duration-200 transition-all ease-in ">
-                {is_high_priority ? (
-                  <Image
-                    className="inline h-[15%] -mt-2 mr-4"
-                    alt="alt"
-                    src={flameImage}
+                <svg
+                  className="inline mr-2 mb-[2px]"
+                  width="17"
+                  height="16"
+                  viewBox="0 0 17 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 8L1 8M1 8L7.75 14.75M1 8L7.75 1.25"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
-                ) : (
-                  ""
-                )}
-                {position_name}
-              </h1>
-            </div>
+                </svg>
+                {t("back_to_home")}
+              </span>
 
-            <Image
-              className=" group-hover:-ml-4  xl:w-3/5 w-5/5 z-0 -right-20 xl:top-16 top-32  duration-200 transition-all ease-in group-hover:-mt-4 z-10 mr-4 absolute"
-              alt="alt"
-              src={screenshot_url}
-              width={1920}
-              height={1080}
-            />
+              <div className="mt-8">
+                {tags &&
+                  tags.map((tag: any, index: any) => (
+                    <Badge
+                      variant="black"
+                      key={index}
+                      className="px-2 text-[16px] rounded-full"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+              </div>
+
+              <div className="xl:bottom-5 bottom-16 absolute z-50  h-12 w-1/3">
+                <h1 className="text-[32px] duration-200 transition-all ease-in ">
+                  {is_high_priority ? (
+                    <Image
+                      className="inline h-[15%] -mt-2 mr-4"
+                      alt="alt"
+                      src={flameImage}
+                    />
+                  ) : (
+                    ""
+                  )}
+                  {position_name}
+                </h1>
+              </div>
+
+              <Image
+                className=" group-hover:-ml-4  xl:w-5/5 w-5/5 z-10 xl:-right-96 -right-20 xl:top-16 top-32  duration-200 transition-all ease-in group-hover:-mt-4 mr-4 absolute"
+                alt="alt"
+                src={screenshot_url}
+                width={1920}
+                height={1080}
+              />
+            </div>
           </div>
           <div className="xl:w-2/3 px-6 w-5/5 my-16 mx-auto">
             <h1 className="text-white text-[32px] font-bold">
-              Deine Aufgaben in unserem Team
+              {t("team_position_card.your_tasks")}
             </h1>
-            <p className="text-[15px] mt-4 text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-              mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-              fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
-              vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum
-              auctor.
-            </p>
+            <p className="text-[15px] mt-4 text-gray-300">{description}</p>
             <div className="grid lg:grid-cols-2 xl:grid-cols-2 grid-cols-1">
               <div className="">
                 <div className="mt-6">
-                  <h2 className="text-[18px]">Du bringst folgendes mit:</h2>
+                  <h2 className="text-[18px]">
+                    {t("team_position_card.requirements")}
+                  </h2>
 
                   <ul>
                     {requirements?.map((req: any, index: any) => (
@@ -214,7 +218,9 @@ export default function TeamPositionsCard({
               </div>
               <div>
                 <div className="mt-6">
-                  <h2 className="text-[18px]">Du bringst folgendes mit:</h2>
+                  <h2 className="text-[18px]">
+                    {t("team_position_card.bonus_requirements")}
+                  </h2>
 
                   <ul>
                     {bonus_requirements?.map((req: any, index: any) => (

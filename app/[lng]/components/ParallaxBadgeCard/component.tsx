@@ -13,7 +13,7 @@ export default function ParallaxBadgeCard({ primaryX, primaryY }: any) {
   const StarBadgeMotion = motion(StarBadge);
 
   return (
-    <div className=" xl:w-2/4 w-4/6 hidden xl:block lg:block relative ">
+    <div className=" xl:w-4/4 w-4/6 hidden xl:block lg:block relative ">
       <StarBadgeMotion
         username="dieserjohn"
         color="#FF00C7"

@@ -20,14 +20,17 @@ export default function HeroSection() {
   } = useParallax();
 
   return (
-    <section className="flex mx-20 py-28">
+    <section className="flex  py-28">
       <motion.div
         className="flex"
         onMouseMove={onMouseMoveHandler}
         onMouseLeave={onMouseLeaveHandler}
       >
-        <div className="my-auto xl:w-2/4 w-6/6">
-          <h4 suppressHydrationWarning className=" text-[24px]">
+        <div className="my-auto xl:w-3/4 w-6/6">
+          <h4
+            suppressHydrationWarning
+            className=" text-[18px] gradient-heading"
+          >
             {t("page.header.subtitle")}
           </h4>
           <h1

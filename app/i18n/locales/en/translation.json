@@ -17,7 +17,14 @@
   "visit-baltic-galaxy": "visit BALTIC GALAXY",
   "en": "🇺🇸",
   "de": "🇩🇪",
-  "back-to-home": "Back to homepage",
+  "privacy": "Privacy",
+  "imprint": "Imprint",
+  "back_to_home": "Back to homepage",
+  "team_position_card": {
+    "your_tasks": "What you will do in our team",
+    "requirements": "You bring the following:",
+    "bonus_requirements": "Bonus:"
+  },
   "form": {
     "title": "Can you make it in 5 minutes?",
     "check_basics": "Quickly check the basics again...",
@@ -35,5 +42,26 @@
     "werke_placeholder": "Type your text here...",
     "accept_privacy": "I understand that after clicking the following button, I can no longer edit the application. I have also noted that the team members of BALTIC Studios have access to my application.",
     "submit": "Submit application now!"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "have_question": "Do you have a question?",
+    "button_discord": "Join Discord",
+    "questions": {
+      "question1": "Do you have a minimum age for team positions?",
+      "answer1": "Yes, you must be at least 15 years old to join the team.",
+
+      "question2": "Do I get feedback after a rejected application?",
+      "answer2": "Yes, we provide feedback so you can improve. You can view this in your application portal.",
+
+      "question3": "Do I need extensive knowledge of Star Wars?",
+      "answer3": "No, you do not need to be a Star Wars expert to join our team. We will explain everything you need to know.",
+
+      "question4": "Can I apply multiple times?",
+      "answer4": "Yes, you can apply as many times as you like. However, make sure you have improved before reapplying.",
+
+      "question5": "What is the application process?",
+      "answer5": "The application process consists of several steps. After submitting your application, it will be reviewed by our team. If your application is successful, you will be invited for an interview. After successfully completing the interview, you will receive a test task from us. Upon successful completion of this task, you will receive feedback from us. We will then decide if you are a good fit for our team."
+    }
   }
 }

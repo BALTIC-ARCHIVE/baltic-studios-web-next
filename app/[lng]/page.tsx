@@ -25,7 +25,7 @@ export default async function Home({ params: { lng } }: any) {
   const teamPositions = await teamPositionsData.json();
 
   return (
-    <main className=" xl:w-3/4 w-5/6 max-w-[1200px] mx-auto min-h-screen flex-col items-center">
+    <main className="max-w-[1200px] xl:px-0 px-4 mx-auto min-h-screen flex-col items-center">
       <HeroSection />
       <section className="">
         <div className="text-center">
@@ -86,6 +86,7 @@ export default async function Home({ params: { lng } }: any) {
                   positionId={position.de.position_id}
                   position_name={position.de.position_name}
                   description={position.de.description}
+                  short_description={position.de.short_description}
                   tags={position.de.tags}
                   requirements={position.de.requirements}
                   bonus_requirements={position.de.bonus_requirements}
@@ -100,6 +101,7 @@ export default async function Home({ params: { lng } }: any) {
                   positionId={position.en.position_id}
                   position_name={position.en.position_name}
                   description={position.en.description}
+                  short_description={position.en.short_description}
                   tags={position.en.tags}
                   requirements={position.en.requirements}
                   bonus_requirements={position.en.bonus_requirements}

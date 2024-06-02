@@ -211,7 +211,7 @@ body {
 }
 
 .heading h4 {
-  background: linear-gradient(90.14deg, #abffe6 0.12%, #00ffb2 100.06%);
+  background: linear-gradient(90.14deg, #7a74ff 0.12%, #00ffb2 100.06%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -442,4 +442,16 @@ body {
   color: var(--fg);
   padding: 5px;
   text-align: center;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.gradient-heading {
+  background: linear-gradient(90.14deg, #7a74ff 0.12%, #00ffb2 100.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
