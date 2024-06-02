@@ -55,7 +55,7 @@ export default function TeamCard({
             src={getImageUrl(userName)}
           />
         </div>
-        <div className="ml-4">
+        <div className="ml-4 text-left">
           <p>{userName}</p>
           <span className="text-xs text-[#B2B2B2]">{rankName}</span>
         </div>
@@ -69,8 +69,8 @@ export default function TeamCard({
             </Avatar>
           </div>
           <div className=" -ml-4 w-4/5">
-            <DialogTitle>{userName}</DialogTitle>
-            <DialogDescription className="mt-3">
+            <DialogTitle className="text-left">{userName}</DialogTitle>
+            <DialogDescription className="mt-3 text-left">
               <Badge className="uppercase px-[12px] py-[4px]" variant={"black"}>
                 {rankName}
               </Badge>
