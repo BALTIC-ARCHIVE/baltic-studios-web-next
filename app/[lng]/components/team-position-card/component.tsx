@@ -145,7 +145,7 @@ export default function TeamPositionsCard({
                     strokeLinejoin="round"
                   />
                 </svg>
-                {t("back_to_home")}
+                {t("back-to-home")}
               </span>
 
               <div className="mt-8">
