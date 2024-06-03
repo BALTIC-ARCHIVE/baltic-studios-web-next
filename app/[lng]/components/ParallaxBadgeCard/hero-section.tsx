@@ -44,7 +44,7 @@ export default function HeroSection() {
           <div className="flex mt-8 relative z-50">
             {/* fix asap */}
             <Button>{t("page.header.button-open-positions")}</Button>
-            <a href="https://discord.gg/uZnb527CwY">
+            <a href="https://discord.gg/fVxtzptZkm">
               <Button variant="outline" className="ml-4">
                 {t("page.header.button-join-discord")}
               </Button>
