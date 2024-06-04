@@ -1,67 +1,87 @@
 {
   "page": {
-    "header": {
-      "subtitle": "WE WANT YOU!",
-      "title": "Ready for the challenge? \nJoin our team!",
-      "description": "Immerse yourself in our inspiring world and become part of our team! Take the opportunity to get involved in a variety of cool and exciting projects where you can apply your passion.",
-      "button-open-positions": "Open positions",
-      "button-join-discord": "Join Discord"
-    },
-    "team": {
-      "title": "Work with an outstanding team",
-      "description": "Immerse yourself in our inspiring world and become part of our team! Take the opportunity to get involved in a variety of cool and exciting projects where you can apply your passion.",
-      "open-positions": "Our open positions",
-      "flame-important-position": "We are particularly looking for those with flame markings at the moment!"
-    }
+      "header": {
+          "subtitle": "WE ARE LOOKING FOR YOU!",
+          "title": "Ready for the journey? <br/> Join our team!",
+          "description": "Immerse yourself in our inspiring world and take the opportunity to get involved in a variety of exciting projects where you can freely unfold.",
+          "button-open-positions": "Open Positions",
+          "button-join-discord": "Join Discord"
+      },
+      "team": {
+          "title": "May we introduce?",
+          "description": "We are a group full of Minecraft, Star Wars, and film fans. Talented experts are at your side in all areas. Get to know us during relaxed game nights and create something great with us!",
+          "open-positions": "Our open positions",
+          "flame-important-position": "Positions marked with flames are currently in high demand!"
+      }
   },
-  "visit-baltic-galaxy": "visit BALTIC GALAXY",
+  "visit-baltic-galaxy": "Visit BALTIC GALAXY",
   "en": "🇺🇸",
   "de": "🇩🇪",
-  "privacy": "Privacy",
+  "privacy": "Privacy Policy",
   "imprint": "Imprint",
-  "back_to_home": "Back to homepage",
+  "back-to-home": "Back to Home",
   "team_position_card": {
-    "your_tasks": "What you will do in our team",
-    "requirements": "You bring the following:",
-    "bonus_requirements": "Bonus:"
+      "your_tasks": "This is your passion",
+      "requirements": "You bring the following",
+      "bonus_requirements": "Bonus"
   },
   "form": {
-    "title": "Can you make it in 5 minutes?",
-    "check_basics": "Quickly check the basics again...",
-    "name": "What is your name?",
-    "email": "What is your email address?",
-    "minecraft_ign": "What is your Minecraft in-game name?",
-    "joined_discord": "I have already joined the BALTIC GALAXY Discord server.",
-    "have_minecraft": "I already own the full version of Minecraft Java Edition.",
-    "have_microphone": "I own a microphone with adequate sound quality.",
-    "discord_id": "What is your Discord ID?",
-    "about_label_title": "Write a short but exciting text about yourself!",
-    "about_label_description": "Little help: Who are you? Where are you in life? What's cool about you? What impressive skills and experience do you bring?",
-    "about_placeholder": "Type your text here...",
-    "werke": "Do you want to show us your work? Then add the links to the respective websites here.",
-    "werke_placeholder": "Type your text here...",
-    "accept_privacy": "I understand that after clicking the following button, I can no longer edit the application. I have also noted that the team members of BALTIC Studios have access to my application.",
-    "submit": "Submit application now!"
+      "title": "Apply in just 5 minutes!",
+      "check_basics": "Quickly check the basics...",
+      "name": "What's your name?",
+      "email": "What's your email address?",
+      "minecraft_ign": "What's your Minecraft In-game Name?",
+      "joined_discord": "I have already joined the BALTIC GALAXY Discord server.",
+      "have_minecraft": "I already own the full version of Minecraft Java Edition.",
+      "have_microphone": "I have a microphone with decent sound quality.",
+      "discord_id": "What's your Discord ID?",
+      "about_label_title": "Tell us more about yourself!",
+      "about_label_description": "A little guidance: Who are you? Where are you in life? What's cool about you? What skills and maybe experience do you bring?",
+      "about_placeholder": "Type your text here...",
+      "werke": "Would you like to show us your work? Then add the links to the respective websites here.",
+      "werke_placeholder": "Type your text here...",
+      "accept_privacy": "I understand that after clicking the following button, I will no longer be able to edit the application. I also acknowledge that the team members of BALTIC STUDIOS have access to my application.",
+      "submit": "Submit application now!"
   },
   "faq": {
-    "title": "Frequently asked questions",
-    "have_question": "Do you have a question?",
-    "button_discord": "Join Discord",
-    "questions": {
-      "question1": "Do you have a minimum age for team positions?",
-      "answer1": "Yes, you must be at least 15 years old to join the team.",
-
-      "question2": "Do I get feedback after a rejected application?",
-      "answer2": "Yes, we provide feedback so you can improve. You can view this in your application portal.",
-
-      "question3": "Do I need extensive knowledge of Star Wars?",
-      "answer3": "No, you do not need to be a Star Wars expert to join our team. We will explain everything you need to know.",
-
-      "question4": "Can I apply multiple times?",
-      "answer4": "Yes, you can apply as many times as you like. However, make sure you have improved before reapplying.",
-
-      "question5": "What is the application process?",
-      "answer5": "The application process consists of several steps. After submitting your application, it will be reviewed by our team. If your application is successful, you will be invited for an interview. After successfully completing the interview, you will receive a test task from us. Upon successful completion of this task, you will receive feedback from us. We will then decide if you are a good fit for our team."
-    }
+      "title": "Frequently Asked Questions",
+      "have_question": "Do you have a question?",
+      "button_discord": "Join Discord",
+      "questions": {
+          "question1": "Do I need extensive knowledge about Star Wars?",
+          "answer1": "No, you don't need to be a Star Wars expert to join our team. We are happy to explain everything you need to know. However, as a content creator, you should be able to dive deeper into Star Wars.",
+          "question2": "Can I hold multiple positions in the team?",
+          "answer2": "We want you to be able to fully focus on your area. Therefore, it is not possible to take on multiple tasks at first. After consultation, however, you can support one or the other area.",
+          "question3": "How much time do I need to have?",
+          "answer3": "We know what it's like to sometimes have less motivation or time for something. Therefore, we do not set any minimum performance requirements. We openly discuss your wishes with you so that you feel comfortable!",
+          "question4": "Will I get paid?",
+          "answer4": "Since everything is privately financed, we are unable to pay you. We are all in this because it is our passion.",
+          "question5": "Will I receive feedback after a rejected application?",
+          "answer5": "We handle our decisions transparently. If it didn't work out between us, we will let you know why. This way, you get the chance to improve!"
+      }
+  },
+  "application": {
+      "title": "STATUS OF YOUR APPLICATION",
+      "thanks": "Thank you for your application!",
+      "description": "We are delighted that you want to be part of BALTIC STUDIOS. Please be patient, we will contact you as soon as possible!",
+      "application_process": "Our application process",
+      "interview": "Introductory interview",
+      "test_task": "Test task",
+      "feedback": "Feedback conversation",
+      "easy_entry": "YOUR ENTRY WITH US",
+      "onboarding": "Onboarding",
+      "onboarding_description": "We want you to feel at home with us. Therefore, from day one, we will guide you and explain our team structure and what great things we have planned with you! We make sure to go at your pace. Over time, you will get to know the whole team well.",
+      "status": {
+          "pending": "In progress",
+          "accepted": "Accepted",
+          "invited": "Invitation to get to know",
+          "test": "Invitation to test project",
+          "feedback": "Invitation to feedback conversation",
+          "rejected": "Rejected"
+      },
+      "button": {
+          "edit": "Edit",
+          "delete": "Delete"
+      }
   }
 }

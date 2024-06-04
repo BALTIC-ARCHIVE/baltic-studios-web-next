@@ -2,16 +2,16 @@
   "page": {
     "header": {
       "subtitle": "WIR SUCHEN DICH!",
-      "title": "Bereit für die Herausforderung? <br/> Werde Teil unseres Teams!",
-      "description": "Tauche ein in unsere inspirierende Welt und werde Teil unseres Teams! Nutze die Chance, dich für eine Vielzahl von coolen und spannenden Projekten einzubringen, bei denen du deine Leidenschaft.",
+      "title": "Bereit für die Reise? <br/> Werde Teil unseres Teams!",
+      "description": "Tauche ein in unsere inspirierende Welt und nutze die Chance, dich für eine Vielzahl von spannenden Projekten einzubringen, bei denen du dich frei entfalten kannst.",
       "button-open-positions": "Offene Positionen",
       "button-join-discord": "Discord beitreten"
     },
     "team": {
       "title": "Dürfen wir vorstellen?",
-      "description": "Tauche ein in unsere inspirierende Welt und werde Teil unseres Teams! Nutze die Chance, dich für eine Vielzahl von coolen und spannenden Projekten einzubringen, bei denen du deine Leidenschaft.",
+      "description": "Wir sind eine Gruppe voller Minecraft, Star Wars- und Filmfans. In allen Bereichen stehen dir talentierte Expert:innen zur Seite. Lerne uns bei entspannten Spieleabenden kennen und erschaffe großartiges mit uns!",
       "open-positions": "Unsere offenen Positionen",
-      "flame-important-position": "Die mit Flammenmarkierung suchen wir zurzeit besonders!"
+      "flame-important-position": "Positionen mit Flammenmarkierung suchen wir zurzeit besonders!"
     }
   },
   "visit-baltic-galaxy": "BALTIC GALAXY besuchen",
@@ -21,26 +21,26 @@
   "imprint": "Impressum",
   "back-to-home": "Zurück zur Startseite",
   "team_position_card": {
-    "your_tasks": "Deine Aufgaben in unserem Team",
-    "requirements": "Du bringst folgendes mit:",
+    "your_tasks": "Das ist deine Leidenschaft",
+    "requirements": "Du bringst folgendes mit",
     "bonus_requirements": "Bonus"
   },
   "form": {
-    "title": "Schaffst du es in 5 Minuten?",
+    "title": "Bewerbe dich in nur 5 Minuten!",
     "check_basics": "Kurz nochmal die Basics abchecken...",
-    "name": "Wie lautet dein Name?",
+    "name": "Wie heißt du?",
     "email": "Wie lautet deine E-Mail Adresse?",
     "minecraft_ign": "Wie lautet dein Minecraft-Ingame Name?",
     "joined_discord": "Ich bin bereits dem BALTIC GALAXY Discord-Server beigetreten.",
     "have_minecraft": "Ich besitze bereits die Vollversion der Minecraft Java-Edition.",
     "have_microphone": "Ich besitze ein Mikrofon mit angemessener Tonqualität.",
     "discord_id": "Wie lautet deine Discord-ID?",
-    "about_label_title": "Schreibe einen Text in kurzer aber spannender Form über dich!",
+    "about_label_title": "Erzähle uns mehr von dir!",
     "about_label_description": "Kleine Hilfestellung: Wer bist du? Wo stehst du im Leben? Was ist cool an dir? Welche beeindruckenden Skills und Erfahrung bringst du so mit?",
     "about_placeholder": "Tippe hier deinen Text ein...",
     "werke": "Möchtest du uns deine Werke zeigen? Dann füge hier die Links zu den jeweiligen Websiten hinzu.",
     "werke_placeholder": "Tippe hier deinen Text ein...",
-    "accept_privacy": "Ich habe verstanden, dass nach dem Klicken des folgenden Buttons ich die Bewerbung nicht mehr bearbeiten kann. Ich habe ebenfalls in Kenntnis genommen, dass die Teammitglieder von BALTIC Studios Zugang zu meiner Bewerbung haben.",
+    "accept_privacy": "Ich habe verstanden, dass nach dem Klicken des folgenden Buttons ich die Bewerbung nicht mehr bearbeiten kann. Ich habe ebenfalls in Kenntnis genommen, dass die Teammitglieder von BALTIC STUDIOS Zugang zu meiner Bewerbung haben.",
     "submit": "Jetzt Bewerbung abschicken!"
   },
   "faq": {
@@ -48,26 +48,26 @@
     "have_question": "Hast du eine Frage?",
     "button_discord": "Discord beitreten",
     "questions": {
-      "question1": "Habt ihr ein Mindestalter für die Teampositionen?",
-      "answer1": "Ja, um Teil des Teams zu werden, musst du mindestens 15 Jahre alt sein.",
+      "question1": "Brauche ich umfassende Kenntnisse über Star Wars?",
+      "answer1": "Nein, du musst kein Star Wars Experte sein, um Teil unseres Teams zu werden. Wir erklären dir sehr gerne alles, was du wissen musst. Als Content solltest du dich allerdings stärker mit Star Wars auseinandersetzen.",
 
-      "question2": "Bekomme ich Feedback nach einer abgelehnten Bewerbung?",
-      "answer2": "Ja, wir geben dir Feedback, damit du dich verbessern kannst. Dieses kannst du in deinem Bewerbungsportal einsehen.",
+      "question2": "Kann ich mehrere Positionen im Team besetzen?",
+      "answer2": "Wir möchten, dass du dich ganz auf deinen Bereich fokussieren kannst. Daher ist es vorerst nicht möglich, mehrere Aufgaben zu übernehmen. Nach Absprache kannst du aber den ein oder anderen Bereich unterstützen.",
 
-      "question3": "Brauche ich umfassende Kenntnisse über Star Wars?",
-      "answer3": "Nein, du musst kein Star Wars Experte sein, um Teil unseres Teams zu werden. Wir erklären dir alles, was du wissen musst.",
+      "question3": "Wie viel Zeit muss ich haben?",
+      "answer3": "Wir wissen wie es ist, auch mal weniger Motivation oder Zeit für etwas zu haben. Wir setzen daher keine Mindestleistung voraus. Wir sprechen offen mit dir über deine Wünsche, damit du dich wohlfühlst!",
 
-      "question4": "Kann ich mich mehrmals bewerben?",
-      "answer4": "Ja, du kannst dich so oft bewerben, wie du möchtest. Jedoch solltest du darauf achten, dass du dich verbessert hast, bevor du dich erneut bewirbst.",
+      "question4": "Werde ich bezahlt??",
+      "answer4": "Da alles aus privater Hand finanziert wird, ist es uns nicht möglich, dich zu bezahlen. Wir alle sind dabei, weil es unsere Leidenschaft ist.",
 
-      "question5": "Wie läuft der Bewerbungsprozess ab?",
-      "answer5": "Der Bewerbungsprozess besteht aus mehreren Schritten. Nachdem du deine Bewerbung abgeschickt hast, wird diese von unserem Team geprüft. Wenn deine Bewerbung positiv ausfällt, wirst du zu einem Gespräch eingeladen. Nach dem du das Gespräch erfolgreich absolviert hast, erhältst du eine Test-Aufgabe von uns. Wenn du diese Aufgabe erfolgreich abgeschlossen hast, erhältst du von uns Feedback. Dort entscheiden wir, ob du in unser Team passt."
+      "question5": "Bekomme ich Feedback nach einer abgelehnten Bewerbung?",
+      "answer5": "Wir gehen transparent mit unseren Entscheidungen um. Sollte es zwischen uns nicht gepasst haben, teilen wir dir mit, woran es gelegen hat. So bekommst du die Chance, dich zu verbessern!"
     }
   },
   "application": {
     "title": "STATUS DEINER BEWERBUNG",
     "thanks": "Vielen Dank für deine Bewerbung!",
-    "description": "Vielen Dank für deine Bewerbung! Wir haben deine Bewerbung erhalten und werden uns in Kürze bei dir melden.",
+    "description": "Wir freuen uns, dass du ein Teil von BALTIC STUDIOS werden möchtest. Bitte habe etwas Geduld, wir werden dich schnellstmöglich kontaktieren!",
     "application_process": "Unser Bewerbungsprozess",
     "interview": "Kennenlerngespräch",
     "test_task": "Test-Aufgabe",
