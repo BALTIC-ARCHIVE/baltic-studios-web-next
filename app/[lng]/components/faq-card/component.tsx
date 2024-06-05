@@ -75,12 +75,12 @@ export default function FaqCard() {
               <Image className="" alt="Message Icon" src={messageIcon} />
             </span>
             <h3 className="text-[22px] text-center xl:text-[22px] mt-0">
-              Du hast immer noch <br /> ein paar Fragen?
+              {t("faq.have_question")}
             </h3>
             <div className="flex justify-center mt-6 relative z-50">
               <Button variant="discord" className="mx-auto" asChild>
                 <Link href="https://discord.gg/Cm48zDkSvr">
-                  Discord beitreten
+                  <a>{t("faq.button_discord")}</a>
                 </Link>
               </Button>
             </div>
