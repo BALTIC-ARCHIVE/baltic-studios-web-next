@@ -20,7 +20,7 @@ export default async function ApplicationViewPage({
 }) {
   const { t } = await useTranslation(params.lng);
   const applicationData = await fetch(
-    "https://plexuspro.baltic-galaxy.de/api/application/" +
+    "https://plexus.baltic-galaxy.de/api/application/" +
       params.application_id +
       "/" +
       params.application_password,
