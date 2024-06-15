@@ -56,7 +56,7 @@ export default function ApplyForm({ position }: { position: string }) {
     console.log(inputs);
 
     const request = new XMLHttpRequest();
-    request.open("POST", "https://plexuspro.baltic-galaxy.de/api/application");
+    request.open("POST", "https://plexus.baltic-galaxy.de/api/application");
     request.setRequestHeader("Content-type", "application/json");
 
     const params = {
