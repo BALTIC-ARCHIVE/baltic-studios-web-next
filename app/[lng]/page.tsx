@@ -13,13 +13,13 @@ import HeroSection from "./components/ParallaxBadgeCard/hero-section";
 export default async function Home({ params: { lng } }: any) {
   const { t } = await useTranslation(lng); // t is a function that takes a key and returns a translation
 
-  const data = await fetch("https://plexuspro.baltic-galaxy.de/api/team", {
+  const data = await fetch("https://plexus.baltic-galaxy.de/api/team", {
     next: { revalidate: 3600 },
   });
   const json = await data.json();
 
   const teamPositionsData = await fetch(
-    "https://plexuspro.baltic-galaxy.de/api/tpos",
+    "https://plexus.baltic-galaxy.de/api/tpos",
     { next: { revalidate: 3600 } }
   );
   const teamPositions = await teamPositionsData.json();

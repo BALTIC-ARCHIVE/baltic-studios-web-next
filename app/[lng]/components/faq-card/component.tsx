@@ -80,7 +80,7 @@ export default function FaqCard() {
             <div className="flex justify-center mt-6 relative z-50">
               <Button variant="discord" className="mx-auto" asChild>
                 <Link href="https://discord.gg/Cm48zDkSvr">
-                  <a>{t("faq.button_discord")}</a>
+                  {t("faq.button_discord")}
                 </Link>
               </Button>
             </div>
